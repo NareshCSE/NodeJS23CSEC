@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class Insert {
 	public static void main(String[]args) 
 	{
-		try {
+		try { 
 			//Step1: register the driver   Student s=new Student()
 			//Class.forName("com.mysql.cj.jdbc.Driver");
 			DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
