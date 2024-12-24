@@ -23,6 +23,7 @@ public class insertDetails {
 			if(rowsInsert>0) {
 				System.out.println("1 row inserted");
 			}
+			con.close();
 		}
 		catch (Exception e) {
 			e.printStackTrace();
