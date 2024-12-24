@@ -1,3 +1,5 @@
+//jdbc retrieval process
+
 package sample;
 
 import java.sql.Connection;
