@@ -1,0 +1,58 @@
+package jdbc;
+import java.sql.Connection;
+
+import java.sql.DriverManager;
+
+import java.sql.ResultSet;
+
+import java.sql.Statement;
+
+
+public class InsertQuery {
+
+	public static void main(String[] args) {
+		
+		try {
+
+			//Class.forName("com.mysql.cj.jdbc.Driver");
+
+			DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
+
+			
+
+			String url = "jdbc:mysql://localhost:3306/db";
+
+			String username = "root";
+
+			String password = "1234";
+
+			
+
+			Connection connection=DriverManager.getConnection(url,username,password);
+
+			System.out.println("Connection Established Successfully");
+
+			
+
+			Statement statement=connection.createStatement();	
+
+		  ResultSet rs=statement.executeUpdate("INSERT INTO employee(eid,emane,esalary)\r\n"+" VALUES (6,"Malan",50000);");
+
+			connection.close();
+
+			while(rs.next()) {
+
+				System.out.println("id:"+rs.getString("eid")+"Name:"+rs.getString("ename")+"\tSalary:"+rs.getFloat("esalary"));
+
+			}
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+
+		
+
+	}
+
+	}
+}
