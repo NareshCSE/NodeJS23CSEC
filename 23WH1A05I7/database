@@ -1,0 +1,6 @@
+create database i7;
+use i7;
+create table employee(empid INT PRIMARY KEY,ename VARCHAR(40),salary FLOAT);
+insert into employee values(1,"Joy",20000.00),(2,"John",30000.00),(3,"Joe",40000.00),
+(4,"Jay",50000.00),(5,"Justin",60000.00);
+select *from employee;
