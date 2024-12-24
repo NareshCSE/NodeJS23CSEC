@@ -11,10 +11,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 
-
 public class sample {
 
-	public static void main(String[]args) 
+	public static void main(String[] args) 
 
 	{
 
@@ -28,7 +27,7 @@ public class sample {
 
 			//step2: get the connection object
 
-			Connection connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/sample", "root", "1234");
+			Connection connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/5i4", "root", "1234");
 
 			//step3: create statement object which is used to send SQL queries to database
 
@@ -36,11 +35,11 @@ public class sample {
 
 			//step4: execute the query
 
-			ResultSet rs=statement.executeQuery("select *from nobel_prizes");
+			ResultSet rs=statement.executeQuery("select *from employees");
 
 			while(rs.next()) {
 
-				System.out.println(rs.getString("year")+"\t"+rs.getString("Subject")+"\t"+rs.getString("winner")+"\t"+rs.getString("country"));
+				System.out.println(rs.getString("emp_id")+"\t"+rs.getString("emp_name")+"\t"+rs.getString("salary")+"\t"+rs.getString("department"));
 
 			}
 
@@ -56,12 +55,6 @@ public class sample {
 
 		}
 
-		
-
-		
-
 	}
-
-
 
 }
