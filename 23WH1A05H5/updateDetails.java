@@ -17,6 +17,7 @@ public class updateDetails {
 			if(rowsUpdated>0) {
 				System.out.println("Department of Employee 1 is changed to IT");
 			}
+			con.close();
 		}
 		catch (Exception e) {
 			e.printStackTrace();
