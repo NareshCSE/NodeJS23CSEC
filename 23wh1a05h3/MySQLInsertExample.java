@@ -11,8 +11,6 @@ public class MySQLInsertExample{
         String password="1234"; 
         String tableName="Employee"; 
         String insertQuery="INSERT INTO "+tableName+" (EmployeeID,FirstName,LastName,Department,Salary) VALUES (8,'kim','som','IT',5000.00)";
-        String updateQuery="UPDATE "+tableName+" SET rating=4 WHERE id=1";
-        String deleteQuery="DELETE FROM "+tableName+" WHERE id=1";
         String selectQuery="SELECT * FROM "+tableName;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
