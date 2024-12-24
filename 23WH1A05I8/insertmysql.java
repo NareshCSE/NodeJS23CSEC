@@ -10,7 +10,7 @@ public class insertmysql {
 	public static void main(String[] args) {
 		try {
 			DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-			Connection connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/23wh1a05i8","root","1234");
+			Connection connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/24wh5a0518S","root","1234");
 			Statement statement=connection.createStatement();
 			String insert="insert into employee (id,name,salary) values(9,'saniya',800000) ";
 			int rowsinserted =statement.executeUpdate(insert);
