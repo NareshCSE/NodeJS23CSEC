@@ -1,0 +1,46 @@
+package javasql;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
+
+public class sqlcon {
+    public static void main(String[] args) {
+        try {
+            DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/h6", "root", "1234");
+            Statement statement = connection.createStatement();
+            int rowsAffected = statement.executeUpdate("INSERT INTO student1 (sid, name1) VALUES (8, 'kim')");
+            if (rowsAffected > 0) {
+                System.out.println("Record inserted successfully!");
+            } else {
+                System.out.println("No record inserted!");
+            }
+            ResultSet rs1 = statement.executeQuery("SELECT * FROM student1");
+            ResultSetMetaData metaData = rs1.getMetaData();
+            int columnCount = metaData.getColumnCount();
+            System.out.println("Table: student1");
+            for (int i = 1; i <= columnCount; i++) {
+                System.out.print(metaData.getColumnName(i));
+                if (i < columnCount) {
+                    System.out.print("\t");
+                }
+            }
+            System.out.println("\n--------------------------------------------");
+            while (rs1.next()) {
+                for (int i = 1; i <= columnCount; i++) {
+                    System.out.print(rs1.getString(i));
+                    if (i < columnCount) {
+                        System.out.print("\t");
+                    }
+                }
+                System.out.println();
+            }
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
