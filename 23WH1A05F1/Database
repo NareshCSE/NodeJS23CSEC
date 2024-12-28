@@ -1,0 +1,14 @@
+reate database 23wh1a05f1;
+use 23wh1a05i1;
+drop table Employee;
+create table Employee(
+empID INT PRIMARY KEY,
+empName VARCHAR(40),
+salary FLOAT);
+insert into Employee values
+(1,"Joy",20000.00),
+(2,"John",30000.00),
+(3,"Joe",40000.00),
+(4,"Jay",50000.00),
+(5,"Justin",60000.00);
+select *from Employee;
