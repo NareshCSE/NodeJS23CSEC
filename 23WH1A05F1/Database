@@ -1,5 +1,5 @@
 create database 23wh1a05f1;
-use 23wh1a05i1;
+use 23wh1a05f1;
 drop table Employee;
 create table Employee(
 empID INT PRIMARY KEY,
