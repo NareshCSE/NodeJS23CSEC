@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - CSE BVRITH ECOMMERCE</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F0F8FF;
+        }
+
+        header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: #87CEEB;
+            color: #333;
+            padding: 10px 20px;
+            border-bottom: 2px solid #4682B4;
+        }
+
+        header .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #E6E6FA;
+            color: #4B0082;
+            position: fixed;
+            height: 100%;
+            padding-top: 20px;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 3px solid #8A2BE2;
+        }
+
+        .sidebar img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar h2 {
+            color: #4B0082;
+        }
+
+        .sidebar a {
+            color: #4B0082;
+            text-decoration: none;
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid #D8BFD8;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #8A2BE2;
+            color: white;
+        }
+
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+            background-color: #FFF0F5;
+        }
+
+        .content h2 {
+            text-align: center;
+            color: #8A2BE2;
+        }
+
+        .logout-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .logout-message {
+            font-size: 1.5em;
+            color: #4682B4;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #8A2BE2;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            display: inline-block;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #4B0082;
+        }
+
+        footer {
+            background-color: #87CEEB;
+            color: #4B0082;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .clear-btn {
+            background-color: #FF6347;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            display: inline-block;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .clear-btn:hover {
+            background-color: #B22222;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <img src="c:\Users\admin\Downloads\logo.webp" class="logo" alt="Logo">
+        <h2>CSE BVRITH ECOMMERCE</h2>
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="logout.html">Logout</a>
+    </div>
+
+    <div class="content">
+        <header>
+            <img src="c:\Users\admin\Downloads\logo.webp" class="logo" alt="Logo">
+            <h1>CSE BVRITH ECOMMERCE</h1>
+        </header>
+
+        <h2>Logout</h2>
+
+        <div class="logout-container">
+            <p class="logout-message">You have been successfully logged out!</p>
+            <p>Thank you for visiting CSE BVRITH ECOMMERCE. See you next time!</p>
+            
+            <a href="login.html" class="btn">Login Again</a>
+            <a href="index.html" class="clear-btn">Back to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 CSE(5D0) BVRITH ECOMMERCE. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
