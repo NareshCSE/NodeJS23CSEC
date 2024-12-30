@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CSE BVRITH ECOMMERCE</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fc; /* Lighter background */
+        }
+
+        header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: #4CAF50; /* Green header */
+            color: #fff;
+            padding: 10px 20px;
+            border-bottom: 2px solid #388E3C;
+        }
+
+        header .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #333333; /* Dark sidebar */
+            color: #ffffff; /* White text for the sidebar */
+            position: fixed;
+            height: 100%;
+            padding-top: 20px;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 3px solid #00C853; /* Green border */
+        }
+
+        .sidebar img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar h2 {
+            color: #ffffff;
+        }
+
+        .sidebar a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid #666;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #00C853; /* Green hover effect */
+        }
+
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+            background-color: #ffffff; /* White background for content */
+        }
+
+        .content h2 {
+            text-align: center;
+            color: #4CAF50; /* Green text for the title */
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #f1f1f1; /* Lighter form background */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-size: 1.2em;
+            color: #333333; /* Dark text for labels */
+        }
+
+        input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+
+        .btn {
+            background-color: #00C853; /* Green button */
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            display: inline-block;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #388E3C; /* Darker green on hover */
+        }
+
+        footer {
+            background-color: #4CAF50; /* Green footer */
+            color: #ffffff; /* White text for footer */
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .clear-btn {
+            background-color: #FF7043; /* Orange button */
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            display: inline-block;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .clear-btn:hover {
+            background-color: #D32F2F; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <img src="c:\Users\admin\Downloads\logo.webp" class="logo" alt="Logo">
+        <h2>CSE BVRITH ECOMMERCE</h2>
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="logout.html">Logout</a>
+    </div>
+
+    <div class="content">
+        <header>
+            <img src="c:\Users\admin\Downloads\logo.webp" class="logo" alt="Logo">
+            <h1>CSE BVRITH ECOMMERCE</h1>
+        </header>
+
+        <h2>Login</h2>
+
+        <div class="form-container">
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="remember">
+                        <input type="checkbox" id="remember" name="remember">
+                        Remember Me
+                    </label>
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+                <button type="reset" class="clear-btn">Clear</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 CSE(5F7) BVRITH ECOMMERCE. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
