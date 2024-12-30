@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - CSE BVRITH ECOMMERCE</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F4F4F9; /* Light Grayish Blue */
+        }
+
+        header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: #6A5ACD; /* Slate Blue */
+            color: white;
+            padding: 10px 20px;
+            border-bottom: 2px solid #483D8B; /* Dark Slate Blue */
+        }
+
+        header .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #D8BFD8; /* Thistle */
+            color: #4B0082; /* Indigo */
+            position: fixed;
+            height: 100%;
+            padding-top: 20px;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 3px solid #8A2BE2; /* Blue Violet */
+        }
+
+        .sidebar img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar h2 {
+            color: #4B0082; /* Indigo */
+        }
+
+        .sidebar a {
+            color: #4B0082; /* Indigo */
+            text-decoration: none;
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid #D8BFD8; /* Thistle */
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #8A2BE2; /* Blue Violet */
+            color: white;
+        }
+
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+            background-color: #FFF0F5; /* Lavender Blush */
+        }
+
+        .content h2 {
+            text-align: center;
+            color: #8A2BE2; /* Blue Violet */
+        }
+
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .cart-table th, .cart-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #D8BFD8; /* Thistle */
+        }
+
+        .cart-table th {
+            background-color: #4682B4; /* Steel Blue */
+            color: white;
+        }
+
+        .cart-table td {
+            background-color: #FFFFFF;
+        }
+
+        .cart-table input {
+            width: 50px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .cart-summary {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-top: 2px solid #D8BFD8; /* Thistle */
+            font-size: 1.2em;
+        }
+
+        .cart-summary p {
+            margin: 0;
+        }
+
+        .btn {
+            background-color: #8A2BE2; /* Blue Violet */
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            margin-top: 20px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #4B0082; /* Indigo */
+        }
+
+        footer {
+            background-color: #6A5ACD; /* Slate Blue */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <img src="c:\Users\admin\Downloads\logo.webp" class="logo" alt="Logo">
+        <h2>CSE BVRITH ECOMMERCE</h2>
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="logout.html">Logout</a>
+    </div>
+
+    <div class="content">
+        <header>
+            <img src="c:\Users\admin\Downloads\logo.webp" class="logo" alt="Logo">
+            <h1>CSE BVRITH ECOMMERCE</h1>
+        </header>
+
+        <h2>Your Cart</h2>
+
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Product 1 -->
+                <tr>
+                    <td>Product 1</td>
+                    <td>$199.99</td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>$199.99</td>
+                    <td><a href="#" class="btn">Remove</a></td>
+                </tr>
+
+                <!-- Product 2 -->
+                <tr>
+                    <td>Product 2</td>
+                    <td>$149.99</td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>$149.99</td>
+                    <td><a href="#" class="btn">Remove</a></td>
+                </tr>
+
+                <!-- Product 3 -->
+                <tr>
+                    <td>Product 3</td>
+                    <td>$299.99</td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>$299.99</td>
+                    <td><a href="#" class="btn">Remove</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="cart-summary">
+            <p><strong>Subtotal:</strong> $649.97</p>
+            <a href="checkout.html" class="btn">Proceed to Checkout</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2023 CSE(5F7) BVRITH ECOMMERCE. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
