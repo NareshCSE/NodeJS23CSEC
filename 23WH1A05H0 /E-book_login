@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    </head>
+    <body bgcolor="yellow" >
+
+    <h1>create new account</h1>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Department and Address</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #234868;
+            color: #0a0a0a;
+            padding: 20px;
+        }
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input[type="text"], input[type="password"], input[type="tel"], input[type="date"], select {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="checkbox"], input[type="radio"] {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        .checkbox-group {
+            display: flex;
+            gap: 15px;
+        }
+        .radio-group {
+            display: flex;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <!-- First and Last Name -->
+        <div class="form-section">
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname">
+
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname">
+        </div>
+
+        <!-- Username and Password -->
+        <div class="form-section">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+
+            <label for="pwd">Password:</label>
+            <input type="password" id="pwd" name="pwd">
+        </div>
+
+        <!-- Phone Number -->
+        <div class="form-section">
+            <label for="phone">Enter your phone number:</label>
+            <input type="tel" id="phone" name="phone" >
+        </div>
+
+        <!-- Birthday -->
+        <div class="form-section">
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="birthday">
+        </div>
+
+        <!-- Languages -->
+        <div class="form-section">
+            <label for="language">Language:</label><br>
+            <div class="checkbox-group">
+                <input type="checkbox" id="english" name="English" value="English">
+                <label for="english">English</label>
+
+                <input type="checkbox" id="hindi" name="Hindi" value="Hindi">
+                <label for="hindi">Hindi</label>
+
+                <input type="checkbox" id="telugu" name="Telugu" value="Telugu">
+                <label for="telugu">Telugu</label>
+            </div>
+        </div>
+
+        <!-- Gender -->
+        <div class="form-section">
+            <label for="gender">Gender:</label>
+            <div class="radio-group">
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label>
+
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+            </div>
+        </div>
+
+        <!-- Department -->
+        <div class="form-section">
+            <label for="department">Department:</label>
+            <select id="department" name="department">
+                <option value="cse">CSE</option>
+                <option value="it">IT</option>
+                <option value="ece">ECE</option>
+                <option value="eee">EEE</option>
+                <option value="ailm">AIML</option>
+            </select>
+        </div>
+
+        <!-- Address -->
+        <div class="form-section">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" placeholder="Enter your address here..."></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
