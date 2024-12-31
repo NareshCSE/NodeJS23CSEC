@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+
+        <br><label for="email">Email</label>
+        <input type="text" id="email" name="email"><br>
+
+        <br><label for="password">Password:</label>
+        <input type="text" id="password" name="password"><br>
+
+        <br><label for="phone number">Phone number:</label>
+        <input type="text" id="phone number" name="phone number"><br>
+
+        <br><label for="dob">DOB:</label>
+        <input type="date" id="dob" name="dob"><br> 
+    </div>
+    </form>
+
+<form>
+<div>
+  <br><label for="Languages known">Languages known:</label><br>
+  <input type="checkbox" id="Language" name="language" value="English">
+  <label for="language"> English</label><br>
+  <input type="checkbox" id="Language" name="language" value="Hindi">
+  <label for="language"> Hindi</label><br>
+  <input type="checkbox" id="Language" name="language" value="Telugu">
+  <label for="language"> Telugu</label><br><br>
+</div>
+<div>
+  <label for="Gender">Gender:</label><br>
+  <input type="radio" id="female" name="gender" value="Gender">
+  <label for="female">Female</label><br>
+  <input type="radio" id="male" name="gender" value="Gender">
+  <label for="Male">Male</label><br>
+</div>
+<div>
+<label for="Department">Department:</label><br>
+<select id ="department" name="department" >
+    <option value="CSE">CSE</option>
+    <option value="IT">IT</option>
+    <option value="ECE">ECE</option>
+    <option value="EEE">EEE</option>
+    <option value="CSM">CSM</option>
+</select><br>
+</div>
+<div>
+    <br><label for="address"> ADDRESS:</label><br>
+    <textarea id="address" name ="address" rows="4" columns="50"></textarea><br>
+</div>
+
+<div>
+    <br><button type="SUBMIT">SUBMIT</button> 
+    <button type="CLOSE">CLOSE</button>
+</div>
+</form> 
+
+    
+</body>
+</html>
