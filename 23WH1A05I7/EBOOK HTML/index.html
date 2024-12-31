@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            padding-top: 10px;
+            padding-right: 100px;
+            padding-bottom: 0px;
+            padding-left: 100px;
+            border: 5px ;
+            margin: 5px; 
+    }
+
+    body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+<body>
+ 
+    <form>
+        <div><label for ="fname">NAME:</label>
+            <input type="text" id ="fname" name="fname" placeholder="enter name "><br>
+        </div>
+        
+        <div> 
+        <br><label for ="email">EMAIL:</label>
+        <input type ="email" id ="email" name ="email"><br> 
+        </div>
+
+        <div>
+        <br><label for ="password">PASSWORD:</label>
+        <input type ="password" id ="password" name=""password> <br> 
+        </div>
+
+        <div>
+         <br><label for ="mobile_no">PHONE NUMBER:</label>
+        <input type="tel" id="mobile_no" name="mobile_no"><br>
+        </div>
+
+        <div>
+        <br><label for="dob">DOB:</label>
+        <input type="date" id ="dob" name="dob"> <br>
+        </div>
+
+        <div>
+        <br><label for ="languages">LANGUAGES KNOWN:</label>
+            <br><input type ="checkbox" id ="language1" name="languages" value="ENGLISH">
+            <label for ="language1"> ENGLISH</label>
+            <br><input type ="checkbox" id ="language2" name="languages" value="HINDI">
+            <label for ="language2">HINDI</label>
+            <br><input type ="checkbox" id ="language3" name="languages" value="OTHERS">
+            <label for ="language3"> OTHERS</label><br>
+        </div>
+
+        <div>
+         <br> <label for ="gender">GENDER:</label><br>
+        <input type ="radio" id ="gender1" name="gender" value ="MALE">
+        <label for ="gender1">MALE</label>
+        <input type ="radio" id ="gender2" name="gender" value ="FEMALE">
+        <label for ="gender1">FEMALE</label><br>
+        </div>
+
+        <div> 
+        <br><label for="department">DEPARTMENT:</label>
+        <select id ="department" name="department" >
+            <option value="CSE">CSE</option>
+            <option value="IT">IT</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+        </select><br>
+        </div>
+
+        <div>
+            <br><label for="address"> ADDRESS:</label><br>
+            <textarea id="address" name ="address" rows="4" columns="50"></textarea><br>
+        </div>
+
+        <div>
+            <br><button type="SUBMIT">SUBMIT</button> 
+            <button type="CLOSE">CLOSE</button>
+        </div>
+
+    </form>
+ 
+</body>
+</html>
