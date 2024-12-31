@@ -1,0 +1,28 @@
+package javaa;
+
+import java.sql.*;
+
+public class Insert {
+	public static void main(String[] args) {
+	
+	try {
+	Class.forName("com.mysql.cj.jdbc.Driver");
+	Connection connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/g6","root","1234");
+	
+	System.out.println("Connection established");
+	String sql="insert into employees(id ,ename,salary) values(?, ?, ?)";
+	PreparedStatement statement=connection.prepareStatement(sql);
+	statement.setInt(1, 6);
+	statement.setString(2,"Ton");
+	statement.setInt(3, 20500);
+	statement.executeUpdate();
+	System.out.println("Record created");
+		
+	
+	}
+	catch(Exception e) {
+		System.out.println(e);
+	}
+}
+
+}
