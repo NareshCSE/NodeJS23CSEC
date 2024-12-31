@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <img src="https://i.postimg.cc/nhS5bQZB/bvrith-logo.png" alt="College Logo">
+        <h1>BVRIT HYDERABAD COLLEGE OF ENGINEERING FOR WOMEN EBOOK</h1>
+    </header>
+    <div class="form-container">
+        <form action="/submit" method="post">
+            <h2>Registration Form</h2>
+            <!-- Name -->
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name"   name="name"  required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Mobile Number -->
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" name="mobile" required>
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <!-- Languages Known -->
+            <div class="form-group">
+                <label>Languages Known</label>
+                <div class="checkbox-group">
+                    <div>
+                        <input type="checkbox" id="language1" name="languages" value="English">
+                        <label for="language1">English</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="language2" name="languages" value="Hindi">
+                        <label for="language2">Hindi</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="language3" name="languages" value="Others">
+                        <label for="language3">Others</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+                <label>Gender</label>
+                <input type="radio" id="male" name="gender" value="Male" required> Male
+                <input type="radio" id="female" name="gender" value="Female" required> Female
+            </div>
+
+            <!-- Department -->
+            <div class="form-group">
+                <label for="department">Department</label>
+                <select id="department" name="department" required>
+                    <option value="CSE">CSE</option>
+                    <option value="CSM">CSM</option>
+                    <option value="IT">IT</option>
+                    <option value="EEE">EEE</option>
+                    <option value="ECE">ECE</option>
+                </select>
+            </div>
+
+            <!-- Address -->
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+            </div>
+
+            <!-- Submit and Reset -->
+            <div class="form-buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 BVRIT Hyderabad College of Engineering for Women. All rights reserved.</p>
+        <p> created by AKHILA</p>
+    </footer>
+</body>
+</html>
+
+
+    
