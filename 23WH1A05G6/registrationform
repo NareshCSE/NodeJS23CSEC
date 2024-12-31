@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration Form</title>
+    <style>
+      /* Centering the title */
+      h1 {
+        text-align: center;
+      }
+
+      /* Arranging the form fields in a column */
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Styling the form labels and inputs */
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      form label,
+      form input,
+      form textarea,
+      form select {
+        margin-bottom: 10px;
+      }
+
+      /* Add some padding and width for input fields */
+      form input,
+      form textarea,
+      form select {
+        padding: 10px;
+        width: 200px;
+      }
+
+      /* Center the submit and reset buttons */
+      form input[type="submit"],
+      form input[type="reset"] {
+        align-self: center;
+        margin: 5px;
+        cursor: pointer;
+      }
+
+      /* Styling the language checkboxes */
+      .language-container {
+        display: flex;
+        gap: 20px; /* Spacing between checkboxes */
+        margin-top: 10px;
+      }
+
+      /* Styling the gender radio buttons */
+      .gender-container {
+        display: flex;
+        gap: 20px; /* Spacing between radio buttons */
+        margin-top: 10px;
+      }
+
+      /* Styling inline label and input pairs */
+      .inline-input {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .inline-input label {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Registration Form</h1>
+      <form action="confirmation.html" method="get">
+        <!-- Name label and input side by side -->
+        <div class="inline-input">
+          <label for="fname">Name:</label>
+          <input type="text" id="fname" name="fname" required>
+        </div>
+
+        <!-- Email label and input side by side -->
+        <div class="inline-input">
+          <label for="email">Enter your email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <!-- Password label and input side by side -->
+        <div class="inline-input">
+          <label for="pwd">Password:</label>
+          <input type="password" id="pwd" name="pwd" required>
+        </div>
+
+        <!-- Mobile number label and input side by side -->
+        <div class="inline-input">
+          <label for="number">Mobile Number:</label>
+          <input 
+            type="tel" 
+            id="number" 
+            name="number" 
+            pattern="\d{10}" 
+            maxlength="10" 
+            placeholder="Enter 10-digit number" 
+            required 
+            title="Please enter a valid 10-digit number">
+        </div>
+
+        <!-- Date of birth label and input side by side -->
+        <div class="inline-input">
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <!-- Languages Known checkboxes side by side -->
+        <label>Languages Known:</label>
+        <div class="language-container">
+          <div>
+            <input type="checkbox" id="language1" name="language" value="English">
+            <label for="language1">English</label>
+          </div>
+          <div>
+            <input type="checkbox" id="language2" name="language" value="Hindi">
+            <label for="language2">Hindi</label>
+          </div>
+          <div>
+            <input type="checkbox" id="language3" name="language" value="Telugu">
+            <label for="language3">Telugu</label>
+          </div>
+          <div>
+            <input type="checkbox" id="language4" name="language" value="Urdu">
+            <label for="language4">Urdu</label>
+          </div>
+        </div>
+
+        <!-- Gender radio buttons side by side -->
+        <label>Gender:</label>
+        <div class="gender-container">
+          <div>
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for="male">Male</label>
+          </div>
+          <div>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+          </div>
+          <div>
+            <input type="radio" id="other" name="gender" value="Other">
+            <label for="other">Other</label>
+          </div>
+        </div>
+
+        <!-- Department select dropdown side by side -->
+        <div class="inline-input">
+          <label for="Department">Select a Department:</label>
+          <select id="Department" name="Department" required>
+            <option value="">--Select--</option>
+            <option value="CSE">Computer Science and Engineering</option>
+            <option value="IT">Information Technology</option>
+            <option value="ECE">Electronics and Communication Engineering</option>
+            <option value="ME">Mechanical Engineering</option>
+            <option value="AE">Aerospace Engineering</option>
+          </select>
+        </div>
+
+        <!-- Address textarea -->
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" cols="50" placeholder="Enter your address here..." required></textarea>
+        <br><br>
+
+        <!-- Submit and Reset buttons -->
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+      </form>
+    </div>
+  </body>
+</html>
