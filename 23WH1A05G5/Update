@@ -1,0 +1,28 @@
+package javaa;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class Update {
+	public static void main(String[] args) {
+	try {
+	Class.forName("com.mysql.cj.jdbc.Driver");
+	Connection connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/g6","root","1234");
+	
+	System.out.println("Connection established");
+	String sql="update employees set id=?, ename=?, salary= ? where id= ?";
+	
+	PreparedStatement statement=connection.prepareStatement(sql);
+	statement.setInt(1,9);
+	statement.setString(2, "Jon");
+	statement.setInt(3, 10000);
+	statement.setInt(4, 1);
+	statement.executeUpdate();
+	System.out.println("Successfully updated");
+	
+	}
+	catch(Exception e) {
+		System.out.println(e);
+	}
+}
+}
