@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Registation Form</title><br>
+    </head>
+    <body>
+        <centre>
+        <h1>Registation Form</h1><br>
+        <from action ="#" method="post" id="registationForm"></from>
+        <label for="name">Name</lable>
+        <input type="text" id="name" name="name" required placeholder="Enter Name"><br><br>
+        <lable for="email">Email</lable>
+        <input type="email" id="email" name="email" required placeholder="Enter Email"><br><br>
+        <label for="password">Password</lable>
+        <input type="password" id="password" name="password" required placeholder="Enter password"><br><br>
+        <label for="mobile">Mobile Number</label>
+        <input type="tel" id="mobile" name="mobile" required placeholder="Enter Mobile number" pattern="[0-9]{10}" maxlength="14"><br><br>
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" required placeholder="DD/MM/YYYY"><br><br>
+        <label>Gender</label><br>
+                    <label for="male">
+                        <input type="radio" id="male" name="gender" value="Male" required>
+                        Male
+                    </label><br>
+                    <label for="female">
+                        <input type="radio" id="female" name="gender" value="Female">
+                     Female
+                    </label><br>
+                    <label for="other">
+                        <input type="radio" id="other" name="gender" value="Other">
+                    Other
+                    </label><br><br>
+                    <label for="languages">Select Languages</label><br>
+                    <input type="checkbox" id="english" name="languages" value="English">
+                    <label for="english">English</label><br>
+                    
+                    <input type="checkbox" id="telugu" name="languages" value="Telugu">
+                    <label for="Telugu">Telugu</label><br>
+                    
+                    <input type="checkbox" id="Hindi" name="languages" value="Hindi">
+                    <label for="Hindi">Hindi</label><br><br>
+                    
+         <label for="department">Department</label>
+            <select id="department" name="department" required>
+                <option value="">Select</option>
+                <option value="">CSE</option>
+                <option value="">ECE</option>
+                <option value="">IT</option>
+                <option value="">AML</option>
+                <option value="">EEE</option>
+                
+            </select><br> <br>
+        <label for="address"> Address:</label> <br><br>
+         <textArea id="address" name="address" rows="5" cols="50" required placeholder="Enter your address"></textArea><br><br>
+
+        <button type="submit">Submit</button>
+
+        <button type="submit"> Clear </button>  
+                </centre>           
+    </body>
+</html>
+
+
