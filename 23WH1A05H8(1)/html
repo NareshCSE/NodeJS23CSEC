@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCAP Portal</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: left;
+            justify-content: center;
+            background-color: #2f7bc2;
+            color: white;
+            padding: 20px;
+        }
+
+        /* Logo styling */
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        /* College Name styling */
+        header h1 {
+            font-size: 2em;
+            text-align: center;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            height: 100vh;
+        }
+
+        /* Sidebar Links */
+        .sidebar ul {
+            list-style-type: none;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Content Area */
+        .content-area {
+            flex: 1;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- College Logo and Name -->
+        <img src="C:\Users\admin\Downloads\channels4_profile.jpg" alt="College Logo" class="logo">
+        <h1>BVRITH COLLEGE OF ENGINEERING FOR WOMEN</h1>
+    </header>
+
+    <div class="main-container">
+        <!-- Sidebar navigation -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#attendance" onclick="loadContent('attendance')">Attendance</a></li>
+                <li><a href="#schedule" onclick="loadContent('schedule')">Schedule</a></li>
+                <li><a href="#bio" onclick="loadContent('bio')">Bio</a></li>
+                <li><a href="#assignments" onclick="loadContent('assignments')">Assignments</a></li>
+                <li><a href="#marks" onclick="loadContent('marks')">Marks</a></li>
+                <li><a href="#projects" onclick="loadContent('projects')">Projects</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main content area -->
+        <div class="content-area">
+            <div id="content">
+                <h2>Welcome to the eCAP Portal!</h2>
+                <p>Select a link from the left to view details.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 eCAP Portal | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
