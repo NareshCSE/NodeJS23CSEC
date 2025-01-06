@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Ticketing System - Catalog</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(90deg, #56ccf2, #2f80ed);
+            min-height: 100vh;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary, .btn-secondary, .btn-danger {
+            border-radius: 20px;
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #56ccf2, #2f80ed);
+            border: none;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(90deg, #2f80ed, #56ccf2);
+        }
+        .ticket-item {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .category-content img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        /* Navbar Styling */
+        .navbar {
+            background: transparent;
+            border-bottom: none;
+        }
+        .navbar-nav .nav-item .nav-link {
+            color: #fff;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-item .nav-link.active {
+            color: #ffcc00;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .navbar-brand {
+            color: #fff;
+            font-weight: bold;
+        }
+        .navbar-toggler {
+            background-color: #fff;
+            border: none;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.7%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Catalog</h1>
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#">E-Ticketing</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showCategory('movies')">Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showCategory('bus')">Buses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showCategory('concerts')">Events</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="movies-tickets" class="category-content">
+            <h4 class="my-3">Movies</h4>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="ticket-item">
+                        <img src="https://via.placeholder.com/300x200" alt="Movie 1">
+                        <p>Movie 1 - $12</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ticket-item">
+                        <img src="https://via.placeholder.com/300x200" alt="Movie 2">
+                        <p>Movie 2 - $15</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ticket-item">
+                        <img src="https://via.placeholder.com/300x200" alt="Movie 3">
+                        <p>Movie 3 - $18</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="bus-tickets" class="category-content" style="display: none;">
+            <h4 class="my-3">Buses</h4>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="ticket-item">
+                        <p>Bus Ticket 1 - $10</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ticket-item">
+                        <p>Bus Ticket 2 - $15</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ticket-item">
+                        <p>Bus Ticket 3 - $20</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="concerts-tickets" class="category-content" style="display: none;">
+            <h4 class="my-3">Events</h4>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="ticket-item">
+                        <p>Concert Ticket 1 - $25</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ticket-item">
+                        <p>Concert Ticket 2 - $35</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ticket-item">
+                        <p>Concert Ticket 3 - $45</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-3 text-center">
+            <button type="button" class="btn btn-secondary mx-2" onclick="window.location.href='cart1.html'">Cart</button>
+            <button type="button" class="btn btn-danger mx-2" onclick="window.location.href='login1.html'">Logout</button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function showCategory(category) {
+            document.querySelectorAll('.category-content').forEach(function(content) {
+                content.style.display = 'none';
+            });
+            document.getElementById(category + '-tickets').style.display = 'block';
+            document.querySelectorAll('.nav-link').forEach(function(link) {
+                link.classList.remove('active');
+            });
+            document.querySelector('.nav-link[onclick="showCategory(\'' + category + '\')"]').classList.add('active');
+        }
+    </script>
+</body>
+</html>

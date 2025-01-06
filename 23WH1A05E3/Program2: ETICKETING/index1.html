@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Ticketing System</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Sidebar styling */
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #2f80ed;
+            padding-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar .nav-link {
+            color: black;
+            font-weight: bold;
+            padding: 15px;
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            color: #ffcc00;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            background-color: #2f80ed;
+            color: black;
+            min-height: 100vh;
+        }
+
+        body {
+            background-color: #2f80ed;
+            color: black;
+        }
+
+        /* Make the content area responsive */
+        @media (max-width: 767px) {
+            .sidebar {
+                display: none;
+            }
+
+            .content {
+                margin-left: 0;
+                padding: 20px;
+                background-color: #2f80ed;
+                color: black;
+            }
+        }
+
+        /* Gradient button */
+        .btn-primary {
+            border-radius: 20px;
+            background: linear-gradient(90deg, #56ccf2, #2f80ed);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(90deg, #2f80ed, #56ccf2);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="catalog1.html">Catalog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cart1.html">Cart</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="register1.html">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login1.html">Logout</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content">
+        <h1 class="text-center my-4">Welcome to E-Ticketing</h1>
+
+        <div id="page-content">
+            <!-- Default "Welcome" Message -->
+            <p class="text-center">Welcome! Please select a page from the sidebar.</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Default page (display Welcome message)
+        window.onload = function () {
+            // Show Welcome message
+            document.getElementById('page-content').innerHTML = `
+                <p class="text-center">Welcome! Please select a page from the sidebar.</p>
+            `;
+        };
+    </script>
+</body>
+
+</html>
