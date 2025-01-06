@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >\
+    <center>
+    <head>
+        <title>BOOK STORE</title>
+    </head>
+    <body>
+        
+            <h1 >BOOK STORE</h1>
+        <form action ="login.html" method="get">
+
+            <label for="fullName"><b>Full Name:</b></label>
+            <input type="text" name="fullName" id="fullName" placeholder="Enter your full name" required><br><br>
+
+            <label for="email"><b>Email</b></label>
+            <input type ="text" placeholder="enter email" name="email" id = "email" required>
+            <p></p>
+            <lable for="psw"><b>Password</b></lable>
+            <input type="password" placeholder="enter password" name="psw" id="psw" required>
+            <p></p>
+            <lable for="pswConfirm"><b>Confirm Password</b></lable>
+            <input type="password" placeholder="enter password" name="pswConfirm" required pattern=".{8,}" title="password must be atleast 8 characters long."><br>
+            <p></p>
+            <div id="error-message" style="color:red; display:none">password do not match!</div><br>
+
+            <button type="submit">Register</button>
+
+            <div class="container signin">
+                <p>Already have an account</p>
+                <a href="login.html">Sign in</a>
+
+            </div>
+            
+
+        </form>
+    </body>
+</center>
+</html>

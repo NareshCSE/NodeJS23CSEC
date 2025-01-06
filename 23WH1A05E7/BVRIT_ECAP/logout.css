@@ -1,0 +1,6 @@
+.center-container {
+    display: grid;
+    place-items: center;  /* This is shorthand for centering items both vertically and horizontally */
+    height: 100vh;
+    text-align: center;
+}

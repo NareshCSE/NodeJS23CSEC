@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
+
+    <h2>User Profile</h2>
+
+    <div>
+        <strong>BHAVISHYA</strong> <span id="profile-fullName"></span>
+    </div>
+    <div>
+        <strong>bhavishya@gmail.com</strong> <span id="profile-email"></span>
+    </div>
+
+    <!-- Logout Button -->
+    <button onclick="logout()">Logout</button>
+
+    <script>
+        // Get user details from localStorage
+        const fullName = localStorage.getItem('fullName');
+        const email = localStorage.getItem('email');
+
+        // Display user details
+        document.getElementById('profile-fullName').textContent = fullName;
+        document.getElementById('profile-email').textContent = email;
+
+        // Logout function
+        function logout() {
+            // Clear user data from localStorage
+            localStorage.removeItem('fullName');
+            localStorage.removeItem('email');
+            localStorage.removeItem('password'); // It's a good practice to clear all sensitive data when logging out.
+
+            // Redirect to the login page
+            window.location.href = 'login.html';
+        }
+    </script>
+
+</body>
+</html>
