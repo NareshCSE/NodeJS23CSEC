@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head><!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>ebook webpage registration</title>
+</head>
+<style>
+    /* .name{
+        margin:25px 500px;
+    } */
+    .name{
+        margin:25px auto;
+        width: 50%;
+    }
+
+    /* .mail{
+        margin:25px 500px;
+    } */
+    .mail{
+        margin:25px auto;
+        width: 50%;
+    }
+
+    /* .password{
+        margin:25px 500px;
+    } */
+    .password{
+        margin:25px auto;
+        width: 50%;
+    }
+
+    /* .mobile{
+        margin:25px 500px;
+    } */
+    .mobile{
+        margin:25px auto;
+        width: 50%;
+    }
+
+    /* .dob{
+        margin:25px 500px;
+    } */
+    .dob{
+        margin:25px auto;
+        width: 50%;
+    }
+
+    /* .language{
+        margin:25px 500px;
+    } */
+    .language{
+        margin:25px auto;
+        width: 50%;
+    }
+
+    /* .gender{
+        margin:25px 500px;
+    } */
+    .gender{
+        margin:25px auto;
+        width: 50%;
+    }
+
+    /* .dept{
+        margin:25px 500px;
+    } */
+    .dept{
+        margin:25px auto;
+        width: 50%;
+    }
+
+    /* .address{
+        margin:25px 500px;
+    } */
+    .address{
+        margin:25px auto;
+        width: 50%;
+    }
+
+    div{
+        /*border:2px solid black;*/
+        padding:10px;
+        margin:10px;
+        background-color: #f4f4f4;
+    }
+
+    .container{
+        /*border:2px solid blue;
+        /*border-style:dotted dashed solid double;*/
+        padding: 20px;
+        width: 60%;
+        margin: 0 auto;
+        background-color: #e9f7fe;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="date"], select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input[type="submit"], input[type="reset"] {
+        width: 48%;
+        padding: 10px;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-right: 4%;
+    }
+
+    input[type="submit"]:hover, input[type="reset"]:hover {
+        background-color: #45a049;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    /* Unused radio buttons for gender in the form: */
+    /* .gender {
+        margin: 10px;
+    } */
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+    <h1>Registration page</h1>
+    <form>
+        <div class="name col-lg-6" >
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name="name"><br>
+        </div>
+        
+        <div class="mail col-lg-6">
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email"><br>
+        </div>
+        <div class="password col-lg-6">
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password"><br>
+        </div>
+        <div class="mobile col-lg-6">
+            <label for="mobile">Mobile no.</label><br>
+            <input type="tel" id="mobile" name="mobile"><br>
+        </div>
+        
+        <div class="dob col-lg-6">
+            <label for="dob">Date of birth</label><br>
+            <input type="date" id="dob" name="dob"><br>
+        </div>
+        <div class="language col-lg-6">
+            <p>Select the languages known:</p>
+            <label for="lk">Telugu</label><br>
+            <input type="checkbox" id="lk" name="language" value="Telugu"><br>
+            <label for="lk">English</label><br>
+            <input type="checkbox" id="lk" name="language" value="English"><br>
+            <label for="lk">Hindi</label><br>
+            <input type="checkbox" id="lk" name="language" value="Hindi"><br>
+        </div>
+        <div class="gender col-lg-6">
+            <p>Select gender:</p>
+            <label for="gender">Male</label>
+            <input type="radio" id="gender" name="gender" value="Male"><br>
+            <label for="gender">Female</label>
+            <input type="radio" id="gender" name="gender" value="Female"><br>
+        </div>
+
+        <div class="dept col-lg-6">
+            <label for="dropdown">Choose an option:</label>
+            <p>Select the department:</p>
+            <select id="dropdown" name="dept"><br>
+             <option value="option1">CSE</option>
+            <option value="option2">ECE</option>
+            <option value="option3">AIML</option><br>
+        </select><br>
+        </div>
+
+        <div class="address col-lg-6">
+            <p>Enter address:</p>
+            <label for="address">Type your address</label><br>
+            <textarea id="address" name="address" rows="5" cols="20"></textarea><br>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+    </div>  
+</body>
+</html>
+
+
+On Mon, Jan 6, 2025 at 9:59 AM BHANU SRI RATHOD RAMAVATH <23wh1a05d0@bvrithyderabad.edu.in> wrote:
+<!DOCTYPE html>
+<html>
+<head><!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>ebook webpage registration</title>
+</head>
+<style>
+    /* .name{
+        margin:25px 500px;
+    } */
+    .name{
+        margin:25px auto;
+        width: 50%;
+    }
+
+    /* .mail{
+        margin:25px 500px;
+    } */
+    .mail{
+        margin:25px auto;
+        width: 50%;
+    }
+
+    /* .password{
+        margin:25px 500px;
+    } */
+    .password{
+        margin:25px auto;
+        width: 50%;
+    }
+
+    /* .mobile{
+        margin:25px 500px;
+    } */
+    .mobile{
+        margin:25px auto;
+        width: 50%;
+    }
+
+    /* .dob{
+        margin:25px 500px;
+    } */
+    .dob{
+        margin:25px auto;
+        width: 50%;
+    }
+
+    /* .language{
+        margin:25px 500px;
+    } */
+    .language{
+        margin:25px auto;
+        width: 50%;
+    }
+
+    /* .gender{
+        margin:25px 500px;
+    } */
+    .gender{
+        margin:25px auto;
+        width: 50%;
+    }
+
+    /* .dept{
+        margin:25px 500px;
+    } */
+    .dept{
+        margin:25px auto;
+        width: 50%;
+    }
+
+    /* .address{
+        margin:25px 500px;
+    } */
+    .address{
+        margin:25px auto;
+        width: 50%;
+    }
+
+    div{
+        /*border:2px solid black;*/
+        padding:10px;
+        margin:10px;
+        background-color: #f4f4f4;
+    }
+
+    .container{
+        /*border:2px solid blue;
+        /*border-style:dotted dashed solid double;*/
+        padding: 20px;
+        width: 60%;
+        margin: 0 auto;
+        background-color: #e9f7fe;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="date"], select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input[type="submit"], input[type="reset"] {
+        width: 48%;
+        padding: 10px;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-right: 4%;
+    }
+
+    input[type="submit"]:hover, input[type="reset"]:hover {
+        background-color: #45a049;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    /* Unused radio buttons for gender in the form: */
+    /* .gender {
+        margin: 10px;
+    } */
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+    <h1>Registration page</h1>
+    <form>
+        <div class="name col-lg-6" >
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name="name"><br>
+        </div>
+        
+        <div class="mail col-lg-6">
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email"><br>
+        </div>
+        <div class="password col-lg-6">
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password"><br>
+        </div>
+        <div class="mobile col-lg-6">
+            <label for="mobile">Mobile no.</label><br>
+            <input type="tel" id="mobile" name="mobile"><br>
+        </div>
+        
+        <div class="dob col-lg-6">
+            <label for="dob">Date of birth</label><br>
+            <input type="date" id="dob" name="dob"><br>
+        </div>
+        <div class="language col-lg-6">
+            <p>Select the languages known:</p>
+            <label for="lk">Telugu</label><br>
+            <input type="checkbox" id="lk" name="language" value="Telugu"><br>
+            <label for="lk">English</label><br>
+            <input type="checkbox" id="lk" name="language" value="English"><br>
+            <label for="lk">Hindi</label><br>
+            <input type="checkbox" id="lk" name="language" value="Hindi"><br>
+        </div>
+        <div class="gender col-lg-6">
+            <p>Select gender:</p>
+            <label for="gender">Male</label>
+            <input type="radio" id="gender" name="gender" value="Male"><br>
+            <label for="gender">Female</label>
+            <input type="radio" id="gender" name="gender" value="Female"><br>
+        </div>
+
+        <div class="dept col-lg-6">
+            <label for="dropdown">Choose an option:</label>
+            <p>Select the department:</p>
+            <select id="dropdown" name="dept"><br>
+             <option value="option1">CSE</option>
+            <option value="option2">ECE</option>
+            <option value="option3">AIML</option><br>
+        </select><br>
+        </div>
+
+        <div class="address col-lg-6">
+            <p>Enter address:</p>
+            <label for="address">Type your address</label><br>
+            <textarea id="address" name="address" rows="5" cols="20"></textarea><br>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+    </div>  
+</body>
+</html>
