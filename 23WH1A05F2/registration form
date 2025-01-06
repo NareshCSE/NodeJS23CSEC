@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<title>ebook webpage registration</title>
+</head>
+<!--<style>
+    .name{
+        margin:25px 500px;
+        
+    }
+    .mail{
+        margin:25px 500px;
+        
+    }
+    .password{
+        margin:25px 500px;
+        
+    }
+    .mobile{
+        margin:25px 500px;
+        
+    }
+    .dob{
+        margin:25px 500px;
+        
+    }
+    .language{
+        margin:25px 500px;
+        
+    }
+    .gender{
+        margin:25px 500px;
+        
+    }
+    .dept{
+        margin:25px 500px;
+        
+    }
+    .address{
+        margin:25px 500px;
+        
+    }
+    div{
+        border:2px solid black;
+        padding:10px;
+        margin:10px;
+        
+    }
+    .container{
+        border:2px solid blue;
+        border-style:dotted dashed solid double;
+        
+    }
+</style>-->
+<body>
+    <div class="container">
+        <div class="row" >
+
+    <h1>Registration page</h1>
+    <form>
+        <div class="name col-lg-6">
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name="name"><br>
+        </div>
+        
+        <div class="mail col-lg-6 ">
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email"><br>
+        </div>
+        <div class="password col-lg-6">
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password"><br>
+        </div>
+        <div class="mobile col-lg-6">
+            <label for="mobile">Mobile no.</label><br>
+            <input type="tel" id="mobile" name="mobile"><br>
+        </div>
+        
+        <div class="dob col-lg-6">
+            <label for="dob">Date of birth</label><br>
+            <input type="date" id="dob" name="dob"><br>
+        </div>
+        <div class="language col-lg-6">
+            <p>Select the languages known:</p>
+            <label for="lk">Telugu</label><br>
+            <input type="checkbox" id="lk" name="language" value="Telugu"><br>
+            <label for="lk">English</label><br>
+            <input type="checkbox" id="lk" name="language" value="English"><br>
+            <label for="lk">Hindi</label><br>
+            <input type="checkbox" id="lk" name="language" value="Hindi"><br>
+        </div>
+        <div class="gender col-lg-6">
+            <p>Select gender:</p>
+            <label for="gender">Male</label>
+            <input type="radio" id="gender" name="gender" value="Male"><br>
+        </div>
+
+        <div class="dept col-lg-6">
+            <label for="dropdown">Choose an option:</label>
+            <p>Select the department:</p>
+            <select id="dropdown" name="dept"><br>
+             <option value="option1">CSE</option>
+            <option value="option2">ECE</option>
+            <option value="option3">AIML</option><br>
+        </select><br>
+        </div>
+
+        <div class="address col-lg-6">
+            <p>Enter address:</p>
+            <label for="address">Type your address</label><br>
+            <textarea id="address" name="address" rows="5" cols="20"></textarea><br>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+    </div>  
+</div>
+       
+
+        
+
+    </form>
+</body>
+</html>
