@@ -1,0 +1,21 @@
+.taskbar {
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+    background-color:#333;
+    padding: 10px 0;
+    position:fixed;
+    left: 0;
+    height: calc(100vh-80px);
+    width:100%;
+}
+.item{
+    color:white;
+    padding:10px 20px;
+    text-align:center;
+    cursor:pointer;
+}
+.item:hover{
+    background-color: #575757;
+    border-radius: 5px;
+}
