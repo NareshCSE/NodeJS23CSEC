@@ -1,0 +1,17 @@
+body{
+    text-align :center;
+}
+form{
+    background-color:hwb(180 81% 10% / 0.971);
+    margin: 400px ;
+    margin-top: 20px;
+    border-style :inherit;
+    font-size: larger;
+    padding-bottom: 20px;
+
+}
+input [type = submit]
+{
+    width: 20px;
+    color : hwb(310 62% 7%);
+}
