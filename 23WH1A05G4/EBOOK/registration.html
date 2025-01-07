@@ -1,35 +1,83 @@
-<!--registration page-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration page</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
 </head>
 <body>
     <div class="form-container">
-        <h2>Create Account</h2>
-        <form action="registration.php" method ="post">
-            <div class="form-group">
-                <label for="name">FULL Name</label>
-                <input type="text" id="name" name="name" required placeholder="Enter your email">
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required placeholder="Enter your email">
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required placeholder="Enter a password">
-            </div>
-            <div class="form-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm your password">
-            </div>
-            <button type="submit" class="submit-btn">Register</button>
-        </form>
-        <p>Already have an account? <a href="login.html">Login here</a></p>
-    </div>
+    <form>
+    <h2> Create a new account</h2>
+
+    <div>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname" >
+
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname" ><br><br>
+</div>
+
+<div>
+    <label for="email">email id:</label><br>
+    <input type="text" id="email" name="email" ><br><br>
+</div>
+
+<div>
+    <label for="pwd">Password:</label><br>
+    <input type="password" id="pwd" name="pwd"><br><br>
+</div>
+
+<div>
+    <label for="phno">Phone number</label><br>
+    <input type="text" id="Phone number" name="Phone number"><br><br>
+</div>
+
+<div>
+    <label for="DOB">Date of birth:</label><br>
+    <input type="Date" id="DOB" name="DOB"><br><br>
+</div>
+
+<div>
+    <label for="Languages">Languages known:</label><br>
+    <input type="checkbox" id="language1" name="language1" value="English">
+    <label for="vehicle1"> English</label>
+    <input type="checkbox" id="language2" name="language2" value="Telugu">
+    <label for="vehicle2"> Telugu</label>
+    <input type="checkbox" id="language3" name="language3" value="hindi">
+    <label for="vehicle3"> Hindi</label><br><br>
+</div>
+
+<div>
+    <label for="gender">Gender:</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label><br><br>
+</div>
+
+
+<div>
+    <label for="Department">Department:</label><br>
+    <input list="department">
+  <datalist id="department">
+    <option value="AIML">
+    <option value="CSE">
+    <option value="ECE">
+    <option value="EEE">
+    <option value="IT">
+  </datalist><br><br>
+</div>
+
+<div>
+  <label for="Address">Address:</label><br>
+  <textarea  placeholder="Enter your address here....." ></textarea><br><br>
+</div>
+
+<div>
+    <input type="submit" value="Submit">
+</div>
+</form>
+</div>
 </body>
 </html>
