@@ -9,17 +9,17 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #F0F8FF; /* Light Alice Blue */
+            background-color: #FFF8E1; /* Light Yellow */
         }
-        
+
         header {
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            background-color: #87CEEB; /* Sky Blue */
-            color: #333;
+            background-color: #FF7043; /* Orange */
+            color: white;
             padding: 10px 20px;
-            border-bottom: 2px solid #4682B4; /* Steel Blue */
+            border-bottom: 2px solid #FF5722; /* Darker Orange */
         }
 
         header .logo {
@@ -35,8 +35,8 @@
 
         .sidebar {
             width: 250px;
-            background-color: #E6E6FA; /* Lavender */
-            color: #4B0082; /* Indigo */
+            background-color: #C8E6C9; /* Light Green */
+            color: #388E3C; /* Green */
             position: fixed;
             height: 100%;
             padding-top: 20px;
@@ -45,7 +45,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            border-right: 3px solid #8A2BE2; /* Blue Violet */
+            border-right: 3px solid #388E3C; /* Green Border */
         }
 
         .sidebar img {
@@ -54,30 +54,34 @@
             margin-bottom: 20px;
         }
 
+        .sidebar h2 {
+            color: #388E3C; /* Green */
+        }
+
         .sidebar a {
-            color: #4B0082; /* Indigo */
+            color: #388E3C; /* Green */
             text-decoration: none;
             padding: 15px;
             width: 100%;
             text-align: center;
-            border-bottom: 1px solid #D8BFD8; /* Thistle */
+            border-bottom: 1px solid #81C784; /* Lighter Green */
             transition: background-color 0.3s;
         }
 
         .sidebar a:hover {
-            background-color: #8A2BE2; /* Blue Violet */
+            background-color: #66BB6A; /* Medium Green */
             color: white;
         }
 
         .content {
             margin-left: 260px;
             padding: 20px;
-            background-color: #FFF0F5; /* Lavender Blush */
+            background-color: #FFF3E0; /* Light Peach */
         }
 
         .content h2 {
             text-align: center;
-            color: #8A2BE2; /* Blue Violet */
+            color: #FF7043; /* Orange */
         }
 
         .content p {
@@ -87,8 +91,8 @@
         }
 
         footer {
-            background-color: #87CEEB; /* Sky Blue */
-            color: #4B0082;
+            background-color: #FF7043; /* Orange */
+            color: white;
             text-align: center;
             padding: 10px 0;
             position: fixed;
@@ -97,7 +101,7 @@
         }
 
         .btn {
-            background-color: #8A2BE2; /* Blue Violet */
+            background-color: #FF7043; /* Orange */
             color: white;
             padding: 12px 25px;
             text-decoration: none;
@@ -109,16 +113,16 @@
         }
 
         .btn:hover {
-            background-color: #4B0082; /* Indigo */
+            background-color: #FF5722; /* Darker Orange */
         }
     </style>
 </head>
 <body>
 
     <div class="sidebar">
-        <img src="c:\Users\admin\Downloads\logo.webp" class="logo">
-        <h2> CSE BVRITH ECOMMERCE</h2>
-        <a href="home.html">Home</a>
+        <img src="th.jpeg" class="logo" alt="Logo">
+        <h2>CSE BVRITH ECOMMERCE</h2>
+        <a href="index.html">Home</a>
         <a href="catalog.html">Catalog</a>
         <a href="cart.html">Cart</a>
         <a href="login.html">Login</a>
@@ -128,15 +132,15 @@
 
     <div class="content">
         <header>
-            <img src="c:\Users\admin\Downloads\logo.webp" class="logo">
-            <h1> CSE BVRITH ECOMMERCE</h1>
+            <img src="th.jpeg" class="logo" alt="Logo">
+            <h1>CSE BVRITH ECOMMERCE</h1>
         </header>
 
         <h2>Welcome to CSE BVRITH ECOMMERCE</h2>
         <p>Browse our catalog and shop your favorite products!</p>
 
         <div>
-            <a href="" class="btn">Browse Catalog</a>
+            <a href="catalog.html" class="btn">Browse Catalog</a>
             <a href="cart.html" class="btn">View Cart</a>
         </div>
     </div>
