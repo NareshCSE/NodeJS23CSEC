@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bvrit E-commerce</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex; /* Use flexbox for full height */
+        }
+        .sidebar {
+            width: 200px; /* Fixed width for sidebar */
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar h2 {
+            color: #ffffff;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .sidebar button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #495057;
+            color: white;
+            cursor: pointer;
+            text-align: left;
+        }
+        .sidebar button:hover {
+            background-color: #6c757d; /* Lighter shade on hover */
+        }
+        .container {
+            flex-grow: 1; /* Take remaining space */
+            padding: 20px;
+            background-color: #f4f4f4; /* Light background for main content */
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center title horizontally */
+        }
+        img.logo {
+            width: 100px; /* Adjust logo size */
+            margin-right: 20px; /* Space between logo and title */
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        .content-section {
+            margin-top: 20px;
+            display: none; /* Hide all sections initially */
+        }
+        .content-section:target {
+            display: block; /* Show the targeted section */
+        }
+        .registration-form, .login-form, .catalog-section, .cart-section {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            margin-top: 10px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="date"],
+        textarea,
+        input[type="number"] {
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: calc(100% - 22px); /* Full width minus padding */
+        }
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px; /* Space between grid items */
+        }
+        .book-item {
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Menu</h2>
+    <a href="#welcomeSection"><button>Welcome</button></a>
+    <a href="#registrationForm"><button>Register</button></a>
+    <a href="#loginForm"><button>Login</button></a>
+    <a href="#catalogSection"><button>Catalog</button></a>
+    <a href="#cartSection"><button>Cart</button></a>
+    <button onclick="alert('Logged out')">Logout</button>
+</div>
+
+<div class="container">
+    <header>
+        <img src="logo.jpg" alt="Logo" class="logo">
+        <h1>Bvrit E-commerce</h1>
+    </header>
+
+    <!-- Welcome Section -->
+    <div class="content-section" id="welcomeSection">
+        <h2>Welcome to Bvrit E-commerce!</h2>
+        <p>Explore our wide range of products and services. Use the menu on the left to navigate through different sections.</p>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="content-section" id="registrationForm">
+        <h3>Registration Form</h3>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+
+        <fieldset>
+            <legend>Languages Known:</legend>
+            <label><input type="checkbox" name="language" value="English"> English</label><br>
+            <label><input type="checkbox" name="language" value="Spanish"> Spanish</label><br>
+            <label><input type="checkbox" name="language" value="French"> French</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Gender:</legend>
+            <label><input type="radio" name="gender" value="male"> Male</label><br>
+            <label><input type="radio" name="gender" value="female"> Female</label><br>
+        </fieldset>
+
+        <label for="dept">Department:</label>
+        <input type="text" id="dept" name="dept">
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address"></textarea>
+
+        <button type="submit" class="submit">Submit</button>
+    </div>
+
+    <!-- Login Form -->
+    <div class="content-section" id="loginForm">
+        <h3>Login Form</h3>
+
+        <label for="loginUsername">Username:</label>
+        <input type="text" id="loginUsername" required>
+
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" required>
+
+        <button onclick="alert('Login Successful')">Login</button>
+    </div>
+
+    <!-- Catalog Section -->
+    <div class="content-section" id="catalogSection">
+        <h3>Catalog</h3>
+        <div class="book-grid">
+            <div class="book-item">
+                <img src="cover1.jpg" alt="Book One" style="width:100%; height:auto;"/>
+                <h4>Book One</h4>
+                <p>Price: $10</p>
+                <p>Pages: 200</p>
+                Quantity:
+                <input type="number" min="1" max="3" value="1"/>
+                <button>Add to Cart</button>
+            </div>
+            <div class="book-item">
+                <img src="cover2.jpg" alt="Book Two" style="width:100%; height:auto;"/>
+                <h4>Book Two</h4>
+                <p>Price: $15</p>
+                <p>Pages: 300</p>
+                Quantity:
+                <input type="number" min="1" max="3" value="1"/>
+                <button>Add to Cart</button>
+            </div>
+            <div class="book-item">
+                <img src="cover3.jpg" alt="Book Three" style="width:100%; height:auto;"/>
+                <h4>Book Three</h4>
+                <p>Price: $20</p>
+                <p>Pages: 250</p>
+                Quantity:
+                <input type="number" min="1" max="3" value="1"/>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Section -->
+    <div class="content-section" id="cartSection">
+        <h3>Your Cart</h3>
+        <p>Your cart is empty.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
