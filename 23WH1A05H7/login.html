@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Book Management System - Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            max-width: 600px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"], input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .row.full-width {
+            grid-template-columns: 1fr;
+        }
+
+        .actions {
+            text-align: center;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration</h1>
+        <form action="/action_page.php">
+            <div class="row full-width">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email">
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label for="mobile">Mobile Number:</label>
+                    <input type="text" id="mobile" name="mobile">
+                </div>
+                <div>
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob">
+                </div>
+            </div>
+            <div class="row full-width">
+                <div>
+                    <label for="languages">Languages Known:</label><br>
+                    <input type="checkbox" id="hindi" name="languages" value="hindi"> <label for="hindi">Hindi</label><br>
+                    <input type="checkbox" id="telugu" name="languages" value="telugu"> <label for="telugu">Telugu</label><br>
+                    <input type="checkbox" id="english" name="languages" value="english"> <label for="english">English</label>
+                </div>
+            </div>
+            <div class="row full-width">
+                <div>
+                    <label for="gender">Gender:</label><br>
+                    <input type="radio" id="male" name="gender" value="male"> <label for="male">Male</label><br>
+                    <input type="radio" id="female" name="gender" value="female"> <label for="female">Female</label>
+                </div>
+            </div>
+            <div class="row full-width">
+                <div>
+                    <label for="department">Choose your department:</label>
+                    <select id="department" name="department">
+                        <option value="CSE">CSE</option>
+                        <option value="AIML">AIML</option>
+                        <option value="ECE">ECE</option>
+                        <option value="EEE">EEE</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row full-width">
+                <div>
+                    <label for="review">Review of our website:</label>
+                    <textarea id="review" name="review" rows="4" placeholder="Give your valuable feedback here."></textarea>
+                </div>
+            </div>
+            <div class="actions">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
