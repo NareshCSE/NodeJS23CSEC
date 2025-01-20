@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      background-color: rgb(230, 226, 173);
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial;
+    }
+
+    .login-form {
+      background-color: rgb(217, 192, 255);
+      color: rgb(255, 255, 255);
+      padding: 50px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .login-form h2 {
+      color: rgb(43, 0, 255);
+      margin-bottom: 20px;
+    }
+
+    .login-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .login-form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+    }
+
+    .login-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: rgb(128, 128, 128);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .login-form button:hover {
+      background-color: darkgrey;
+    }
+
+    .radio-buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="login-form">
+    <h2 style="color:black;">Enter your Details:</h2>
+    <form>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username">
+     
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password">
+     
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email">
+     
+      <!-- Radio Buttons for Gender -->
+      <label>Gender:</label>
+      <div class="radio-buttons">
+        <label>
+          <input type="radio" name="gender" value="male"> Male
+        </label>
+        <label>
+          <input type="radio" name="gender" value="female"> Female
+        </label>
+        <label>
+          <input type="radio" name="gender" value="other"> Other
+        </label>
+      </div>
+     
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>
+
