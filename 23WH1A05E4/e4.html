@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bvrit E-commerce</title>
+
+    <!-- Bootstrap CSS (add this link to enable Bootstrap) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html, body {
+            height: flex;
+            margin: 0;
+            display: flex; /* Use flexbox for full height */
+        }
+
+        .sidebar {
+            width: 300px; /* Fixed width for sidebar */
+            height: flex;
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar h2 {
+            color: #ffffff;
+            width: "100%";
+            height: flex;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #495057;
+            color: white;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .sidebar button:hover {
+            background-color: #6c757d; /* Lighter shade on hover */
+        }
+
+        .container {
+            flex-grow: 1; /* Take remaining space */
+            padding: 20px;
+            background-color: #f4f4f4; /* Light background for main content */
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center title horizontally */
+        }
+
+        img.logo {
+            width: 100px; /* Adjust logo size */
+            margin-right: 20px; /* Space between logo and title */
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .content-section {
+            margin-top: 20px;
+            display: none; /* Hide all sections initially */
+        }
+
+        .content-section:target {
+            display: block; /* Show the targeted section */
+        }
+
+        .registration-form, .login-form, .catalog-section, .cart-section {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="date"],
+        textarea,
+        input[type="number"] {
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: calc(100% - 22px); /* Full width minus padding */
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px; /* Space between grid items */
+        }
+
+        .book-item {
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .cart-item {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Menu</h2>
+    <a href="#welcomeSection"><button class="btn btn-dark btn-block">Welcome</button></a>
+    <a href="#registrationForm"><button class="btn btn-dark btn-block">Register</button></a>
+    <a href="#loginForm"><button class="btn btn-dark btn-block">Login</button></a>
+    <a href="#catalogSection"><button class="btn btn-dark btn-block">Catalog</button></a>
+    <a href="#cartSection"><button class="btn btn-dark btn-block">Cart</button></a>
+    <button class="btn btn-dark btn-block" onclick="alert('Logged out')">Logout</button>
+</div>
+
+<div class="container">
+    <header>
+        <img src="logo.jpg" alt="Logo" class="logo">
+        <h1>Bvrit E-commerce</h1>
+    </header>
+
+    <!-- Welcome Section -->
+    <div class="content-section" id="welcomeSection">
+        <h2>Welcome to Bvrit E-commerce!</h2>
+        <p>Explore our wide range of products and services. Use the menu on the left to navigate through different sections.</p>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="content-section" id="registrationForm">
+        <h3>Registration Form</h3>
+        <!-- Registration form elements here -->
+        
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your Username here" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your Email here" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your Password here" required>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" placeholder="Enter your Mobile Number here" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+
+        <fieldset>
+            <legend>Languages Known:</legend>
+            <label><input type="checkbox" name="language" value="English"> English</label><br>
+            <label><input type="checkbox" name="language" value="Spanish"> Spanish</label><br>
+            <label><input type="checkbox" name="language" value="French"> French</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Gender:</legend>
+            <label><input type="radio" name="gender" value="male"> Male</label><br>
+            <label><input type="radio" name="gender" value="female"> Female</label><br>
+        </fieldset>
+
+        <label for="dept">Department:</label>
+        <input type="text" id="dept" name="dept" placeholder="Enter your Department here">
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" placeholder="Enter your Address here"></textarea>
+
+        <button type="submit" class="submit btn btn-primary">Submit</button>
+    </div>
+
+    <!-- Login Form -->
+    <div class="content-section" id="loginForm">
+        <h3>Login Form</h3>
+        <!-- Login form elements here -->
+        <label for="loginUsername">Username:</label>
+        <input type="text" id="loginUsername" required>
+
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" required>
+
+        <button class="btn btn-primary" onclick="alert('Login Successful')">Login</button>
+    </div>
+
+    <!-- Catalog Section -->
+    <div class="content-section" id="catalogSection">
+        <h3>Catalog</h3>
+        <div class="book-grid">
+            <div class="book-item">
+                <img src="cover1.jpg" alt="Book One" class="img-fluid"/>
+                <h4>Book One</h4>
+                <p>Price: $10</p>
+                <p>Pages: 200</p>
+                Quantity:
+                <input type="number" min="1" max="3" value="1" id="quantity1"/>
+                <button class="btn btn-success" onclick="addToCart('Book One', 10, document.getElementById('quantity1').value)">Add to Cart</button>
+            </div>
+            <div class="book-item">
+                <img src="cover2.jpg" alt="Book Two" class="img-fluid"/>
+                <h4>Book Two</h4>
+                <p>Price: $15</p>
+                <p>Pages: 300</p>
+                Quantity:
+                <input type="number" min="1" max="3" value="1" id="quantity2"/>
+                <button class="btn btn-success" onclick="addToCart('Book Two', 15, document.getElementById('quantity2').value)">Add to Cart</button>
+            </div>
+            <div class="book-item">
+                <img src="cover3.jpg" alt="Book Three" class="img-fluid"/>
+                <h4>Book Three</h4>
+                <p>Price: $20</p>
+                <p>Pages: 250</p>
+                Quantity:
+                <input type="number" min="1" max="3" value="1" id="quantity3"/>
+                <button class="btn btn-success" onclick="addToCart('Book Three', 20, document.getElementById('quantity3').value)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Section -->
+    <div class="content-section" id="cartSection">
+        <h3>Your Cart</h3>
+        <div id="cartItems">
+            <p>Your cart is empty.</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- Bootstrap JS (add these scripts to enable responsive behavior) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    let cart = [];
+
+    function addToCart(bookName, price, quantity) {
+        // Create a cart item object
+        const item = { bookName, price, quantity };
+        cart.push(item);
+
+        // Update the cart display
+        updateCart();
+    }
+
+    function updateCart() {
+        const cartItemsContainer = document.getElementById('cartItems');
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+        } else {
+            let cartContent = '';
+            cart.forEach(item => {
+                cartContent += `
+                    <div class="cart-item">
+                        <h4>${item.bookName}</h4>
+                        <p>Price: $${item.price}</p>
+                        <p>Quantity: ${item.quantity}</p>
+                    </div>
+                `;
+            });
+            cartItemsContainer.innerHTML = cartContent;
+        }
+    }
+</script>
+
+</body>
+</html>
