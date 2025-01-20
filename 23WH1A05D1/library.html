@@ -28,11 +28,16 @@
             padding: 20px;
         }
         .book-card {
+            background-color: #ffffff; /* White background for book cards */
+            border: 1px solid #ddd; /* Light border to separate cards */
+            border-radius: 8px;
+            padding: 15px;
             margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
         .book-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px); /* Hover effect to elevate cards */
         }
         .welcome-section {
             background: linear-gradient(135deg, #3b6f9c 0%, #0052cc 100%);
@@ -112,6 +117,14 @@
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pwd" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="Password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phoneNumber" class="form-label">Phone Number</label>
+                            <input type="text" class="form-control" id="Phonenumber" required>
                         </div>
                         <div class="mb-3">
                             <label for="year" class="form-label">Year</label>
