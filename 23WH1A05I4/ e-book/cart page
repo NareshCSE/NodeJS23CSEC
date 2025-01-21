@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e9ecef;
+            color: #333;
+        }
+
+        header {
+            background-color: #3f51b5;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+        }
+
+        .cart-items {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-item img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .cart-item .details {
+            flex: 1;
+            padding-left: 15px;
+            text-align: left;
+        }
+
+        .cart-item .details h3 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .cart-item button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart-item button:hover {
+            background-color: #e53935;
+        }
+
+        .cart-summary {
+            text-align: right;
+            margin-top: 30px;
+        }
+
+        .cart-summary p {
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+        .checkout-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 200px;
+        }
+
+        .checkout-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Your Cart</h1>
+    </header>
+
+    <main>
+        <div class="cart-items">
+            <!-- Cart Item 1 -->
+            <div class="cart-item">
+                <img src="https://m.media-amazon.com/images/I/813+28jvO2L._AC_UF1000,1000_QL80_.jpg" alt="Product 1">
+                <div class="details">
+                    <h3>Product 1</h3>
+                    <p>Price: $29.99</p>
+                    <p>Quantity: 1</p>
+                </div>
+                <button>Remove</button>
+            </div>
+
+            <!-- Cart Item 2 -->
+            <div class="cart-item">
+                <img src="https://img1.exportersindia.com/product_images/bc-full/dir_136/4065051/best-of-series-story-books-p-b-bw-1514537556-3549957.jpeg" alt="Product 2">
+                <div class="details">
+                    <h3>Product 2</h3>
+                    <p>Price: $39.99</p>
+                    <p>Quantity: 2</p>
+                </div>
+                <button>Remove</button>
+            </div>
+        </div>
+
+        <div class="cart-summary">
+            <p><strong>Total: $109.97</strong></p>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </main>
+
+</body>
+</html>
