@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .book {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .book img {
+            width: 100px;
+            height: 150px;
+            margin-right: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book Catalog</h1>
+        <div class="book">
+            <img src="c:/Users/admin/Desktop/book1.jpg" alt="Book 1">
+            <div>
+                <h4>Book 1</h4>
+                <p> Rs 100.00</p>
+                <button onclick="addToCart('Book 1', 10.00)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="book">
+            <img src="c:/Users/admin/Desktop/book2.jpg" alt="Book 2">
+            <div>
+                <h4>Book 2</h4>
+                <p> Rs 150.00</p>
+                <button onclick="addToCart('Book 2', 15.00)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="book">
+            <img src="c:/Users/admin/Desktop/book3.jpg" alt="Book 3">
+            <div>
+                <h4>Book 3</h4>
+                <p> Rs 200.00</p>
+                <button onclick="addToCart('Book 3', 20.00)">Add to Cart</button>
+            </div>
+        </div>
+        <a href="cart.html" class="btn btn-secondary">Go to Cart</a>
+        <br><br>
+        <a href="logout.html" class="btn btn-secondary">Logout</a>
+    </div>
+    <script>
+        function addToCart(book, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({book, price});
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(book + ' added to cart!');
+        }
+    </script>
+</body>
+</html>
