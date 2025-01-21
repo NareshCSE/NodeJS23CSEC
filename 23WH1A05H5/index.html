@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Layout</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .header {
+            flex: 0 1 20%;
+        }
+        .main-content {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            flex: 0 1 20%;
+        }
+        .footer {
+            flex: 0 1 5%;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <iframe src="header.html" name="headerframe"></iframe>
+        </div>
+            <div class="main-content">
+            <div class="sidebar">
+                <iframe src="navbar.html" name="sidebarframe"></iframe>
+            </div>
+        </div>
+        <div class="footer">
+            <iframe src="footer.html" name="footerframe"></iframe>
+        </div>
+    </div>
+</body>
+</html>
