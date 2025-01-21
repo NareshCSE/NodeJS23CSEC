@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+</head>
+<style>
+    /* Make the body take full height and center content */
+    body {
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f4f4f4;
+    }
+
+    /* Center the form container */
+    .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center; /* Center text inside the form */
+    }
+
+    /* Style the form labels and inputs */
+    form label {
+        display: block;
+        margin-bottom: 8px;
+        text-align: left;
+    }
+
+    form input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    form input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        border: none;
+    }
+
+    form input[type="submit"]:hover {
+        opacity: 0.8;
+    }
+    body {
+        background-image:url('books.WEBP');
+        background-size:cover
+    }
+
+    .image {
+            position: absolute;
+            top: 50px; /* Place the image 50px from the top */
+            left: 100px; /* Place the image 100px from the left */
+            width: 150px; /* Set the width of the image */
+        }
+
+        
+</style>
+
+<body>
+    <img src="bvrith.jpeg" alt="Image" class="image">
+
+    
+  <div class="container">
+    <form name="login">
+        <h2>LOGIN PAGE</h2>
+       
+        <label for="fname">Username:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+
+        <label for="'password">Password:</label>
+        <input type="password" id="password" name="'password"><br>
+        <button type ="submit"></button>
+    </form>
+  </div>
+</body>
+</html>
