@@ -1,0 +1,15 @@
+.lpa{
+width:250px;
+border:2px solid black;
+text-align:center;
+margin:250px 350px 350px 600px ;
+border-radius:10px;
+padding:30px;
+}
+body{
+background-color:violet;
+}
+h2{
+text-align:center;
+
+}
