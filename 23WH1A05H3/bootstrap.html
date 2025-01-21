@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>Modern Registration</title>
+
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Card container */
+        .register-card {
+            display: flex;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Left side background styling */
+        .register-card .left {
+            flex: 1;
+            background-color: #4CAF50;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            padding: 50px;
+        }
+
+        /* Right side for the form */
+        .register-card .right {
+            flex: 1;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+
+        .form-footer {
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .form-footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .register-card {
+                flex-direction: column;
+            }
+
+            .register-card .left {
+                flex: none;
+                height: 200px;
+                font-size: 24px;
+                padding: 20px;
+            }
+
+            .register-card .right {
+                margin-top: 20px;
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="register-card container-fluid">
+        <!-- Left Column: Background / Visual -->
+        <div class="left">
+            <div>
+                <h1>Welcome</h1>
+                <p>Register to get started</p>
+            </div>
+        </div>
+
+        <!-- Right Column: Registration Form -->
+        <div class="right">
+            <h2>Registration Form</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number">
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob">
+                </div>
+
+                <div class="form-group">
+                    <label>Select Department</label>
+                    <select id="department" name="department">
+                        <option value="cse">CSE</option>
+                        <option value="ece">ECE</option>
+                        <option value="aiml">AIML</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" rows="4" placeholder="Enter your address"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+
+            <div class="form-footer">
+                <p>Already have an account? <a href="#">Login here</a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
