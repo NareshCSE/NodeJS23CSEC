@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My E-Book Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: right;
+            flex: 0 1 100px; /* Header takes 100px height */
+        }
+
+        header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 10px 0;
+        }
+
+        /* Sidebar Styling */
+        nav {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            padding-top: 20px;
+            position: fixed;
+            top: 100px; /* Just below the header */
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            margin-left: 200px; /* Offset by sidebar width */
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            height: calc(100vh - 100px); /* Full height minus header */
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            width: 100%;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <img src="https://yt3.googleusercontent.com/Mf6Vbzz-ITnaIvx5Zo7UDF5uiyKpO5NZqHBXHNs8B0WTJwHkNFbz3w9mZ0cHa4OAJxTRrVX4eA=s900-c-k-c0x00ffffff-no-rj" alt="BVRIT-LOGO">
+        <h1>Welcome to My E-Book Store</h1>
+    </header>
+
+    <!-- Sidebar Section -->
+    <nav>
+        <ul>
+            <li><a href="javascript:void(0)" onclick="loadPage('home')">Home</a></li>
+            <li><a href="javascript:void(0)" onclick="loadPage('login')">Login</a></li>
+            <li><a href="javascript:void(0)" onclick="loadPage('register')">Register</a></li>
+            <li><a href="javascript:void(0)" onclick="loadPage('catalog')">Catalog</a></li>
+            <li><a href="javascript:void(0)" onclick="loadPage('cart')">Cart</a></li>
+        </ul>
+    </nav>
+
+    
+    <div class="main-content">
+       
+   
+    <iframe src="home page.html" height="200" width="300" title="Home Page"></iframe>
+</div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 My E-Commerce Store</p>
+    </footer>
+
+    <script>
+        // Function to load specific page in the iframe
+        function loadPage(page) {
+            var pageMap = {
+                
+                'login': 'login.html',
+                'register': 'register.html',
+                'catalog': 'catalog page.html',
+                'cart': 'cart page.html'
+            };
+            // Load the corresponding page into the iframe
+            document.getElementById('content-frame').src = pageMap[page];
+        }
+    </script>
+
+</body>
+</html>
