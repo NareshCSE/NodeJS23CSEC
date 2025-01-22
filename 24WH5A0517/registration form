@@ -1,0 +1,39 @@
+<html>
+<head>  <center>BVRIT H
+<style>
+body {
+  background-color:lavender;
+div {
+  background-color: green;
+  opacity: 0.3;
+}
+
+}
+</style>
+<title> Registration Form</title></head>
+<body><center>
+<img src="C:\Users\admin\Downloads\BVRIT-Logo-1.png">
+<form>
+  <br><label for="fname">First name:</label>
+  <input type="textbox" placeholder = "john" ><br>
+  <br><label for="lname">Last name:</label>
+  <input type="textbox" placeholder = "doe"><br>
+  <br><label for="gmail"> Gmail:</label>
+  <input type= "textbox" placeholder = "xyz@gmail.com"><br>
+  <br><label for= "pas">Password:</label>
+  <input type="password"><br>
+  <br><label for="gender"> choose gender:</label><br>
+  <input type = "radio".<br>
+  <label for = "tname"> male</label>
+  <input type = "radio".<br>
+  <label for = "mname"> female</label><br>
+  <br> Date of Birth:<input type= "date"><br>
+  <br> Mobile num: <input type="tel"><br>
+   <br>select course:<br> <input type= "checkbox"> CSS <br> <br><input type= "checkbox"> HTML<br>
+<br><input type= "checkbox"> JAVA SCRIPT<br>
+
+
+<br><input type="submit">
+
+</form>
+</html>
