@@ -1,0 +1,137 @@
+<html>
+<head>
+    <title>Registration Form</title>
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: lavender;
+        }
+        p.double {
+            border-style: double;
+        }
+        .form-container {
+            border: 1px solid black;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            background-color: lightblue;
+            padding: 30px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="text-center">
+                <img src="C:\Users\admin\Downloads\bvritlogo.bmp" class="img-fluid" style="width:200px;height:200px;">
+                <h1><p class="double">Registration Form</p></h1>
+            </div>
+
+            <form action="#" method="post" id="registrationForm">
+                <div class="form-row">
+                    
+                    <div class="form-group col-md-6">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required placeholder="Enter Name">
+                    </div>
+                   
+                    <div class="form-group col-md-6">
+                        <label for="email">Email: </label>
+                        <input type="email" class="form-control" id="email" name="email" required placeholder="Enter Email">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                  
+                    <div class="form-group col-md-6">
+                        <label for="password">Password: </label>
+                        <input type="password" class="form-control" id="password" name="password" required placeholder="Enter password">
+                    </div>
+                   
+                    <div class="form-group col-md-6">
+                        <label for="mobile">Mobile Number:</label>
+                        <input type="tel" class="form-control" id="mobile" name="mobile" required placeholder="Enter Mobile number" pattern="[0-9]{10}" maxlength="14">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    
+                    <div class="form-group col-md-6">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" class="form-control" id="dob" name="dob" required>
+                    </div>
+                    
+                    <div class="form-group col-md-6">
+                        <label>Gender:</label><br>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" id="male" name="gender" value="Male" required>
+                            <label class="form-check-label" for="male">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" id="female" name="gender" value="Female">
+                            <label class="form-check-label" for="female">Female</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" id="other" name="gender" value="Other">
+                            <label class="form-check-label" for="other">Other</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                  
+                    <div class="form-group col-md-12">
+                        <label>Select Languages:</label><br>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="english" name="languages" value="English">
+                            <label class="form-check-label" for="english">English</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="telugu" name="languages" value="Telugu">
+                            <label class="form-check-label" for="telugu">Telugu</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="Hindi" name="languages" value="Hindi">
+                            <label class="form-check-label" for="Hindi">Hindi</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                  
+                    <div class="form-group col-md-12">
+                        <label for="department">Department:</label>
+                        <select class="form-control" id="department" name="department" required>
+                            <option value="">Select</option>
+                            <option value="CSE">CSE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="IT">IT</option>
+                            <option value="AIML">AIML</option>
+                            <option value="EEE">EEE</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    
+                    <div class="form-group col-md-12">
+                        <label for="address">Address:</label>
+                        <textarea class="form-control" id="address" name="address" rows="5" required placeholder="Enter your address"></textarea>
+                    </div>
+                </div>
+
+               
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-secondary">Clear</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
