@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body style="background-color: antiquewhite;">
+        <h2><i>REGISTRATION FORM</i></h2>
+        <p>please fill in the form to create an account.</p>
+        <form>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname"><br><br>
+            <label for="email">Email:</label>
+            <input type="text" id="email" Email="email"><br><br>
+            <label for="contactno">Contact number:</label>
+            <input type="text" id="contactno" Contact number="Contactno"><br><br>
+            <button type="buttton">Register</button>
+            <a href="./login.html">Go login</a>
+    </body>
+</html>
