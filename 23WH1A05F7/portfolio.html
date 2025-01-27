@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CH. Rasagna Priya's Portfolio</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+            color: #333;
+        }
+        header {
+            background-color: #0288d1;
+            color: white;
+            text-align: center;
+            padding: 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3.2em;
+        }
+        header p {
+            font-size: 1.2em;
+            font-style: italic;
+        }
+        nav {
+            background-color: #039be5;
+            text-align: center;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 0 20px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #0288d1;
+            color: white;
+            border-radius: 5px;
+        }
+        .container {
+            width: 80%;
+            margin: 30px auto;
+        }
+        section {
+            margin: 50px 0;
+        }
+        h2 {
+            color: #0288d1;
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        .projects, .contact {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .project, .contact-info {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project:hover, .contact-info:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .project h3 {
+            color: #0288d1;
+            font-size: 1.7em;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #039be5;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        footer p {
+            font-size: 1.1em;
+        }
+        .contact-info a {
+            color: #0288d1;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-info a:hover {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>CH.Rasagna Priya</h1>
+        <p>B.Tech 2nd Year Student | Active in Academics & Hackathons</p>
+    </header>
+
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I am CH. Rasagna Priya, currently pursuing my B.Tech 2nd year at BVRIT, Hyderabad. I am an active student, deeply engaged in academics as well as hackathons. I am passionate about coding and enjoy collaborating with my team members in projects. I believe in the power of teamwork and have built a strong rapport with my teammates. My creative side allows me to bring innovative ideas and approaches to any project I take on.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li><strong>C Programming:</strong> Comfortable with data structures, algorithms, and system programming.</li>
+                <li><strong>Python:</strong> Proficient in writing scripts, building applications, and handling automation tasks.</li>
+                <li><strong>Java:</strong> Experienced with object-oriented programming and developing desktop and web applications.</li>
+                <li><strong>SQL:</strong> Comfortable with database management and updating tables.</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3>LogoCrea8</h3>
+                    <p>This project is about designing logos using Python's Tkinter library. I created a simple yet creative logo designing tool where users can choose colors, shapes, and fonts to create unique logos.</p>
+                </div>
+                <div class="project">
+                    <h3>Train Ticket Booking</h3>
+                    <p>A simple yet effective system to manage train ticket bookings using Java and SQL to store and manage data efficiently.</p>
+                </div>
+                <div class="project">
+                    <h3>Movie Ticket Booking</h3>
+                    <p>A movie ticket booking system where users can browse available movies and book tickets, built using Java.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:rasagnapriya@bvrithyderabad.edu.in">rasagnapriya@bvrithyderabad.edu.in</a></p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CH. Rasagna Priya | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
