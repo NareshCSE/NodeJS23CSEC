@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BVRITH e-commerce</title>
+    <style>
+        /* Styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative; /* Ensure footer is positioned at the bottom */
+            min-height: 100vh; /* Ensure the footer stays at the bottom of the page */
+        }
+
+        /* Flexbox layout for main container */
+        .container {
+            display: flex;
+            flex-grow: 1;
+        }
+
+        /* Left Sidebar styling */
+        .sidebar {
+            width: 200px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            height: 100vh;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Links in the sidebar */
+        .sidebar a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            padding: 10px 0;
+            display: block;
+            background-color: lightblue;
+            margin-bottom: 10px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .sidebar a:hover {
+            background-color: lightblue;
+        }
+
+        /* Right Content Area styling */
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        /* Form container styling */
+        .form-container {
+            margin-top: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h3 {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* Form field styling */
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: lightblue;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+        }
+
+        /* Catalog section styling */
+        .catalog-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .catalog-item {
+            width: 30%;
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .catalog-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .catalog-item h4 {
+            margin-top: 10px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .catalog-item p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .catalog-item button {
+            background-color: lightgreen;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .catalog-item button:hover {
+            background-color: green;
+        }
+
+        /* Cart section styling */
+        .cart-container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .cart-item {
+            background-color: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-item h4 {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .cart-item p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Payment section styling */
+        .payment-methods {
+            margin-top: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-methods select, .payment-methods input, .payment-methods button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Thank You message styling */
+        .thank-you-message {
+            font-size: 20px;
+            font-weight: bold;
+            color: green;
+            text-align: center;
+            display: none;
+        }
+
+        .order-status {
+            font-size: 18px;
+            color: darkgreen;
+            text-align: center;
+            display: none;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Main container using Flexbox for layout -->
+    <div class="container">
+
+        <!-- Left Sidebar (image + navigation links) -->
+        <div class="sidebar">
+            <!-- Image at the top of the sidebar -->
+            <img src="C:\Users\admin\Downloads\BVRIT-LOGO.jpg" alt="logo" width="50" height="50" style="margin-bottom: 20px;">
+
+            <!-- Navigation links in the sidebar -->
+            <a href="#" id="registerLink">REGISTER</a>
+            <a href="#" id="loginLink">LOGIN</a>
+            <a href="#" id="catalogLink">CATALOG</a>
+            <a href="#" id="cartLink">CART</a>
+        </div>
+
+        <!-- Right Content Area -->
+        <div class="content">
+            <!-- Header for the Page -->
+            <div style="background-color: lightblue; padding: 10px; text-align: center;">
+                <h1 style="color: white; margin: 0;">BVRITH e-commerce</h1>
+            </div>
+
+            <!-- Register Form Section (Visible by default) -->
+            <div id="registerForm" class="form-container">
+                <h3>Register</h3>
+                <form>
+                    <label for="name" style="font-size: 14px; margin-bottom: 5px;">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name">
+                    <label for="email" style="font-size: 14px; margin-bottom: 5px;">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                    <label for="username" style="font-size: 14px; margin-bottom: 5px;">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username">
+                    <label for="password" style="font-size: 14px; margin-bottom: 5px;">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+
+            <!-- Login Form Section (Hidden by default) -->
+            <div id="loginForm" class="form-container" style="display: none;">
+                <h3>Login</h3>
+                <form>
+                    <label for="login-username" style="font-size: 14px; margin-bottom: 5px;">Username</label>
+                    <input type="text" id="login-username" name="login-username" placeholder="Enter your username">
+                    <label for="login-password" style="font-size: 14px; margin-bottom: 5px;">Password</label>
+                    <input type="password" id="login-password" name="login-password" placeholder="Enter your password">
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+
+            <!-- Catalog Section (Initially hidden) -->
+            <div id="catalogSection" class="catalog-container" style="display: none;">
+                <!-- Toy Category -->
+                <div class="catalog-item">
+                    <img src="C:\Users\admin\Downloads\toys.jpg" alt="Toys">
+                    <h4>Toys</h4>
+                    <p>Explore a wide variety of toys for all ages, from educational to fun games.</p>
+                    <button class="add-to-cart" data-item="Toys">Add to Cart</button>
+                </div>
+
+                <!-- Clothes Category -->
+                <div class="catalog-item">
+                    <img src="C:\Users\admin\Downloads\clothes.jfif" alt="Clothes" width="200" height="200">
+                    <h4>Clothes</h4>
+                    <p>Shop for trendy and comfortable clothes for men, women, and children.</p>
+                    <button class="add-to-cart" data-item="Clothes">Add to Cart</button>
+                </div>
+
+                <!-- Books Category -->
+                <div class="catalog-item">
+                    <img src="C:\Users\admin\Downloads\books" alt="Books">
+                    <h4>Books</h4>
+                    <p>Discover the latest books, bestsellers, and timeless classics across genres.</p>
+                    <button class="add-to-cart" data-item="Books">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Cart Section (Initially hidden) -->
+            <div id="cartSection" class="cart-container" style="display: none;">
+                <h3>Your Cart</h3>
+                <div id="cartItems">
+                    <!-- Cart items will be dynamically added here -->
+                </div>
+
+                <!-- Payment Methods Section -->
+                <div class="payment-methods">
+                    <h4>Payment Method</h4>
+                    <label for="payment-type" style="font-size: 14px;">Choose Payment Type</label>
+                    <select id="payment-type">
+                        <option value="credit-card">Credit/Debit Card</option>
+                        <option value="cash-on-delivery">Cash on Delivery</option>
+                    </select>
+
+                    <!-- Credit/Debit Card Details -->
+                    <div id="creditCardDetails" class="payment-details" style="display: block;">
+                        <label for="card-name">Card Name</label>
+                        <input type="text" id="card-name" placeholder="Enter Card Name">
+
+                        <label for="card-cvv">Card CVV</label>
+                        <input type="text" id="card-cvv" placeholder="Enter Card CVV">
+
+                        <label for="card-pin">Card Pin</label>
+                        <input type="password" id="card-pin" placeholder="Enter Card Pin">
+                    </div>
+
+                    <!-- Cash on Delivery -->
+                    <div id="cashOnDeliveryDetails" class="payment-details" style="display: none;">
+                        <p>You can pay with cash when your order is delivered.</p>
+                    </div>
+
+                    <!-- Payment Button -->
+                    <button type="submit" id="proceedToPayBtn">Proceed to Pay</button>
+                </div>
+            </div>
+
+            <!-- Thank You Message and Order Status (Initially hidden) -->
+            <div id="thankYouMessage" class="thank-you-message">
+                Thank you for your purchase...!!!
+            </div>
+            <div id="orderStatus" class="order-status">
+                Your order is on the way.
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>2025 E-Book Management System. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Cart functionality
+        let cart = [];
+
+        // Get references to the forms and links
+        const registerForm = document.getElementById('registerForm');
+        const loginForm = document.getElementById('loginForm');
+        const catalogSection = document.getElementById('catalogSection');
+        const cartSection = document.getElementById('cartSection');
+        const registerLink = document.getElementById('registerLink');
+        const loginLink = document.getElementById('loginLink');
+        const catalogLink = document.getElementById('catalogLink');
+        const cartLink = document.getElementById('cartLink');
+        const cartItems = document.getElementById('cartItems');
+
+        // Function to show the register form and hide the login and catalog sections
+        registerLink.addEventListener('click', function() {
+            registerForm.style.display = 'block';
+            loginForm.style.display = 'none';
+            catalogSection.style.display = 'none';
+            cartSection.style.display = 'none';
+        });
+
+        // Function to show the login form and hide the register and catalog sections
+        loginLink.addEventListener('click', function() {
+            loginForm.style.display = 'block';
+            registerForm.style.display = 'none';
+            catalogSection.style.display = 'none';
+            cartSection.style.display = 'none';
+        });
+
+        // Function to show the catalog section and hide the register and login forms
+        catalogLink.addEventListener('click', function() {
+            catalogSection.style.display = 'flex';
+            registerForm.style.display = 'none';
+            loginForm.style.display = 'none';
+            cartSection.style.display = 'none';
+        });
+
+        // Function to show the cart section and hide the register, login, and catalog sections
+        cartLink.addEventListener('click', function() {
+            cartSection.style.display = 'flex';
+            registerForm.style.display = 'none';
+            loginForm.style.display = 'none';
+            catalogSection.style.display = 'none';
+
+            // Display cart items
+            cartItems.innerHTML = '';
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `<h4>${item}</h4>`;
+                cartItems.appendChild(cartItem);
+            });
+        });
+
+        // Add to cart functionality
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const item = button.getAttribute('data-item');
+                cart.push(item);
+            });
+        });
+
+        // Payment method selection handling
+        const paymentTypeSelect = document.getElementById('payment-type');
+        const creditCardDetails = document.getElementById('creditCardDetails');
+        const cashOnDeliveryDetails = document.getElementById('cashOnDeliveryDetails');
+
+        // Listen for changes in the payment type selection
+        paymentTypeSelect.addEventListener('change', function() {
+            const paymentType = paymentTypeSelect.value;
+
+            // Hide all payment details
+            creditCardDetails.style.display = 'none';
+            cashOnDeliveryDetails.style.display = 'none';
+
+            // Show the corresponding payment details based on the selected payment type
+            if (paymentType === 'credit-card') {
+                creditCardDetails.style.display = 'block';
+            } else if (paymentType === 'cash-on-delivery') {
+                cashOnDeliveryDetails.style.display = 'block';
+            }
+        });
+
+        // Handle "Proceed to Pay" button click
+        const proceedToPayBtn = document.getElementById('proceedToPayBtn');
+        const thankYouMessage = document.getElementById('thankYouMessage');
+        const orderStatus = document.getElementById('orderStatus');
+
+        proceedToPayBtn.addEventListener('click', function() {
+            // Hide payment methods and show thank you messages
+            document.querySelector('.payment-methods').style.display = 'none';
+            thankYouMessage.style.display = 'block';
+            orderStatus.style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
