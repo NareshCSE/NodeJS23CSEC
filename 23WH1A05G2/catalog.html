@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catalog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+        }
+        h1 {
+            margin: 0;
+            text-align: center;
+            flex-grow: 1;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+        }
+        .catalog-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .book-card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .book-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .book-card h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .book-card p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .book-card button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .book-card button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+        /* Catalog Styles (same as before) */
+    </style>
+    <script>
+        function addToCart(title, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || []; // Retrieve cart from localStorage, or use an empty array if none exists
+            cart.push({ title, price }); // Add new item to the cart
+            localStorage.setItem('cart', JSON.stringify(cart)); // Save updated cart to localStorage
+            alert(`${title} has been added to your cart!`);
+        }
+
+        function getBooksHTML() {
+            const books = [
+                {
+                    image: "https://m.media-amazon.com/images/I/91CqNElQaKL._AC_UF1000,1000_QL80_.jpg",
+                    title: "It Ends with Us",
+                    author: "Colleen Hoover",
+                    price: "343/-",
+                    description: "It Ends with Us is a book that follows a girl named Lily who has just moved and is ready to start her life after college."
+                },
+                {
+                    image: "https://padhegaindia.in/wp-content/uploads/2024/07/9780143467359.webp",
+                    title: "The Hidden Hindu",
+                    author: "Akshat Gupta",
+                    price: "681/-",
+                    description: "The Hidden Hindu is a trilogy of books by Akshat Gupta that combines Hindu mythology with contemporary science fiction, mystery, and fantasy."
+                },
+                {
+                    image: "https://miro.medium.com/v2/resize:fit:1400/0*tQ0CdoTItIGpDjLG",
+                    title: "Ikigai",
+                    author: "Héctor García, Francesc Miralles",
+                    price: "399/-",
+                    description: "Ikigai: The Japanese Secret to a Long and Happy Life."
+                }
+            ];
+
+            return books
+                .map(
+                    (book) => `
+                    <div class="book-card">
+                        <img src="${book.image}" alt="${book.title}">
+                        <h3>${book.title}</h3>
+                        <p><strong>Author:</strong> ${book.author}</p>
+                        <p><strong>Price:</strong> ${book.price}</p>
+                        <p>${book.description}</p>
+                        <button onclick="addToCart('${book.title}', '${book.price}')">Add to Cart</button>
+                    </div>
+                `
+                )
+                .join("");
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelector(".catalog-container").innerHTML = getBooksHTML();
+        });
+    </script>
+</head>
+<body>
+    <div class="catalog-container"></div>
+</body>
+</html>
+
