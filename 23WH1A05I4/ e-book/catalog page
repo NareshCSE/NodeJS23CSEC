@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalog Page</title>
+    <title>Cart Page</title>
     <style>
         /* General Reset */
         * {
@@ -31,71 +31,65 @@
             font-size: 36px;
         }
 
-        nav ul {
-            list-style: none;
+        .cart-container {
+            padding: 20px;
+        }
+
+        .cart-item {
             display: flex;
-            justify-content: center;
-            padding: 10px 0;
-        }
-
-        nav ul li {
-            margin: 0 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .product-item {
+            align-items: center;
             background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-        }
-
-        .product-item img {
-            max-width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
             border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .product-item h3 {
-            font-size: 22px;
-            margin-top: 15px;
+        .cart-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 20px;
         }
 
-        .product-item p {
+        .cart-item h3 {
+            flex: 1;
+            font-size: 20px;
+        }
+
+        .cart-item p {
             font-size: 18px;
-            margin: 10px 0;
-            color: #555;
+            margin-top: 5px;
         }
 
-        .product-item button {
+        .cart-item button {
+            background-color: #ff4747;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart-item button:hover {
+            background-color: #e13b3b;
+        }
+
+        .proceed-btn {
             background-color: #4CAF50;
             color: white;
+            padding: 15px 25px;
             border: none;
-            padding: 10px 20px;
-            font-size: 16px;
             border-radius: 30px;
+            font-size: 20px;
+            width: 100%;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            text-align: center;
+            margin-top: 20px;
         }
 
-        .product-item button:hover {
+        .proceed-btn:hover {
             background-color: #45a049;
         }
 
@@ -106,69 +100,98 @@
             padding: 15px 0;
             margin-top: 50px;
         }
+
+        .empty-cart-message {
+            text-align: center;
+            font-size: 24px;
+            color: #555;
+        }
+
     </style>
 </head>
 <body>
+
     <header>
-        <h1>Product Catalog</h1>
+        <h1>Your Cart</h1>
     </header>
 
-    <main>
-        <div class="product-grid">
-            <div class="product-item">
-                <img src="https://m.media-amazon.com/images/I/813+28jvO2L._AC_UF1000,1000_QL80_.jpg" alt="Product 1">
-                <h3>Product 1</h3>
-                <p>$29.99</p>
-                <button onclick="addToCart('Product 1', 29.99, 'https://m.media-amazon.com/images/I/813+28jvO2L._AC_UF1000,1000_QL80_.jpg')">Add to Cart</button>
-            </div>
-            <div class="product-item">
-                <img src="https://img1.exportersindia.com/product_images/bc-full/dir_136/4065051/best-of-series-story-books-p-b-bw-1514537556-3549957.jpeg" alt="Product 2">
-                <h3>Product 2</h3>
-                <p>$39.99</p>
-                <button onclick="addToCart('Product 2', 39.99, 'https://img1.exportersindia.com/product_images/bc-full/dir_136/4065051/best-of-series-story-books-p-b-bw-1514537556-3549957.jpeg')">Add to Cart</button>
-            </div>
-            <div class="product-item">
-                <img src="https://img.etimg.com/photo/msid-99118824,imgsize-82944/GreatStoriesforChildrenbyRuskinBond.jpg" alt="Product 3">
-                <h3>Product 3</h3>
-                <p>$49.99</p>
-                <button onclick="addToCart('Product 3', 49.99, 'https://img.etimg.com/photo/msid-99118824,imgsize-82944/GreatStoriesforChildrenbyRuskinBond.jpg')">Add to Cart</button>
-            </div>
-            <div class="product-item">
-                <img src="https://www.ombooksinternational.com/wp-content/uploads/2024/06/9788196043636.jpg" alt="Product 4">
-                <h3>Product 4</h3>
-                <p>$69.99</p>
-                <button onclick="addToCart('Product 4', 69.99, 'https://www.ombooksinternational.com/wp-content/uploads/2024/06/9788196043636.jpg')">Add to Cart</button>
-            </div>
-            <div class="product-item">
-                <img src="https://3.imimg.com/data3/ES/PW/MY-2507275/the-jungle-book.jpg" alt="Product 5">
-                <h3>Product 5</h3>
-                <p>$59.99</p>
-                <button onclick="addToCart('Product 5', 59.99, 'https://3.imimg.com/data3/ES/PW/MY-2507275/the-jungle-book.jpg')">Add to Cart</button>
-            </div>
-        </div>
-    </main>
+    <div class="cart-container" id="cart-list">
+        <!-- Cart items will be dynamically displayed here -->
+    </div>
+
+    <button class="proceed-btn" onclick="proceedToBuy()">Proceed to Buy</button>
 
     <footer>
         <p>&copy; 2025 My E-Commerce Store</p>
     </footer>
 
     <script>
-        // Function to add a product to the cart
-        function addToCart(name, price, image) {
-            const product = { name, price, image };
+        // Function to render the cart page
+        function renderCart() {
+            const cartList = document.getElementById("cart-list");
 
-            // Get the current cart from localStorage
+            // Retrieve the cart from localStorage
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-            // Add the product to the cart
-            cart.push(product);
+            // Check if cart is empty
+            if (cart.length === 0) {
+                cartList.innerHTML = "<p class='empty-cart-message'>Your cart is empty.</p>";
+            } else {
+                cartList.innerHTML = ""; // Clear any existing cart content
+
+                // Loop through each item in the cart
+                cart.forEach(item => {
+                    const cartItemDiv = document.createElement("div");
+                    cartItemDiv.classList.add("cart-item");
+
+                    cartItemDiv.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}">
+                        <div>
+                            <h3>${item.name}</h3>
+                            <p>Price: $${item.price}</p>
+                            <button onclick="removeFromCart('${item.name}')">Remove</button>
+                        </div>
+                    `;
+
+                    cartList.appendChild(cartItemDiv);
+                });
+            }
+        }
+
+        // Function to remove an item from the cart
+        function removeFromCart(itemName) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Filter out the item to be removed
+            cart = cart.filter(item => item.name !== itemName);
 
             // Save the updated cart back to localStorage
             localStorage.setItem('cart', JSON.stringify(cart));
 
-            alert(`${name} has been added to your cart!`);
+            // Re-render the cart page
+            renderCart();
         }
+
+        // Function to handle the "Proceed to Buy" action
+        function proceedToBuy() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            if (cart.length === 0) {
+                alert("Your cart is empty! Please add items to your cart before proceeding.");
+                return;
+            }
+
+            // Simulate a checkout process (e.g., redirect to a checkout page)
+            // For now, we'll just clear the cart and alert the user
+            localStorage.removeItem('cart'); // Clear the cart
+
+            alert("Thank you for your purchase! Your cart has been cleared.");
+            window.location.href = "checkout.html"; // Redirect to a checkout page (you can create this page separately)
+        }
+
+        // Initial call to render the cart
+        renderCart();
     </script>
+
 </body>
 </html>
-
