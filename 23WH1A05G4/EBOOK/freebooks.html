@@ -20,6 +20,14 @@
             text-align: center;
             margin-top: 10px;
         }
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .add-to-cart {
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
@@ -39,6 +47,11 @@
                     <img src="https://th.bing.com/th/id/OIP.3xzOEEUcHHhzPonKxv5SkQHaKm?rs=1&pid=ImgDetMain" class="card-img-top" alt="Book Image">
                     <div class="card-body">
                         <h5 class="card-title book-title">Book 1</h5>
+                        <form action="cart.html" method="get">
+                            <input type="hidden" name="book_name" value="Book 1">
+                            <input type="hidden" name="book_price" value="Free">
+                            <button type="submit" class="btn btn-primary add-to-cart">Add to Cart</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -48,6 +61,11 @@
                     <img src="https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2014/7/30/1406719264487/fd90e162-93de-41b1-aea5-f8e49227e85b-1360x2040.jpeg?w=1200&q=55&auto=format&usm=12&fit=max&s=6aec5983026d71051e0abf881c79ab6f" class="card-img-top" alt="Book Image">
                     <div class="card-body">
                         <h5 class="card-title book-title">Book 2</h5>
+                        <form action="cart.html" method="get">
+                            <input type="hidden" name="book_name" value="Book 2">
+                            <input type="hidden" name="book_price" value="Free">
+                            <button type="submit" class="btn btn-primary add-to-cart">Add to Cart</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -57,6 +75,11 @@
                     <img src="https://th.bing.com/th/id/R.847ff818eb060a80aa401c0273ee49ef?rik=PitBxG7NXly9yA&riu=http%3a%2f%2fi2.wp.com%2fgeekdad.com%2fwp-content%2fuploads%2f2013%2f02%2fHP1-Kibuishi.jpg&ehk=uafYYv3yMqpRGlecJf0Si6SPSZwksDcZUzc982%2byhlQ%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="Book Image">
                     <div class="card-body">
                         <h5 class="card-title book-title">Book 3</h5>
+                        <form action="cart.html" method="get">
+                            <input type="hidden" name="book_name" value="Book 3">
+                            <input type="hidden" name="book_price" value="Free">
+                            <button type="submit" class="btn btn-primary add-to-cart">Add to Cart</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -66,6 +89,11 @@
                     <img src="https://images.thalia.media/07/-/10316d653ea14febb6c5413d18695911/harry-potter-and-the-prisoner-of-azkaban-harry-potter-book-3-minalima-edition-gebundene-ausgabe-j-k-rowling-englisch.jpeg" class="card-img-top" alt="Book Image">
                     <div class="card-body">
                         <h5 class="card-title book-title">Book 4</h5>
+                        <form action="cart.html" method="get">
+                            <input type="hidden" name="book_name" value="Book 4">
+                            <input type="hidden" name="book_price" value="Free">
+                            <button type="submit" class="btn btn-primary add-to-cart">Add to Cart</button>
+                        </form>
                     </div>
                 </div>
             </div>
