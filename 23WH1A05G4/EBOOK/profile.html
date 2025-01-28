@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eBooks Profile Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #004f67;
+            font-family: Arial, sans-serif;
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #6c757d;
+        }
+
+        .book-cover {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+
+        .book-cover:hover {
+            transform: scale(1.05);
+        }
+
+        .book-card {
+            border: none;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-card {
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .name-box {
+            background-color: white;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #004f7c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-5">
+        <!-- Profile Header -->
+        <div class="text-center mb-5">
+            <img src="https://th.bing.com/th/id/OIP.NfkvJ6S2ZUJ_m8OVnemcngHaK9?rs=1&pid=ImgDetMain" alt="Profile Avatar" class="profile-avatar">
+            <div class="name-box mt-3">Lohitha Duppanapudi</div>
+            <p class="text-muted">Avid Reader | Lover of Fiction</p>
+            <button class="btn btn-outline-secondary btn-sm">Edit Profile</button>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="row text-center mb-5">
+            <div class="col-md-4">
+                <div class="stats-card">
+                    <h5>Total Books</h5>
+                    <h3>45</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stats-card">
+                    <h5>Genres Explored</h5>
+                    <h3>12</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stats-card">
+                    <h5>Total Reading Hours</h5>
+                    <h3>120</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Latest Purchased Books -->
+        <h4 class="mb-4">Your Latest Reads</h4>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card book-card">
+                    <img src="https://m.media-amazon.com/images/I/41kxyuFffsL._SY445_SX342_.jpg" alt="Book Cover" class="book-cover">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">GOAT</h6>
+                        <p class="text-muted">Lohitha</p>
+                        <button class="btn btn-primary btn-sm">Read Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card book-card">
+                    <img src="https://images.thenile.io/r1000/9780321958327.jpg" alt="Book Cover" class="book-cover">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Complex</h6>
+                        <p class="text-muted">Vaidehi</p>
+                        <button class="btn btn-primary btn-sm">Read Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card book-card">
+                    <img src="https://th.bing.com/th/id/R.99c54f54640e4c3f0a0d1686232c5f9f?rik=nWUEt7NiFUYbrQ&riu=http%3a%2f%2fwww.betterreading.com.au%2fwp-content%2fuploads%2f2019%2f08%2fNLA_StoryTimeStars_cover.jpg&ehk=e7LzpDf1NAZ161epXG%2fVyfoIxXDiRdvXK1QifC%2fGaUk%3d&risl=&pid=ImgRaw&r=0" alt="Book Cover" class="book-cover">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Tinkle</h6>
+                        <p class="text-muted">Shresta</p>
+                        <button class="btn btn-primary btn-sm">Read Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card book-card">
+                    <img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781800227804/my-giant-storybook-library-9781800227804_hr.jpg" alt="Book Cover" class="book-cover">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Funniest</h6>
+                        <p class="text-muted">Harika</p>
+                        <button class="btn btn-primary btn-sm">Read Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
