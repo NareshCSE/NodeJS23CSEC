@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Cart</title>
+    <title>Cart Page</title>
     <style>
+        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -13,8 +14,9 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #e9ecef;
+            background-color: #f5f5f5;
             color: #333;
+            line-height: 1.6;
         }
 
         header {
@@ -22,83 +24,72 @@
             color: white;
             padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             font-size: 36px;
         }
 
-        .cart-items {
-            max-width: 800px;
-            margin: 30px auto;
-            background-color: white;
+        .cart-container {
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .cart-item {
             display: flex;
-            justify-content: space-between;
-            padding: 15px 0;
-            border-bottom: 1px solid #ddd;
+            align-items: center;
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .cart-item img {
             width: 100px;
-            height: auto;
+            height: 100px;
+            object-fit: cover;
             border-radius: 8px;
+            margin-right: 20px;
         }
 
-        .cart-item .details {
+        .cart-item h3 {
             flex: 1;
-            padding-left: 15px;
-            text-align: left;
+            font-size: 20px;
         }
 
-        .cart-item .details h3 {
-            font-size: 22px;
-            margin-bottom: 5px;
+        .cart-item p {
+            font-size: 18px;
+            margin-top: 5px;
         }
 
         .cart-item button {
-            background-color: #f44336;
+            background-color: #ff4747;
             color: white;
+            padding: 10px 15px;
             border: none;
-            padding: 10px 20px;
-            font-size: 16px;
             border-radius: 5px;
             cursor: pointer;
         }
 
         .cart-item button:hover {
-            background-color: #e53935;
+            background-color: #e13b3b;
         }
 
-        .cart-summary {
-            text-align: right;
-            margin-top: 30px;
-        }
-
-        .cart-summary p {
-            font-size: 22px;
-            margin: 10px 0;
-        }
-
-        .checkout-btn {
-            background-color: #4CAF50;
+        footer {
+            background-color: #333;
             color: white;
-            border: none;
-            padding: 15px 25px;
-            font-size: 18px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 200px;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 50px;
         }
 
-        .checkout-btn:hover {
-            background-color: #45a049;
+        .empty-cart-message {
+            text-align: center;
+            font-size: 24px;
+            color: #555;
         }
+
     </style>
 </head>
 <body>
@@ -107,36 +98,64 @@
         <h1>Your Cart</h1>
     </header>
 
-    <main>
-        <div class="cart-items">
-            <!-- Cart Item 1 -->
-            <div class="cart-item">
-                <img src="https://m.media-amazon.com/images/I/813+28jvO2L._AC_UF1000,1000_QL80_.jpg" alt="Product 1">
-                <div class="details">
-                    <h3>Product 1</h3>
-                    <p>Price: $29.99</p>
-                    <p>Quantity: 1</p>
-                </div>
-                <button>Remove</button>
-            </div>
+    <div class="cart-container" id="cart-list">
+        <!-- Cart items will be dynamically displayed here -->
+    </div>
 
-            <!-- Cart Item 2 -->
-            <div class="cart-item">
-                <img src="https://img1.exportersindia.com/product_images/bc-full/dir_136/4065051/best-of-series-story-books-p-b-bw-1514537556-3549957.jpeg" alt="Product 2">
-                <div class="details">
-                    <h3>Product 2</h3>
-                    <p>Price: $39.99</p>
-                    <p>Quantity: 2</p>
-                </div>
-                <button>Remove</button>
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2025 My E-Commerce Store</p>
+    </footer>
 
-        <div class="cart-summary">
-            <p><strong>Total: $109.97</strong></p>
-            <button class="checkout-btn">Proceed to Checkout</button>
-        </div>
-    </main>
+    <script>
+        // Function to render the cart page
+        function renderCart() {
+            const cartList = document.getElementById("cart-list");
+
+            // Retrieve the cart from localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Check if cart is empty
+            if (cart.length === 0) {
+                cartList.innerHTML = "<p class='empty-cart-message'>Your cart is empty.</p>";
+            } else {
+                cartList.innerHTML = ""; // Clear any existing cart content
+
+                // Loop through each item in the cart
+                cart.forEach(item => {
+                    const cartItemDiv = document.createElement("div");
+                    cartItemDiv.classList.add("cart-item");
+
+                    cartItemDiv.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}">
+                        <div>
+                            <h3>${item.name}</h3>
+                            <p>Price: $${item.price}</p>
+                            <button onclick="removeFromCart('${item.name}')">Remove</button>
+                        </div>
+                    `;
+
+                    cartList.appendChild(cartItemDiv);
+                });
+            }
+        }
+
+        // Function to remove an item from the cart
+        function removeFromCart(itemName) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Filter out the item to be removed
+            cart = cart.filter(item => item.name !== itemName);
+
+            // Save the updated cart back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Re-render the cart page
+            renderCart();
+        }
+
+        // Initial call to render the cart
+        renderCart();
+    </script>
 
 </body>
 </html>
