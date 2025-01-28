@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE BVRITH ECOMMERCE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF8E1;
+        }
+
+        header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: #FF7043;
+            color: white;
+            padding: 10px 20px;
+            border-bottom: 2px solid #FF5722; 
+        }
+
+        header .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #C8E6C9; 
+            color: #388E3C;
+            position: fixed;
+            height: 100%;
+            padding-top: 20px;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 3px solid #388E3C;
+        }
+
+        .sidebar img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar h2 {
+            color: #388E3C;
+        }
+
+        .sidebar a {
+            color: #388E3C;
+            text-decoration: none;
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid #81C784; 
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #66BB6A;
+            color: white;
+        }
+
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+            background-color: #FFF3E0;
+        }
+
+        .content h2 {
+            text-align: center;
+            color: #FF7043;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            text-align: center;
+            color: #4682B4; 
+        }
+
+        footer {
+            background-color: #FF7043;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .btn {
+            background-color: #FF7043;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            display: inline-block;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #FF5722;
+        }
+
+        .iframe-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <img src="th.jpeg" class="logo" alt="Logo">
+        <h2>CSE BVRITH ECOMMERCE</h2>
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="logout.html">Logout</a>
+    </div>
+
+    <div class="content">
+        <header>
+            <img src="th.jpeg" class="logo" alt="Logo">
+            <h1>CSE BVRITH ECOMMERCE</h1>
+        </header>
+
+        <h2>Welcome to CSE BVRITH ECOMMERCE</h2>
+        <p>Browse our catalog and shop your favorite products!</p>
+
+        <div>
+            <a href="catalog.html" class="btn">Browse Catalog</a>
+            <a href="cart.html" class="btn">View Cart</a>
+        </div>
+        <div class="iframe-container">
+            <h3>Featured Product Videos</h3>
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Featured Video"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 CSE BVRITH ECOMMERCE. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
