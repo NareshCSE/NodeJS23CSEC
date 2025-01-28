@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Ticketing System</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Custom styles */
+    .hero {
+      background: #f4f4f4;
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+    }
+
+    .book-catalog {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .book-item {
+      text-align: center;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .checkout {
+      background-color: #28a745;
+      color: #fff;
+      padding: 1rem;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .checkout:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">E-Ticketing System</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#login">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="#register">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="#catalog">Catalog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cart">Cart</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+
+  <!-- Home Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h1>Welcome to the E-Ticketing System</h1>
+      <p>Your one-stop platform to book tickets for events, concerts, and more.</p>
+    </div>
+  </section>
+
+  <!-- Login Section -->
+  <section id="login" class="container my-5">
+    <h2>Login</h2>
+    <form>
+      <div class="mb-3">
+        <label for="login-email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="login-email" required>
+      </div>
+      <div class="mb-3">
+        <label for="login-password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="login-password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </section>
+
+  <!-- Register Section -->
+  <section id="register" class="container my-5">
+    <h2>Register</h2>
+    <form>
+      <div class="mb-3">
+        <label for="register-name" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="register-name" required>
+      </div>
+      <div class="mb-3">
+        <label for="register-email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="register-email" required>
+      </div>
+      <div class="mb-3">
+        <label for="register-password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="register-password" required>
+      </div>
+      <button type="submit" class="btn btn-success">Register</button>
+    </form>
+  </section>
+
+  <!-- Catalog Section (Tickets available for booking) -->
+  <section id="catalog" class="container my-5">
+    <h2>Event Catalog</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Event 1">
+          <div class="card-body">
+            <h5 class="card-title">Event Title 1</h5>
+            <p class="card-text">Details about the event...</p>
+            <button class="btn btn-primary" onclick="addToCart('Event Title 1')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Event 2">
+          <div class="card-body">
+            <h5 class="card-title">Event Title 2</h5>
+            <p class="card-text">Details about the event...</p>
+            <button class="btn btn-primary" onclick="addToCart('Event Title 2')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- More events can be added here in similar fashion -->
+    </div>
+  </section>
+
+  <!-- Cart Section -->
+  <section id="cart" class="container my-5">
+    <h2>Your Cart</h2>
+    <div id="cart-items">
+      <!-- Cart items will be dynamically added here -->
+      <p>Your cart is empty.</p>
+    </div>
+    <button class="btn btn-success checkout" onclick="checkout()">Proceed to Checkout</button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2025 E-Ticketing System</p>
+  </footer>
+
+  <!-- Bootstrap JS & Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script>
+    let cart = [];
+
+    // Function to add items to the cart
+    function addToCart(event) {
+      cart.push(event);
+      alert(event + " added to cart!");
+      updateCart();
+    }
+
+    // Function to update the cart display
+    function updateCart() {
+      const cartItemsDiv = document.getElementById("cart-items");
+      cartItemsDiv.innerHTML = ''; // Clear the cart items before updating
+
+      if (cart.length === 0) {
+        cartItemsDiv.innerHTML = "<p>Your cart is empty.</p>";
+      } else {
+        cart.forEach((event, index) => {
+          const cartItemDiv = document.createElement("div");
+          cartItemDiv.classList.add("cart-item");
+          cartItemDiv.innerHTML = `
+            <p>${event}</p>
+            <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">Remove</button>
+          `;
+          cartItemsDiv.appendChild(cartItemDiv);
+        });
+      }
+    }
+
+    // Function to remove items from the cart
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCart();
+    }
+
+    // Function to simulate the checkout process
+    function checkout() {
+      if (cart.length === 0) {
+        alert("Your cart is empty. Please add items before checking out.");
+      } else {
+        alert("Proceeding to checkout...\nItems in cart: " + cart.join(", "));
+      }
+    }
+  </script>
+</body>
+</html>

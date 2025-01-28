@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Book System - Homepage</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    footer p {
+      font-size: 1rem;
+    }
+
+    /* Header and Navigation */
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 5px 15px;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #555;
+      border-radius: 4px;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* Content iframe */
+    .main.content {
+      margin: 20px auto;
+      max-width: 1200px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #content-frame {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    footer p {
+      font-size: 1rem;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html" onclick="loadPage('home')">Home</a></li>
+        <li><a href="login.html" onclick="loadPage('login')">Login</a></li>
+        <li><a href="register.html" onclick="loadPage('register')">Register</a></li>
+        <li><a href="catalog.html" onclick="loadPage('catalog')">Catalog</a></li>
+        <li><a href="cart.html" onclick="loadPage('cart')">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Welcome to the E-Book Management System</h1>
+      <p>Your one-stop shop for digital books.</p>
+    </section>
+
+    <div class="main content">
+      <iframe id="content-frame" src="login.html" title="Home Page"></iframe>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 E-Book Management System</p>
+  </footer>
+
+  <script>
+    // Function to load specific page in the iframe
+    function loadPage(page) {
+        var pageMap = {
+            'login': 'login.html', 
+            'register': 'register.html',
+            'catalog': 'catalog.html',
+            'cart': 'cart.html'
+        };
+        document.getElementById('content-frame').src = pageMap[page];
+    }
+  </script>
+
+</body>
+</html>
