@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCAP Portal</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #2f7bc2;
+            color: rgb(153, 216, 228);
+            padding: 20px;
+        }
+
+        /* Logo styling */
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        /* College Name styling */
+        header h1 {
+            font-size: 2em;
+            text-align: center;
+        }
+
+        /* Main Container */
+        .main-container {
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #93d1e7;
+            padding: 20px;
+            height: 100vh;
+        }
+
+        /* Sidebar Links */
+        .sidebar ul {
+            list-style-type: none;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Content Area */
+        .content-area {
+            flex: 1;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Hidden until login */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- College Logo and Name -->
+        <img src="C:\Users\admin\Downloads\bvrit.png" alt="College Logo" class="logo">
+        <h1>BVRITH COLLEGE OF ENGINEERING FOR WOMEN</h1>
+    </header>
+
+    <!-- Main Content (hidden until logged in) -->
+    <div class="main-container hidden" id="mainContainer">
+        <!-- Sidebar navigation -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#attendance" onclick="loadContent('attendance')">Attendance</a></li>
+                <li><a href="#schedule" onclick="loadContent('schedule')">Schedule</a></li>
+                <li><a href="#bio" onclick="loadContent('bio')">Bio</a></li>
+                <li><a href="#assignments" onclick="loadContent('assignments')">Assignments</a></li>
+                <li><a href="#marks" onclick="loadContent('marks')">Marks</a></li>
+                <li><a href="#projects" onclick="loadContent('projects')">Projects</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main content area -->
+        <div class="content-area">
+            <div id="content">
+                <h2>Welcome to the eCAP Portal!</h2>
+                <p>Select a link from the left to view details.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 eCAP Portal | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Correct password
+        const correctPassword = "yourpassword"; 
+
+        // Function to handle login
+        function checkPassword() {
+            // Prompt user for the password
+            const enteredPassword = prompt("Please enter the password:");
+
+            if (enteredPassword === correctPassword) {
+                // Hide login form (if any) and show main portal content
+                document.getElementById("mainContainer").classList.remove("hidden");
+                alert("Login successful! Welcome to the eCAP Portal.");
+            } else {
+                // If password is incorrect, reload the page and prompt again
+                alert("Incorrect password, please try again.");
+                location.reload();  // Reload the page to ask for the password again
+            }
+        }
+
+        // Call the checkPassword function as soon as the page loads
+        window.onload = checkPassword;
+
+        // JavaScript function to load content dynamically
+        function loadContent(section) {
+            const contentDiv = document.getElementById('content');
+
+            // Clear existing content
+            contentDiv.innerHTML = '';
+
+            // Load new content based on the section clicked
+            switch (section) {
+                case 'attendance':
+                    contentDiv.innerHTML = '<h2>Attendance</h2><p>Here you can view your attendance records.</p>';
+                    break;
+                case 'schedule':
+                    contentDiv.innerHTML = '<h2>Schedule</h2><p>Here is your class schedule.</p>';
+                    break;
+                case 'bio':
+                    contentDiv.innerHTML = '<h2>Bio</h2><p>View your personal information and bio data here.</p>';
+                    break;
+                case 'assignments':
+                    contentDiv.innerHTML = '<h2>Assignments</h2><p>Check your assignments and due dates here.</p>';
+                    break;
+                case 'marks':
+                    contentDiv.innerHTML = '<h2>Marks</h2><p>View your marks and grades here.</p>';
+                    break;
+                case 'projects':
+                    contentDiv.innerHTML = '<h2>Projects</h2><p>Details about your projects can be found here.</p>';
+                    break;
+                default:
+                    contentDiv.innerHTML = '<h2>Welcome to the eCAP Portal!</h2><p>Select a link from the left to view details.</p>';
+                    break;
+            }
+        }
+    </script>
+
+</body>
+</html>
