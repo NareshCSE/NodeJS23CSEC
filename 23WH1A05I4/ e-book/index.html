@@ -123,12 +123,11 @@
         </ul>
     </nav>
 
-    
     <div class="main-content">
-       
-   
-    <iframe src="home page.html" height="200" width="300" title="Home Page"></iframe>
-</div>
+        <!-- Updated iframe with id -->
+        <iframe id="content-frame" src="home page.html" title="Home Page"></iframe>
+    </div>
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 My E-Commerce Store</p>
@@ -138,7 +137,7 @@
         // Function to load specific page in the iframe
         function loadPage(page) {
             var pageMap = {
-                
+                'home': 'home page.html', // Add this line for home page
                 'login': 'login.html',
                 'register': 'register.html',
                 'catalog': 'catalog page.html',
