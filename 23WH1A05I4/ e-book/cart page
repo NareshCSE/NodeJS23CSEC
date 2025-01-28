@@ -76,6 +76,23 @@
             background-color: #e13b3b;
         }
 
+        .proceed-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 30px;
+            font-size: 20px;
+            width: 100%;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .proceed-btn:hover {
+            background-color: #45a049;
+        }
+
         footer {
             background-color: #333;
             color: white;
@@ -101,6 +118,8 @@
     <div class="cart-container" id="cart-list">
         <!-- Cart items will be dynamically displayed here -->
     </div>
+
+    <button class="proceed-btn" onclick="proceedToBuy()">Proceed to Buy</button>
 
     <footer>
         <p>&copy; 2025 My E-Commerce Store</p>
@@ -151,6 +170,23 @@
 
             // Re-render the cart page
             renderCart();
+        }
+
+        // Function to handle the "Proceed to Buy" action
+        function proceedToBuy() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            if (cart.length === 0) {
+                alert("Your cart is empty! Please add items to your cart before proceeding.");
+                return;
+            }
+
+            // Simulate a checkout process (e.g., redirect to a checkout page)
+            // For now, we'll just clear the cart and alert the user
+            localStorage.removeItem('cart'); // Clear the cart
+
+            alert("Thank you for your purchase! Your cart has been cleared.");
+            window.location.href = "checkout.html"; // Redirect to a checkout page (you can create this page separately)
         }
 
         // Initial call to render the cart
