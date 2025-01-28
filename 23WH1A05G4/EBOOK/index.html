@@ -3,10 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="css" href="styles.css">
+    <title>BVRIT Hyderabad College for Women</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <a href="login.html" class="button">Login</a>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="https://th.bing.com/th/id/OIP.4oviXq2osm3IlH6kbQenFAHaE-?rs=1&pid=ImgDetMain" alt="BVRIT Logo" />
+        </div>
+        <div class="header-title">
+            <h1>BVRIT Hyderabad College for Women</h1>
+        </div>
+        <div class="auth-buttons">
+            <button onclick="document.getElementById('contentFrame').src='login.html'">Login</button>
+            <button onclick="document.getElementById('contentFrame').src='register.html'">Register</button>
+        </div>
+    </header>
+
+    <!-- Sidebar Section -->
+    <aside class="sidebar">
+        <p>Sidebar content goes here.</p>
+    </aside>
+
+    <!-- Main Content Box (iframe to load pages) -->
+    <div class="main-box">
+        <iframe id="contentFrame" src="welcome.html" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 BVRIT Hyderabad College of Engineering for Women. All rights reserved.</p>
+    </footer>
 </body>
 </html>
