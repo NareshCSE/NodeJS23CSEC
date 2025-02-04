@@ -1,0 +1,16 @@
+.error{
+    color:red;
+}
+.success{
+    color:green;
+}
+body{
+    font-size:large;
+    background-color:aquamarine;
+}
+#btn{
+    height:30px;
+    width:100px;
+    font-size:20px;
+    background-color:cadetblue;
+}
