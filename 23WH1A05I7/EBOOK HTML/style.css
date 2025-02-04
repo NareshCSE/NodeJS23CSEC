@@ -33,6 +33,7 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
+    margin-top: auto; /* This ensures the footer stays at the bottom */
 }
 
 .form-container {
@@ -64,4 +65,3 @@ footer p {
     margin: 0;
     font-size: 0.9rem;
 }
-
