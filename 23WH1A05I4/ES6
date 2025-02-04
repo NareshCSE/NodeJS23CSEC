@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e1f5fe;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 600px;
+        }
+
+        input {
+            padding: 10px;
+            width: 200px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        #loading {
+            font-size: 16px;
+            color: #888;
+        }
+
+        .weather-info {
+            margin-top: 20px;
+        }
+
+        .weather-icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        .weather-details {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="cityInput" placeholder="Enter city" />
+        <button onclick="getWeather()">Get Weather</button>
+        <p id="loading" style="display:none;">Loading...</p>
+        <p id="result"></p>
+        <div id="weatherData" class="weather-info" style="display:none;">
+   
+            <img src="https://media.istockphoto.com/id/1007768414/photo/blue-sky-with-bright-sun-and-clouds.jpg?s=612x612&w=0&k=20&c=MGd2-v42lNF7Ie6TtsYoKnohdCfOPFSPQt5XOz4uOy4="/>
+            <div id="weatherDetails" class="weather-details"></div>
+        </div>
+    </div>
+
+    <script>
+        const getWeather = async () => {
+            const city = document.getElementById('cityInput').value.trim();
+            const apiKey = 'ef8161082d9844eab1052609250402'; // Use your actual API key here
+            const resultElement = document.getElementById('result');
+            const loadingElement = document.getElementById('loading');
+            const weatherDataElement = document.getElementById('weatherData');
+            const weatherIconElement = document.getElementById('weatherIcon');
+            const weatherDetailsElement = document.getElementById('weatherDetails');
+
+            // Reset the display
+            weatherDataElement.style.display = 'none';
+            resultElement.innerText = '';
+            loadingElement.style.display = 'block';
+
+            if (!city) {
+                resultElement.innerText = "Please enter a city name.";
+                loadingElement.style.display = 'none';
+                return;
+            }
+
+            try {
+                const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&units=metric`);
+                const data = await response.json();
+                loadingElement.style.display = 'none';  // Hide loading message
+
+                if (data.error) {
+                    resultElement.innerText = "City not found. Please try again.";
+                    resultElement.classList.add('error');
+                } else {
+                    // Display weather data
+                    const { temp_c, humidity, wind_kph, pressure_mb, condition, icon } = data.current;
+
+                    // Update result text
+                    resultElement.innerText = `${city} Weather: ${temp_c}°C | ${condition.text}`;
+                    resultElement.classList.remove('error'); // Remove error class if any
+
+                    // Show weather details
+                    weatherIconElement.src = `https:${icon}`;
+                    weatherDataElement.style.display = 'block';
+                    weatherDetailsElement.innerHTML = `
+                        <p>Humidity: ${humidity}%</p>
+                        <p>Wind Speed: ${wind_kph} km/h</p>
+                        <p>Pressure: ${pressure_mb} mb</p>
+                    `;
+                }
+            } catch (error) {
+                loadingElement.style.display = 'none';  
+                resultElement.innerText = "Error fetching weather data.";
+                resultElement.classList.add('error');
+            }
+        };
+    </script>
+</body>
+</html>
