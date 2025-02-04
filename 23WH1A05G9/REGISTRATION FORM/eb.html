@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Product Catalog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+        }
+        .product-item {
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            min-height: 300px;
+        }
+        .product-item img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        .product-item h3 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            height: 40px;
+        }
+        .product-item p {
+            margin-bottom: 10px;
+            font-size: 16px;
+            height: 30px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .cart {
+            margin-top: 30px;
+            background-color: #eee;
+            padding: 15px;
+        }
+        .cart p {
+            margin: 5px 0;
+        }
+        .cart-total {
+            font-weight: bold;
+        }
+        .cart-items-list {
+            margin-top: 15px;
+        }
+        .cart-items-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .cart-items-list li {
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .delete-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .delete-btn:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center">Interactive Product Catalog</h1>
+        <h2 class="text-center">Select Your Items</h2>
+
+        <!-- Main Category Tabs -->
+        <ul class="nav nav-tabs" id="mainTabs">
+            <li class="active"><a href="#jewelry" data-toggle="tab">Jewelry</a></li>
+            <li><a href="#dresses" data-toggle="tab">Dresses</a></li>
+            <li><a href="#shoes" data-toggle="tab">Shoes</a></li>
+            <li><a href="#handbags" data-toggle="tab">Handbags</a></li>
+            <li><a href="#cart" data-toggle="tab">Cart</a></li> <!-- Cart Tab -->
+        </ul>
+
+        <!-- Jewelry Subcategories Tabs -->
+        <div class="tab-content">
+            <!-- Jewelry Main Tab -->
+            <div id="jewelry" class="tab-pane fade in active">
+                <ul class="nav nav-tabs" id="jewelrySubTabs">
+                    <li><a href="#bangles" data-toggle="tab">Bangles</a></li>
+                    <li><a href="#necklaces" data-toggle="tab">Necklaces</a></li>
+                    <li><a href="#earrings" data-toggle="tab">Earrings</a></li>
+                </ul>
+                <!-- Jewelry Subcategories Content -->
+                <div class="tab-content">
+                    <!-- Bangles Tab -->
+                    <div id="bangles" class="tab-pane fade in active">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="product-item">
+                                    <img src="shopping.webp" alt="b1">
+                                    <h3>Glitter Bangles</h3>
+                                    <p>$100.00</p>
+                                    <button class="button select-btn" data-name="Glitter Bangles" data-price="100">Select</button>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="product-item">
+                                    <img src="b2.jpg" alt="B2">
+                                    <h3>Unique Chilt</h3>
+                                    <p>$5200.00</p>
+                                    <button class="button select-btn" data-name="Unique Chilt" data-price="5200">Select</button>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="product-item">
+                                    <img src="b3.webp" alt="B3">
+                                    <h3>Golden Bangles</h3>
+                                    <p>$1000.00</p>
+                                    <button class="button select-btn" data-name="Golden Bangles" data-price="1000">Select</button>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="product-item">
+                                    <img src="b4.webp" alt="B4">
+                                    <h3>quitle</h3>
+                                    <p>$200.00</p>
+                                    <button class="button select-btn" data-name="quitle" data-price="200">Select</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Necklace Tab -->
+                    <div id="necklaces" class="tab-pane fade in active">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="product-item">
+                                    <img src="n1.webp" alt="N1">
+                                    <h3>Platinum Necklace</h3>
+                                    <p>$10000.00</p>
+                                    <button class="button select-btn" data-name="Platinum Necklace" data-price="10000">Select</button>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="product-item">
+                                    <img src="n2.avif" alt="N2">
+                                    <h3>Ubinger</h3>
+                                    <p>$700.00</p>
+                                    <button class="button select-btn" data-name="Ubinger" data-price="700">Select</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Earrings Tab -->
+                    <div id="earrings" class="tab-pane fade in active">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="product-item">
+                                    <img src="e2.webp" alt="E1">
+                                    <h3>pinit earings</h3>
+                                    <p>$100.00</p>
+                                    <button class="button select-btn" data-name="pinit earings" data-price="100">Select</button>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="product-item">
+                                    <img src="e1.webp" alt="E2">
+                                    <h3>swisling</h3>
+                                    <p>$200.00</p>
+                                    <button class="button select-btn" data-name="swisling" data-price="200">Select</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Handbags Tab -->
+            <div id="handbags" class="tab-pane fade">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="product-item">
+                            <img src="h2.webp" alt="Hand">
+                            <h3>cream cion</h3>
+                            <p>$5000.00</p>
+                            <button class="button select-btn" data-name="cream cion" data-price="5000">Select</button>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="product-item">
+                            <img src="h1.webp" alt="hand">
+                            <h3>Lewion</h3>
+                            <p>$1000.00</p>
+                            <button class="button select-btn" data-name="Lewion" data-price="1000">Select</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dresses Tab -->
+            <div id="dresses" class="tab-pane fade">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="product-item">
+                            <img src="d1.avif" alt="Dresses">
+                            <h3>werst</h3>
+                            <p>$250.00</p>
+                            <button class="button select-btn" data-name="werst" data-price="250">Select</button>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="product-item">
+                            <img src="d2.jpg" alt="flower">
+                            <h3>stwing</h3>
+                            <p>$100.00</p>
+                            <button class="button select-btn" data-name="stwing" data-price="100">Select</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shoes Tab -->
+            <div id="shoes" class="tab-pane fade">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="product-item">
+                            <img src="s1.webp" alt="shoes">
+                            <h3>snikers</h3>
+                            <p>$250.00</p>
+                            <button class="button select-btn" data-name="snikers" data-price="250">Select</button>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="product-item">
+                            <img src="s2.avif" alt="shoes">
+                            <h3>highill shoes</h3>
+                            <p>$220.00</p>
+                            <button class="button select-btn" data-name="highill shoes" data-price="220">Select</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cart Tab -->
+            <div id="cart" class="tab-pane fade">
+                <div class="cart">
+                    <h3>Your Cart</h3>
+                    <div id="cart-items">
+                        <p>No items in the cart.</p>
+                    </div>
+                    <p class="cart-total">Total: $<span id="cart-total">0.00</span></p>
+                    <button class="button" onclick="checkout()">Checkout</button>
+                    <div class="cart-items-list">
+                        <h4>Items in Cart:</h4>
+                        <ul id="cart-item-list">
+                            <!-- Added items will appear here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Item Added -->
+    <div id="itemAddedModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Item Added to Cart</h4>
+                </div>
+                <div class="modal-body">
+                    <p>You have added <span id="added-product-name"></span> to your cart.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        // Event listener for select buttons
+        $(document).on('click', '.select-btn', function () {
+            let productName = $(this).data('name');
+            let productPrice = $(this).data('price');
+
+            // Add the selected product to the cart array
+            cart.push({ name: productName, price: productPrice });
+            total += productPrice;
+
+            // Show the modal with the product name
+            $("#added-product-name").text(productName);
+            $('#itemAddedModal').modal('show'); // Show the modal
+
+            updateCartDisplay(); // Update the cart display
+        });
+
+        // Function to update the cart display
+        function updateCartDisplay() {
+            // Get the cart item list and clear the existing items
+            let cartItemList = document.getElementById("cart-item-list");
+            cartItemList.innerHTML = "";
+
+            // Loop through each item in the cart and display it with a delete button
+            cart.forEach((item, index) => {
+                let li = document.createElement("li");
+                li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+
+                // Create delete button
+                let deleteBtn = document.createElement("button");
+                deleteBtn.textContent = "Delete";
+                deleteBtn.classList.add("delete-btn");
+                deleteBtn.onclick = function() {
+                    deleteItem(index);
+                };
+
+                // Append the delete button to the list item
+                li.appendChild(deleteBtn);
+                cartItemList.appendChild(li);
+            });
+
+            // Update the total amount in the cart
+            document.getElementById("cart-total").textContent = total.toFixed(2);
+        }
+
+        // Function to delete an item from the cart
+        function deleteItem(index) {
+            // Subtract the price of the deleted item from the total
+            total -= cart[index].price;
+
+            // Remove the item from the cart array
+            cart.splice(index, 1);
+
+            // Update the cart display after deletion
+            updateCartDisplay();
+        }
+
+        // Function for checkout (this could be expanded with actual checkout logic)
+        function checkout() {
+            alert("Proceeding to checkout!");
+        }
+    </script>
+
+</body>
+</html>
