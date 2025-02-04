@@ -96,7 +96,29 @@
                 <label for="address" class="form-label">Address:</label><br>
                 <textarea id="address" name="address" rows="4" class="form-control"></textarea><br>
             </div>
+            
+            <!-- Password Section -->
+            <div class="row mb-3">
+                <label for="password" class="col-sm-3 col-form-label">Password:</label>
+                <div class="col-sm-9">
+                    <input type="password" id="password" name="password" placeholder="Enter password" class="form-control">
+                </div>
+            </div>
 
+            <!-- Confirm Password Section -->
+            <div class="row mb-3">
+                <label for="confirmPassword" class="col-sm-3 col-form-label">Confirm Password:</label>
+                <div class="col-sm-9">
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" class="form-control">
+                </div>
+            </div>
+
+            <!-- Password Error -->
+            <div class="row mb-3">
+                <div class="col-sm-9 offset-sm-3">
+                    <span id="passwordError" class="text-danger"></span>
+                </div>
+            </div>
             <!-- Submit and Close Buttons -->
             <div>
                 <button type="submit" class="btn btn-primary">Submit</button>
