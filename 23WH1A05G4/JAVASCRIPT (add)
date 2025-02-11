@@ -9,6 +9,7 @@ const App=()=>{
 
   //definition for handleChange
   const handleChange=(event)=>{
+    //tracing
     console.log(event.target.value)
     setValue1(event.target.value)
   }
