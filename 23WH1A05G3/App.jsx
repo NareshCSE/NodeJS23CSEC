@@ -32,7 +32,7 @@ const App = () =>{
   return (
     //Fragment
     <> 
-    <h1>Anyeong, sesanga!!</h1>
+    <h1>Hello world!!</h1>
     <input type = "text" placeholder="First value" onChange = {handleChange}/>         {/* inline elements */}
     {/*onChange = {(e) => handleChange(e,'value1')}/>*/}
     <input type = "text" placeholder="Second value" onChange = {handleChange1}/>
