@@ -32,7 +32,7 @@ const App=()=>{
   // e... call back
   />
   <input type="text" placeholder="Second Value"
-  onChange={(e)=>handleChange(e,'value1')}/>
+  onChange={(e)=>handleChange(e,'value2')}/>
 
   <button onClick={handleClick}>Add</button>
   <p>Answer: {result}</p>
