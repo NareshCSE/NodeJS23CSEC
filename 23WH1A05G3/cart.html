@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+        }
+        h1 {
+            margin: 0;
+            text-align: center;
+            flex-grow: 1;
+            background-color: #509396;
+            color: white;
+            padding: 20px;
+        }
+        .cart-container {
+            padding: 20px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-item button {
+            background-color: red;
+            border: none;
+            color: white;
+            padding: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .cart-item button:hover {
+            background-color: #d43f3a;
+        }
+        .payment-methods {
+            margin-top: 20px;
+        }
+        .payment-methods label {
+            margin-right: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1); // Remove item from the cart
+            localStorage.setItem('cart', JSON.stringify(cart)); // Update cart in localStorage
+            showCart();
+        }
+
+        function getCartItemsHTML() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            return cart
+                .map(
+                    (item, index) => `
+                    <div class="cart-item">
+                        <p>${item.title} - ${item.price}</p>
+                        <button onclick="removeFromCart(${index})">Remove</button>
+                    </div>
+                `
+                )
+                .join("");
+        }
+
+        function getTotalAmount() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            return cart.reduce((total, item) => total + parseFloat(item.price), 0);
+        }
+
+        function proceedToBuy() {
+            const paymentMethods = document.getElementsByName("payment");
+            let selectedPaymentMethod = null;
+
+            for (let method of paymentMethods) {
+                if (method.checked) {
+                    selectedPaymentMethod = method.value;
+                    break;
+                }
+            }
+
+            if (selectedPaymentMethod) {
+                alert(`Your order has been placed using ${selectedPaymentMethod} as payment method.`);
+                localStorage.setItem('cart', JSON.stringify([])); // Clear the cart after purchase
+                showCart(); // Update cart display
+            } else {
+                alert("Please select a payment method before proceeding.");
+            }
+        }
+
+        function showCart() {
+            const contentDiv = document.querySelector('.content');
+            contentDiv.innerHTML = `
+                <div class="cart-container">
+                    <h2>Your Cart</h2>
+                    ${getCartItemsHTML()}
+                    <div class="payment-methods">
+                        <h3>Total: ₹${getTotalAmount()}</h3>
+                        <label><input type="radio" name="payment" value="COD"> COD</label>
+                        <label><input type="radio" name="payment" value="Credit Card"> Credit Card</label>
+                        <label><input type="radio" name="payment" value="Debit Card"> Debit Card</label>
+                        <label><input type="radio" name="payment" value="UPI"> UPI</label>
+                        <button onclick="proceedToBuy()">Proceed to Buy</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            showCart(); // Load cart items on page load
+        });
+    </script>
+</head>
+<body>
+    <div class="content"></div>
+</body>
+</html>
+

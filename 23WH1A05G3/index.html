@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            width: 100%;
+            background-color: #f4f4f4; 
+            padding: 10px;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin-right: 20px; 
+        }
+
+        h1 {
+            margin: 0;
+            text-align: center;
+            flex-grow: 1;
+            background-color: #509396;
+            color: white;
+            padding: 20px;
+        }
+
+        .main-container {
+            display: flex;
+            margin-top: 20px; 
+        }
+
+        .buttons {
+            text-align: left;
+            padding-left: 20px;
+            flex: 1; 
+        }
+
+        iframe {
+            flex: 5;
+            border: none;
+            height: calc(100vh - 180px);
+            width: 100%;
+        }
+
+        .buttons button {
+            width: 180px; 
+            padding: 15px;
+            background-color: #509396; 
+            border: none;
+            color: white;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+            display: block;
+            position: relative;
+        }
+
+        .buttons button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px; 
+            height: 100%;
+            background-color: #333; 
+        }
+
+        .buttons button:hover {
+            background-color: #509396; 
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function loadPage(page) {
+            document.getElementById('contentFrame').src = page;
+        }
+    </script>
+</head>
+<body>
+    <!-- Header Section with Logo and Title -->
+    <div class="header">
+        <img src="https://media.collegedekho.com/media/img/institute/logo/bvrit_logo.png" alt="BVRIT HYDERABAD College of Engineering for Women" class="logo">
+        <h1>E-BOOK MANAGEMENT SYSTEM</h1>
+    </div>
+    
+    <!-- Main container with buttons and iframe -->
+    <div class="main-container">
+        <!-- Buttons Section -->
+        <div class="buttons">
+            <button onclick="loadPage('registration.html')">Register</button>
+            <button onclick="loadPage('login.html')">Login</button>
+            <button onclick="loadPage('catalog.html')">Catalog</button>
+            <button onclick="loadPage('cart.html')">Cart</button>
+        </div>
+
+        <!-- Iframe Section -->
+        <iframe id="contentFrame" src="welcome.html"></iframe>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 E-Book Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
