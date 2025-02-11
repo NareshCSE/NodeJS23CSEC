@@ -42,4 +42,4 @@ const App=()=>{ //arrow function
   )
 }
 
-export default App // to let the main know about the app ig
+export default App // to let the main know about the app 
