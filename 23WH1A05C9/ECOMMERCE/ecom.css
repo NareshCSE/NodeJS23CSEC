@@ -1,0 +1,133 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f9f9f9;
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #4caf50;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: relative;
+    flex: 0 0 auto; /* Prevent header from stretching */
+}
+
+.title {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    position: absolute;
+    left: 10px;
+}
+
+.container-fluid {
+    flex: 1 1 auto; /* Allow container to fill remaining space */
+    padding: 0; /* Remove padding */
+}
+
+.row {
+    height: 100%; /* Ensure the row fills the container */
+    margin: 0; /* Remove margin */
+}
+
+.taskbar-container, .content-container {
+    padding: 0; /* Remove padding */
+    display: flex;
+    flex-direction: column; /* Ensure content fills the column */
+}
+
+.taskbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #01579b;
+    width: 100%;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    height: calc(100vh - 150px); /* Ensure taskbar takes full height */
+}
+
+.item {
+    width: 100%;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.item:hover {
+    background-color:#0277bd;
+    border-radius: 5px;
+    transform: translateX(5px);
+}
+
+/* Main content */
+.iframe-container {
+    width: 100%;
+    flex: 1 1 auto; /* Allow iframe to fill the remaining space */
+    border: none;
+    height: calc(100vh - 150px); /* Ensure iframe takes full height */
+}
+
+/* Footer */
+footer {
+    background-color: #212121;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    flex: 0 0 auto; /* Prevent footer from stretching */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-content {
+    font-size: 0.9em;
+}
+
+.footer-content a {
+    color: #ffab40;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .taskbar {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0;
+        box-shadow: none;
+        text-align: center;
+    }
+
+    .item {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .title {
+        font-size: 1.2em;
+    }
+}

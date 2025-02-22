@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        function validateForm(){
+  let x = document.forms["loginpage"]["FirstName"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+</script>
+</head>
+<body>
+        <h1><center>Registration</center></h1>
+        <form name="loginpage" action="action=/action_page.html"onsubmit="return validateForm()" method="post">
+        <label> <b>First Name</b></label>
+         <input type="text"  name="FirstName" placeholder= EnterFirstName><br><br>
+        </form>
+       <label><b>Last Name </b></label>
+       <input type="text"  placeholder= EnterLastName><br><br>
+       <label><b> Email Id</b></label>
+       <input type="EmailId" placeholder="EnterEmailId"><br><br>
+       <label><b>Password</b></label>
+       <input type="text"  placeholder="EnterPassword"><br><br>
+       <label><b>Address</b></label>
+       <input type="text" placeholder=EnterAddress><br><br>
+       <label><b>Gender:</b></label>
+       <label>  Male</label>
+       <input type="Radio">
+       <label>Female</label>
+       <input type="Radio"><br><br>
+       <label><b>Mobile Number</b></label>
+       <input type="number"><br>
+       <input type="Submit" >
+
+
+    </body>
+</html>

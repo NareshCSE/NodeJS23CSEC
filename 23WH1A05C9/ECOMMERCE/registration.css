@@ -1,0 +1,123 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #4caf50;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.title {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    position: absolute;
+    left: 10px;
+}
+
+/* Taskbar */
+.taskbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #01579b;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+}
+
+.item {
+    width: 100%;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.item:hover {
+    background-color: #0277bd;
+    border-radius: 5px;
+    transform: translateX(5px);
+}
+
+/* Main content */
+.iframe-container {
+    width: 100%;
+    height: calc(100vh - 80px);
+    border: none;
+}
+
+/* Footer */
+footer {
+    background-color: #212121;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-content {
+    font-size: 0.9em;
+}
+
+.footer-content a {
+    color: #ffab40;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .taskbar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+        box-shadow: none;
+    }
+
+    .item {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .title {
+        font-size: 1.2em;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 10px;
+    }
+}
