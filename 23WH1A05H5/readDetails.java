@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 class readDetails {
-
 	public static void main(String[]args) 
 
 	{
@@ -32,13 +31,5 @@ class readDetails {
 			e.printStackTrace();
 
 		}
-
-		
-
-		
-
 	}
-
-
-
 }
