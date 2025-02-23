@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iframe Layout</title>
+  <style>
+    body {
+      margin: 0;
+      display: grid;
+      grid-template-rows: 60px 1fr 40px;
+      grid-template-columns: 200px 1fr;
+      grid-template-areas:
+        "header header"
+        "nav content"
+        "footer footer";
+      height: 100vh;
+    }
+    header {
+      grid-area: header;
+      background-color: #544e4e;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
+    }
+    footer {
+      grid-area: footer;
+      background-color: #544e4e;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    nav {
+      grid-area: nav;
+      background-color: #dff5f7f8;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      padding: 8px 0;
+    }
+    nav a:hover {
+      color: #007bff;
+    }
+    iframe {
+      grid-area: content;
+      border: none;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>My Website</header>
+  <nav>
+    <a href="registration.html" target="content-frame">Registration Form</a>
+    <a href="login.html" target="content-frame">Login</a>
+    <a href="cart.html" target="content-frame">Cart</a>
+    <a href="catalog.html" target="content-frame">Catalog</a>
+    <a href="logout.html" target="content-frame">Logout</a>
+  </nav>
+  <iframe name="content-frame"></iframe>
+  <footer>Footer Section</footer>
+</body>
+</html>
