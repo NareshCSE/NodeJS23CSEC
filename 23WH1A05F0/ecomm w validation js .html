@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple E-Commerce</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #f8f9fa;
+        }
+        .product-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 10px;
+            background: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">ShopEasy</a>
+            <button class="btn btn-light" onclick="showCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+        </div>
+    </nav>
+
+    <!-- Product Listing -->
+    <div class="container mt-4">
+        <h2 class="text-center">Products</h2>
+        <div class="row">
+            <!-- Product 1 -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" class="img-fluid">
+                    <h5>Product 1</h5>
+                    <p>$10.00</p>
+                    <button class="btn btn-success" onclick="addToCart(1)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" class="img-fluid">
+                    <h5>Product 2</h5>
+                    <p>$15.00</p>
+                    <button class="btn btn-success" onclick="addToCart(2)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" class="img-fluid">
+                    <h5>Product 3</h5>
+                    <p>$20.00</p>
+                    <button class="btn btn-success" onclick="addToCart(3)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center mt-4 p-3 bg-dark text-white">
+        © 2025 ShopEasy | All rights reserved
+    </footer>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript for Cart Validation -->
+    <script>
+        let cartCount = 0;
+
+        function addToCart(productId) {
+            if (!productId) {
+                alert("Invalid product selection!");
+                return;
+            }
+            cartCount++;
+            document.getElementById("cart-count").innerText = cartCount;
+            alert("Product added to cart!");
+        }
+
+        function showCart() {
+            if (cartCount === 0) {
+                alert("Your cart is empty!");
+            } else {
+                alert("You have " + cartCount + " items in your cart.");
+            }
+        }
+    </script>
+
+</body>
+</html>
