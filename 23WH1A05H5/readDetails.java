@@ -11,7 +11,6 @@ class readDetails {
 	{
 		try {
 			DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-			
 
 			Connection connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/235h5", "root", "1234");
 
