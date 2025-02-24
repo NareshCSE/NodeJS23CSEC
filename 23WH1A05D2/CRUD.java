@@ -16,7 +16,7 @@ public class CRUD {
 
 			DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
 			
-			String url = "jdbc:mysql://localhost:3306/23wh1a05f9";
+			String url = "jdbc:mysql://localhost:3306/23wh1a05d2";
 			String username = "root";
 			String password = "1234";
 			
