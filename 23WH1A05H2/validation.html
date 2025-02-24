@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Input Validation</title>
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var password = document.getElementById("password").value;
+            var errorMessage = "";
+
+            if (name.length < 3) {
+                errorMessage += "Name must be at least 3 characters long.\n";
+            }
+            if (password.length < 6) {
+                errorMessage += "Password must be at least 6 characters long.\n";
+            }
+            
+            if (errorMessage) {
+                alert(errorMessage);
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Simple Form Validation</h2>
+    <form onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        <input type="submit" value="Submit">  
+    </form>
+</body>
+</html>
