@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<html>
+<head>
+    <title></title>
+    <link href="" rel="stylesheet">
+</head>
+<body style="background-color: white; margin-top: 50px; padding: 50px; background-color: red; border-radius: 10px;">
+
+    container {
+       max-width: 500px;
+       margin-top: 50px;
+       padding: 50px;
+       background-color: #ccc;
+       border-radius: 10px;
+    }
+
+    <div class="container">
+        <h2 class="text-center">Register</h2>
+        <form>
+            <label for="fullname">Full Name</label>
+            <input type="text" class="form-control" name="fullname" required>
+
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" required minlength="6">
+
+            <label for="gender">Gender</label>
+            <input type="radio" name="gender" value="male">Male
+            <input type="radio" name="gender" value="female">Female
+
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    document.getElementById("formId").addEventListener("submit", function(event) {
+        if (!this.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        this.classList.add("was-validated");
+    });
+    </script>
+    
+    <script src=""></script>
+    </body>
+    </html>
+    
