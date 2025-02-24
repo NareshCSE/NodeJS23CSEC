@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | eBook Store</title>
+
+    <script>
+        function validatePassword(event) {
+            const password = document.getElementById('password').value.trim();
+            const confirmPassword = document.getElementById('confirmPassword').value.trim();
+            const error = document.getElementById('passwordError');
+
+            let isValid = true;
+
+            if (password.length < 8) {
+                error.textContent = "Password must be at least 8 characters.";
+                isValid = false;
+            } else if (password !== confirmPassword) {
+                error.textContent = "Passwords do not match.";
+                isValid = false;
+            } else {
+                error.textContent = "";
+            }
+
+            // Prevent form submission if validation fails
+            if (!isValid) {
+                event.preventDefault();
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Create an Account</h2>
+    <form novalidate onsubmit="validatePassword(event)">
+
+        <label>Email:</label>
+        <input type="email" required>
+
+        <label>Password:</label>
+        <input type="password" id="password" required>
+
+        <label>Confirm Password:</label>
+        <input type="password" id="confirmPassword" required>
+
+        <span id="passwordError" style="color: red;"></span>
+
+        <div>
+            <button type="submit">Register</button>
+            <button type="reset">Reset</button>
+        </div>
+
+        <p>Already have an account? <a href="login.html">Login Here</a></p>
+    </form>
+
+</body>
+</html>
