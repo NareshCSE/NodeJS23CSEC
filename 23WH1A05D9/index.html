@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
+  <div class="form-container">
+    <form action="#" method="POST" class="registration-form">
+      <h2>Registration Form</h2>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="mobile">Mobile Number:</label>
+      <input type="tel" id="mobile" name="mobile" required>
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label for="languages">Languages Known:</label>
+      <div class="languages">
+        <label class="language-button">
+          <input type="checkbox" name="languages" value="telugu"> Telugu
+        </label>
+        <label class="language-button">
+          <input type="checkbox" name="languages" value="hindi"> Hindi
+        </label>
+        <label class="language-button">
+          <input type="checkbox" name="languages" value="english"> English
+        </label>
+        <label class="language-button">
+          <input type="checkbox" name="languages" value="others"> Others
+        </label>
+      </div>
+
+      <label for="department">Department:</label>
+      <select id="department" name="department" required>
+        <option value="cse">CSE</option>
+        <option value="it">IT</option>
+        <option value="ece">ECE</option>
+        <option value="eee">EEE</option>
+      </select>
+      
+      <form>
+        <div class="gender">
+          <label for="gender">Gender:</label> 
+          <input type="radio" id="male" name="gender" value="male"> 
+          <label for="male">Male</label>
+      
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">Female</label>
+      
+          <input type="radio" id="other" name="gender" value="other">
+          <label for="other">Other</label>
+        </div>
+      </form>
+      
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="4" required></textarea>
+
+      <div class="form-buttons">
+        <button type="submit">Submit</button>
+        <button type="reset">Clear</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
