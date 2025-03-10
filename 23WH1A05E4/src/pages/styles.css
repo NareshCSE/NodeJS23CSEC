@@ -1,0 +1,352 @@
+/* General Styling */
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Changed from center to flex-start */
+    min-height: 100vh;
+    text-align: center;
+    overflow-y: auto; /* Ensure the body allows vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container {
+    max-width: 100%; /* Ensure the container does not exceed the viewport width */
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    overflow-y: auto; /* Ensure the container allows vertical scrolling if needed */
+    background-color: #ecf0f1; /* Light bluish background color */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
+}
+
+h1, h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #34495e;
+}
+
+/* Home Page */
+.home {
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #ecf0f1;
+}
+
+.home h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #e74c3c;
+}
+
+.home p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #7f8c8d;
+}
+
+/* Catalog Page */
+.catalog {
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #ecf0f1;
+    overflow-y: auto; /* Ensure the catalog allows vertical scrolling if needed */
+}
+
+.catalog h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #e74c3c;
+}
+
+.catalog table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.catalog th, .catalog td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.catalog th {
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+.catalog img {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+.catalog button {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.catalog button:hover {
+    background-color: #c0392b;
+}
+
+/* Cart Page */
+.cart {
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #ecf0f1;
+}
+
+.cart h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #e74c3c;
+}
+
+.cart p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #7f8c8d;
+}
+
+.cart .form-group {
+    margin-bottom: 15px;
+}
+
+.cart .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #34495e;
+}
+
+.cart .form-group input,
+.cart .form-group select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+}
+
+.cart button {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.cart button:hover {
+    background-color: #c0392b;
+}
+
+/* Login Page */
+.login {
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #ecf0f1;
+}
+
+.login h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #e74c3c;
+}
+
+.login .form-group {
+    margin-bottom: 15px;
+}
+
+.login .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #34495e;
+}
+
+.login .form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+}
+
+.login button {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.login button:hover {
+    background-color: #c0392b;
+}
+
+/* SignUp Page */
+.signup {
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #ecf0f1;
+}
+
+.signup h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #e74c3c;
+}
+
+.signup .form-group {
+    margin-bottom: 15px;
+}
+
+.signup .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #34495e;
+}
+
+.signup .form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+}
+
+.signup button {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.signup button:hover {
+    background-color: #c0392b;
+}
+
+/* Header */
+.header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.header .site-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 12px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+.footer-nav ul li {
+    margin: 0;
+}
+
+.footer-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-info {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.footer-info p {
+    margin: 5px 0;
+}
