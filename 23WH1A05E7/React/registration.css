@@ -1,0 +1,22 @@
+.container {
+    max-width: 90%; /* Adjust this to control width */
+    margin: 0 auto;  /* Center the form */
+    padding: 20px;   /* Add some padding */
+  }
+  
+  form {
+    width: 100%;       /* Make the form take full container width */
+    padding: 20px;     /* Adjust padding for spacing */
+    background-color: #ffffff;  /* Ensure good contrast */
+    border-radius: 8px;
+  }
+  
+  input, textarea, select {
+    width: 100%;       /* Make all input fields full width */
+    margin-bottom: 10px;
+  }
+  
+  button[type="submit"] {
+    width: 100%;  /* Full width button */
+  }
+  
