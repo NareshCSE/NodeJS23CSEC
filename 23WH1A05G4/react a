@@ -1,0 +1,121 @@
+import React from 'react';
+import { Link } from 'react-router';
+import './Nav.css'; 
+
+const Nav = () => {
+  return (
+    <nav className="nav">
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+        <Link to="/About">About</Link>
+        </li>
+        <li>
+        <Link to="/Services">Services</Link>
+        </li>
+        <li>
+        <Link to="/Contact">Contact</Link>
+        </li>
+      </ul>
+    </nav>
+  );
+};
+
+export default Nav;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React from 'react';
+//for submit button
+import { useNavigate } from 'react-router';
+
+import './styles.css';
+
+const Contact = () => {
+  const navigate=useNavigate()
+  const handlesubmit=()=>{
+    navigate("/result")
+  }
+
+  return (
+    <div className="contact">
+      <h1>Contact Us</h1>
+      <p>If you have any questions, feel free to reach out to us.</p>
+      <form>
+        <div className="form-group">
+          <label htmlFor="name">Name:</label>
+          <input type="text" id="name" name="name" />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email:</label>
+          <input type="email" id="email" name="email" />
+        </div>
+        <div className="form-group">
+          <label htmlFor="message">Message:</label>
+          <textarea id="message" name="message" ></textarea>
+        </div>
+        <button type="submit" onClick={handlesubmit}>Submit</button>
+      </form>
+    </div>
+  );
+};
+
+export default Contact;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import { BrowserRouter ,Routes , Route} from "react-router"
+import Home from "./pages/Home"
+import About from "./pages/About"
+import Contact from "./pages/Contact"
+import Services from "./pages/Services"
+import Result from "./pages/result"
+
+import AppLayout from "./components/layout/AppLayout/AppLayout"
+
+
+const App = () =>{
+  return (
+    <BrowserRouter>
+     <Routes>
+      <Route path='/*' element={<AppLayout/>}>
+      <Route index element={<Home/>}/>
+      <Route path='home' element={<Home/>}/>
+      <Route path='About' element={<About/>}/>
+      <Route path='Contact' element={<Contact/>}/>
+      <Route path='result' element={<Result/>}/>
+      <Route path='Services' element={<Services/>}/>
+
+      </Route>
+  
+      
+     </Routes>
+    </BrowserRouter>
+  )
+}
+export default App
