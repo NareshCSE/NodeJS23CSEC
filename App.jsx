@@ -1,40 +1,31 @@
-import "./App.css"
-import {useState} from 'react'
-const App=() =>{
-  const [value1,setValue1] = useState();
-  const [value2,setValue2] = useState();
-  const [value3,setResult] = useState();
 
-  const handleChange = (event) =>{
-    console.log(event.target.value)
-    setValue1(event.target.value)
-  }
-  const handle1Change = (event) =>{
-    
-    setValue2(event.target.value)
-  }
-  const handleclick=() => {
-    let v1=parseInt(value1);
-    let v2=parseInt(value2);
-    setResult (v1+v2)
-  } 
+import { BrowserRouter, Routes, Route } from "react-router"
+import Home from "./pages/Home"
+import About from "./pages/About"
+import Services from "./pages/Services"
+import Contact from "./pages/Contact"
+import AppLayout from "./components/layout/AppLayout/AppLayout"
+import Result from "./pages/Result"      
 
+const App = () =>{
   return (
-    <>
-      <h1>Hello world</h1>
-      <input type="text" 
-      placeholder="User Name" 
-      onChange={handleChange}
-      />
-      <input type="text" 
-      placeholder="sec User name"
-      onChange={handle1Change}
-      />
-      <button onClick={handleclick}>add</button>
-      <p>Answer:{value3}</p>
-    </>
+    <BrowserRouter>
+      <Routes>
+        {/* slash * is for storing all routes under applayout, put path name in the tab in browser and check how it works */}
+        <Route path='/*' element={<AppLayout />} >
+          {/* single slash represents default route path */}
+          <Route index element={<Contact />} />
+          <Route path='home' element={<Home />} />
+          <Route path='pappu_kaadu' element={<About />} />
+          <Route path='services' element={<Services />} />
+          <Route path='contact' element={<Contact />} />
+
+          <Route path='Result' element={<Result />} />
+
+        </Route>
+      </Routes> 
+    </BrowserRouter>
   )
 }
-
 
 export default App
