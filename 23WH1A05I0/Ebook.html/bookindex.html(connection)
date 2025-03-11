@@ -89,12 +89,12 @@
         <div class="nav-bar">
             <button onclick="loadPage('welcome.html')">Home</button>
             <button onclick="loadPage('registration.html')">Register</button>
-            <button onclick="loadPage('login.html')">Login</button>
+            <button onclick="loadPage('login.html')">Login</button> <!-- Login button -->
             <button onclick="loadPage('catalog.html')">Catalog</button>
             <button onclick="loadPage('cart.html')">Cart</button>
         </div>
 
-        <iframe id="contentFrame" src="welcome.html"></iframe>
+        <iframe id="contentFrame" src="welcome.html"></iframe> <!-- Default page -->
     </div>
 
     <footer>
@@ -102,3 +102,4 @@
     </footer>
 </body>
 </html>
+
