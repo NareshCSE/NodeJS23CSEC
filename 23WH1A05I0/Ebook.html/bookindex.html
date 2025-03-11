@@ -1,0 +1,104 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .header {
+            background-color: #30c9dd;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
+            border: 2px solid white;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .main-container {
+            display: flex;
+            flex-grow: 1;
+        }
+
+        .nav-bar {
+            background-color: #333;
+            width: 200px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 10px 0;
+        }
+
+        .nav-bar button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px;
+            text-align: left;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .nav-bar button:hover {
+            background-color: #555;
+        }
+
+        iframe {
+            flex-grow: 1;
+            border: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+    <script>
+        function loadPage(page) {
+            document.getElementById('contentFrame').src = page;
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img src="newlogo.png" alt="BVRIT HYDERABAD College of Engineering for Women" class="logo">
+        <h1>E-Book Management System</h1>
+    </div>
+
+    <div class="main-container">
+        <div class="nav-bar">
+            <button onclick="loadPage('welcome.html')">Home</button>
+            <button onclick="loadPage('registration.html')">Register</button>
+            <button onclick="loadPage('login.html')">Login</button>
+            <button onclick="loadPage('catalog.html')">Catalog</button>
+            <button onclick="loadPage('cart.html')">Cart</button>
+        </div>
+
+        <iframe id="contentFrame" src="welcome.html"></iframe>
+    </div>
+
+    <footer>
+        &copy; 2025 E-Book Management System. All rights reserved.
+    </footer>
+</body>
+</html>
