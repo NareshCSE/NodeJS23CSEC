@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catalog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+        }
+        h1 {
+            margin: 0;
+            text-align: center;
+            flex-grow: 1;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+        }
+        .catalog-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .book-card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .book-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .book-card h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .book-card p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .book-card button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .book-card button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function addToCart(title, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || []; 
+            cart.push({ title, price }); 
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${title} has been added to your cart!`);
+        }
+
+        function getBooksHTML() {
+            const books = [
+                {
+                    image: "https://m.media-amazon.com/images/I/41XuNSf9rwL._SY445_SX342_.jpg",
+                    title: "To Kill a Mockingbird",
+                    author: "Harper Lee",
+                    price: "280/-",
+                    description: "To Kill a Mockingbird is a coming-of-age story, an anti-racist novel, a historical drama of the Great Depression and a sublime example of the Southern writing tradition."
+                },
+                {
+                    image: "https://m.media-amazon.com/images/I/71NvWibzW5L._SY466_.jpg",
+                    title: "And Then There Were None",
+                    author: "Agatha Cristie",
+                    price: "320/-",
+                    description: "Agatha Christie’s masterpiece, and the best-selling murder mystery book of all time."
+                },
+                {
+                    image: "https://m.media-amazon.com/images/I/91XHDtSt7qL._SY466_.jpg",
+                    title: "The Complete Sherlock Holmes Collection",
+                    author: "Arthur Conan Doyle",
+                    price: "1660/-",
+                    description: "The Adventures of Shelock Holmes and his partner John Watson.                       "
+                },
+                {
+                    image: "https://m.media-amazon.com/images/I/71F2PlBrfnL._SY466_.jpg",
+                    title: "The Guest List",
+                    author: "Lucy Foley",
+                    price: "291/-",
+                    description: "Another murder. Another mystery. The brand new thriller from the No. 1 Sunday Times bestselling author of The Hunting Party."
+                },
+                {
+                    image: "https://m.media-amazon.com/images/I/51VbQgyJdyL._SY445_SX342_.jpg",
+                    title: "How to Win Friends and Influence People",
+                    author: "Dale Carnegie",
+                    price: "137/-",
+                    description: "'How to win friends and influence people is a self-help book which is the pioneer of this genre."
+                },
+                {
+                    image: "https://m.media-amazon.com/images/I/61GbHEZKOPL._SY466_.jpg",
+                    title: "The Art of Being Alone",
+                    author: "Renuka Gavrani",
+                    price: "200/-",
+                    description: "The Art of Being ALONE: Solitude Is My HOME, Loneliness Was My Cage!"
+                }
+            ];
+
+            return books
+                .map(
+                    (book) => `
+                    <div class="book-card">
+                        <img src="${book.image}" alt="${book.title}">
+                        <h3>${book.title}</h3>
+                        <p><strong>Author:</strong> ${book.author}</p>
+                        <p><strong>Price:</strong> ${book.price}</p>
+                        <p>${book.description}</p>
+                        <button onclick="addToCart('${book.title}', '${book.price}')">Add to Cart</button>
+                    </div>
+                `
+                )
+                .join("");
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelector(".catalog-container").innerHTML = getBooksHTML();
+        });
+    </script>
+</head>
+<body>
+    <div class="catalog-container"></div>
+</body>
+</html>
