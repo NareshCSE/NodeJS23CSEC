@@ -1,0 +1,195 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FFF8E1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+
+.container {
+  display: flex;
+  flex: 1;
+  min-height: 100vh; 
+}
+
+
+.sidebar {
+  width: 250px; /* Sidebar width */
+  background-color: #C8E6C9;
+  color: #388E3C;
+  position: fixed; /* Fixed sidebar */
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 3px solid #388E3C;
+  z-index: 1; /* Keep sidebar above content */
+}
+
+.sidebar img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.sidebar h2 {
+  color: #388E3C;
+}
+
+.sidebar a {
+  color: #388E3C;
+  text-decoration: none;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #81C784;
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #66BB6A;
+  color: white;
+}
+
+/* Main content area */
+.main-content {
+  margin-left: 250px; /* Ensure content starts after the sidebar */
+  width: 100%;
+  padding: 20px;
+  background-color: #FFF3E0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the content */
+  align-items: center; /* Horizontally center the content */
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #FF7043;
+  color: white;
+  padding: 10px 20px;
+  border-bottom: 2px solid #FF5722;
+  margin-left: 250px; /* Align header to the right of the sidebar */
+  z-index: 2; /* Keep header above the sidebar */
+}
+
+header .logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+/* Footer styles */
+footer {
+  background-color: #FF7043;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.btn {
+  background-color: #FF7043;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 1.1em;
+  display: inline-block;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #FF5722;
+}
+
+.clear-btn {
+  background-color: #66BB6A;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 1.1em;
+  display: inline-block;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.clear-btn:hover {
+  background-color: #388E3C;
+}
+
+/* Form Styles */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 1.2em;
+  color: #388E3C;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+}
+
+/* Additional styling for main pages */
+h2 {
+  color: #FF7043;
+  text-align: center;
+}
+
+p {
+  font-size: 1.2em;
+  text-align: center;
+  color: #FF5722;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Specific styles for aligning content */
+.page-content {
+  width: 100%;
+  max-width: 800px; /* Limit the width of the content */
+  text-align: center;
+}
