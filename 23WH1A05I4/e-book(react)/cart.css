@@ -1,0 +1,11 @@
+.cart-container {
+    padding: 20px;
+    background-color: #FFF3E0;
+    border-radius: 8px;
+}
+
+.cart-items {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
