@@ -1,3 +1,4 @@
+//weather api - fetching weather details by entering the city name
 <!DOCTYPE html>
  <html lang="en">
  <head>
@@ -60,7 +61,7 @@
      <script>
          const getWeather = async () => {
              const city = document.getElementById('cityInput').value;
-             const apiKey = '8a7f0fbd374c4e2397320508252403'; 
+             const apiKey = '8a7f0fbd374c4e2397320508252403'; //for this we need active api key so login to https://www.weatherapi.com/ and replace this with new active api key
              if (!city) {
                  document.getElementById('result').innerText = "Please enter a city name.";
                  return;
