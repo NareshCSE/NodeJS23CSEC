@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BVRIT Registration</title>
+    <!-- Add Bootstrap CSS link -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optionally, you can link your custom styles below Bootstrap -->
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar with Bootstrap classes -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">BVRIT</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalog.html">Catalog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="register-container">
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="register-form">
+                            <h2 class="text-center mb-4">BVRIT Student Registration</h2>
+                            <form id="registerForm" action="submit" method="POST">
+                                <div class="form-group">
+                                    <label for="name">Full Name:</label>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="roll-number">Roll Number:</label>
+                                    <input type="text" class="form-control" id="roll-number" name="roll-number" placeholder="Enter your roll number" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Phone Number:</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="department">Department:</label>
+                                    <select class="form-control" id="department" name="department" required>
+                                        <option value="CSE">Computer Science Engineering</option>
+                                        <option value="ECE">Electronics and Communication Engineering</option>
+                                        <option value="EEE">Electrical and Electronics Engineering</option>
+                                        <option value="IT">Information Technology</option>
+                                        <option value="Civil">Civil Engineering</option>
+                                        <option value="Mechanical">Mechanical Engineering</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="course">Course:</label>
+                                    <select class="form-control" id="course" name="course" required>
+                                        <option value="BTech">B.Tech</option>
+                                        <option value="MTech">M.Tech</option>
+                                        <option value="MBA">MBA</option>
+                                        <option value="PhD">Ph.D.</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="year">Year of Study:</label>
+                                    <select class="form-control" id="year" name="year" required>
+                                        <option value="1">1st Year</option>
+                                        <option value="2">2nd Year</option>
+                                        <option value="3">3rd Year</option>
+                                        <option value="4">4th Year</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Password:</label>
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="confirm-password">Confirm Password:</label>
+                                    <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="dob">Date of Birth:</label>
+                                    <input type="date" class="form-control" id="dob" name="dob" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="address">Address:</label>
+                                    <textarea class="form-control" id="address" name="address" placeholder="Enter your address" rows="4" required></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-block">Register</button>
+                            </form>
+
+                            <p class="error-message text-center mt-3" id="error-message"></p>
+
+                            <div class="register-options text-center mt-3">
+                                <p>Already have an account? <a href="login.html">Login here</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 BVRIT. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Add Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
