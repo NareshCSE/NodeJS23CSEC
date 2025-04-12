@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .profile {
+            background-color: #fff;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 1200px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        .profile-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .profile-header img {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .profile-header h1 {
+            font-size: 32px;
+            margin: 0;
+        }
+        .profile-header p {
+            font-size: 18px;
+            color: #666;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .section p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .projects, .strengths-weaknesses {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .projects div, .strengths-weaknesses div {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .projects div h3, .strengths-weaknesses div h3 {
+            font-size: 22px;
+            color: #333;
+        }
+        .projects div p, .strengths-weaknesses div p {
+            font-size: 16px;
+            color: #666;
+        }
+        .button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <img src="https://via.placeholder.com/150" alt="Profile Picture">
+                <h1>John Doe</h1>
+                <p>Web Developer | Designer | Creator</p>
+            </div>
+
+            <!-- About Me Section -->
+            <div class="section">
+                <h2>About Me</h2>
+                <p>
+                    I am a web developer with a passion for creating beautiful and functional websites. With years of experience in front-end development, I specialize in HTML, CSS, JavaScript, and UI/UX design. I enjoy working on innovative projects that challenge me and allow me to grow as a developer. When I am not coding, I love exploring new technologies, playing video games, and contributing to open-source projects.
+                </p>
+            </div>
+
+            <!-- My Projects Section -->
+            <div class="section">
+                <h2>My Projects</h2>
+                <div class="projects">
+                    <div>
+                        <h3>Project 1: Personal Portfolio</h3>
+                        <p>
+                            A portfolio website built using HTML, CSS, and JavaScript to showcase my skills, projects, and experience.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Project 2: E-commerce Site</h3>
+                        <p>
+                            An online store built with React and Node.js. It includes features like user authentication, payment integration, and a product catalog.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Project 3: Blog Platform</h3>
+                        <p>
+                            A blog platform developed with Django, allowing users to create, edit, and comment on blog posts.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Project 4: Task Management App</h3>
+                        <p>
+                            A task management app built with Vue.js, enabling users to create, manage, and prioritize their tasks effectively.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My Strengths and Weaknesses Section -->
+            <div class="section">
+                <h2>My Strengths & Weaknesses</h2>
+                <div class="strengths-weaknesses">
+                    <div>
+                        <h3>Strengths</h3>
+                        <p>
+                            - Strong problem-solving skills<br>
+                            - Attention to detail<br>
+                            - Passion for learning new technologies<br>
+                            - Ability to work well in teams and independently
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Weaknesses</h3>
+                        <p>
+                            - Sometimes I take on too many tasks at once<br>
+                            - I can be a perfectionist, which sometimes delays projects<br>
+                            - I occasionally struggle with time management when balancing multiple projects
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact or LinkedIn Section -->
+            <div class="section">
+                <a href="https://www.linkedin.com/in/johndoe" target="_blank" class="button">Connect with Me on LinkedIn</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
