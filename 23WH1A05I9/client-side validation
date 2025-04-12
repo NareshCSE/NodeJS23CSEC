@@ -1,0 +1,31 @@
+<script>
+function validateRegistration() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const confirm = document.getElementById("confirm").value;
+
+    if (name === "" || email === "" || password === "" || confirm === "") {
+        alert("All fields are required.");
+        return false;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("Invalid email format.");
+        return false;
+    }
+
+    if (password.length < 6) {
+        alert("Password should be at least 6 characters.");
+        return false;
+    }
+
+    if (password !== confirm) {
+        alert("Passwords do not match.");
+        return false;
+    }
+
+    return true;
+}
+</script>
