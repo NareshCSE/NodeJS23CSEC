@@ -1,0 +1,100 @@
+import { useEffect, useState } from "react";
+
+function App() {
+  const [city, setCity] = useState("Hyderabad"); // Default city
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  // Handle city input change
+  const handleCityChange = (e) => {
+    setCity(e.target.value);
+  };
+
+  // Fetch weather data based on the city
+  useEffect(() => {
+    if (!city) return; // If no city, do not fetch
+
+    const apiKey = "c4042525fb170844ecb78bcce362e5cd"; // Replace with your OpenWeatherMap API key
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`; // Units=metric for Celsius
+
+    // Reset error and data before fetching new data
+    setError(null);
+    setData(null);
+
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setData(data);
+      })
+      .catch((error) => {
+        setError(error.message); // Set error state
+      });
+  }, [city]); // Re-fetch data when city changes
+
+  return (
+    <div style={{ textAlign: "center", fontFamily: "Arial, sans-serif", marginTop: "20px" }}>
+      <h1 style={{ color: "#333" }}>Weather Information</h1>
+      
+      {/* Input field and button with spacing */}
+      <div style={{ marginBottom: "20px" }}>
+        <input
+          type="text"
+          value={city}
+          onChange={handleCityChange}
+          placeholder="Enter city name"
+          style={{ padding: "10px", fontSize: "16px", borderRadius: "5px", border: "1px solid #ccc", marginRight: "10px" }}
+        />
+        <button 
+          onClick={() => setCity(city)} 
+          style={{ padding: "10px 15px", fontSize: "16px", borderRadius: "5px", border: "none", backgroundColor: "#333", color: "white", cursor: "pointer" }}
+        >
+          Get Weather
+        </button>
+      </div>
+
+      {/* Display error if any */}
+      {error && <p style={{ color: "red" }}>Error: {error}</p>}
+
+      {/* Show data if available */}
+      {data ? (
+        <table style={{ width: "60%", margin: "auto", borderCollapse: "collapse", border: "1px solid #ddd", backgroundColor: "#f9f9f9" }}>
+          <thead>
+            <tr style={{ backgroundColor: "#333", color: "white" }}>
+              <th style={tableCellStyle}>City</th>
+              <th style={tableCellStyle}>Temperature (°C)</th>
+              <th style={tableCellStyle}>Weather</th>
+              <th style={tableCellStyle}>Humidity (%)</th>
+              <th style={tableCellStyle}>Wind Speed (m/s)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style={tableCellStyle}>{data.name}</td>
+              <td style={tableCellStyle}>{data.main.temp}</td>
+              <td style={tableCellStyle}>{data.weather[0].description}</td>
+              <td style={tableCellStyle}>{data.main.humidity}</td>
+              <td style={tableCellStyle}>{data.wind.speed}</td>
+            </tr>
+          </tbody>
+        </table>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
+}
+
+// Table cell styling
+const tableCellStyle = {
+  padding: "10px",
+  border: "1px solid #ddd",
+  textAlign: "center"
+};
+
+export default App;
+
