@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Book Management System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #F0F0F0;
+            color: #2D3436;
+        }
+
+        .header {
+            background-color: #6C5CE7;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .main-container {
+            display: flex;
+            flex-grow: 1;
+            overflow: hidden;
+        }
+
+        .nav-bar {
+            background-color: #2D3436;
+            width: 220px;
+            display: flex;
+            flex-direction: column;
+            padding-top: 15px;
+        }
+
+        .nav-bar button {
+            background: none;
+            border: none;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .nav-bar button:hover {
+            background-color: #00B894;
+            color: #fff;
+        }
+
+        iframe {
+            flex-grow: 1;
+            border: none;
+            width: 100%;
+        }
+
+        footer {
+            text-align: center;
+            padding: 12px;
+            background-color: #2D3436;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+            }
+
+            .nav-bar {
+                width: 100%;
+                flex-direction: row;
+                overflow-x: auto;
+                justify-content: space-around;
+            }
+
+            .nav-bar button {
+                flex: 1;
+                text-align: center;
+                padding: 12px;
+            }
+        }
+    </style>
+    <script>
+        function loadPage(page) {
+            document.getElementById('contentFrame').src = page;
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img src="newlogo.png" alt="BVRIT Logo" class="logo">
+        <h1>E-Book Management System</h1>
+    </div>
+
+    <div class="main-container">
+        <div class="nav-bar">
+            <button onclick="loadPage('welcome.html')">Home</button>
+            <button onclick="loadPage('registration.html')">Register</button>
+            <button onclick="loadPage('login.html')">Login</button>
+            <button onclick="loadPage('catalog.html')">Catalog</button>
+            <button onclick="loadPage('cart.html')">Cart</button>
+        </div>
+
+        <iframe id="contentFrame" src="welcome.html"></iframe>
+    </div>
+
+    <footer>
+        &copy; 2025 E-Book Management System. All rights reserved.
+    </footer>
+</body>
+</html>
