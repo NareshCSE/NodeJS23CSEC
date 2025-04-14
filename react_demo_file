@@ -1,0 +1,35 @@
+//funtcional component
+import {useState} from 'react'
+import "./App.css"
+//state : An object that would store info/data in a component
+const App=() =>{
+  const [Value1,setValue1]=useState()
+  const [Value2,setValue2]=useState()
+  const [result,setresult]=useState()
+  //defination for handle change 
+  const handleChange=(event)=>{
+      
+    setValue1(event.target.value)
+  }
+  const handleChanges=(event)=>{
+   
+    setValue2(event.target.value)
+  }
+  const handleClick=()=>{
+    let v1=parseInt(Value1)
+    let v2=parseInt(Value2)
+    setresult(v1+v2)
+  }
+  return (
+    <>
+    <h1>Hello World</h1>
+    <input type="text" placeholder="First value" onChange={handleChange}/>
+    <input type="text" placeholder="Second value" onChange={handleChanges}/>
+    <button onClick={handleClick}>Submit</button>
+    <p>Answer:{result}</p>
+
+    </>
+  
+  )
+}
+export default App
