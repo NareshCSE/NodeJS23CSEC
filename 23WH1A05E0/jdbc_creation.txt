@@ -1,0 +1,38 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class CreateEmployeesTable {
+    public static void main(String[] args) throws SQLException {
+        // Step 1: Register the driver
+        DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
+
+        // Step 2: Establish a connection
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sample", "root", "1234");
+
+        // Step 3: Create a statement object
+        Statement statement = conn.createStatement();
+
+        // Step 4: Write the CREATE TABLE query
+        String createQuery = "CREATE TABLE IF NOT EXISTS employees ("
+                           + "eid INT PRIMARY KEY, "
+                           + "ename VARCHAR(50) NOT NULL, "
+                           + "dept VARCHAR(50), "
+                           + "salary INT"
+                           + ");";
+
+        // Step 5: Execute the query
+        int result = statement.executeUpdate(createQuery);
+
+        // Step 6: Display result
+        if (result == 0) {
+            System.out.println("✅ 'employees' table created successfully or already exists.");
+        } else {
+            System.out.println("🔔 Table creation returned: " + result);
+        }
+
+        // Step 7: Close the connection
+        conn.close();
+    }
+}
