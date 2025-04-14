@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        .form-container {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 25px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: #6C5CE7;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .radio-group, .checkbox-group {
+            margin-top: 10px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+
+        button {
+            background-color: #00B894;
+            color: white;
+            border: none;
+            padding: 12px;
+            margin-top: 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #019d7e;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Register</h2>
+        <form>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" required>
+
+            <label>Gender</label>
+            <div class="radio-group">
+                <label><input type="radio" name="gender" value="male" required> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label>
+                <label><input type="radio" name="gender" value="other"> Other</label>
+            </div>
+
+            <label>Interests</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="interests" value="fiction"> Fiction</label>
+                <label><input type="checkbox" name="interests" value="non-fiction"> Non-Fiction</label>
+                <label><input type="checkbox" name="interests" value="mystery"> Mystery</label>
+                <label><input type="checkbox" name="interests" value="sci-fi"> Sci-Fi</label>
+            </div>
+
+            <label for="bio">Short Bio / Address</label>
+            <textarea id="bio" rows="4" placeholder="Tell us a bit about yourself..."></textarea>
+
+            <label for="profile-pic">Upload Profile Picture</label>
+            <input type="file" id="profile-pic" accept="image/*">
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
