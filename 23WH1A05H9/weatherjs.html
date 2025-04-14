@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #weatherContainer {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            display: inline-block;
+            text-align: left;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Information</h1>
+    <input type="text" id="cityInput" placeholder="Enter city name">
+    <button onclick="fetchData()">Get Weather</button>
+    <div id="weatherContainer" style="display: none;">
+        <h2>Weather Details</h2>
+        <p><strong>Location:</strong> <span id="location"></span></p>
+        <p><strong>Region:</strong> <span id="region"></span></p>
+        <p><strong>Country:</strong> <span id="country"></span></p>
+        <p><strong>Temperature:</strong> <span id="temperature"></span></p>
+        <p><strong>Condition:</strong> <span id="condition"></span></p>
+        <p><strong>Humidity:</strong> <span id="humidity"></span></p>
+        <p><strong>Wind Speed:</strong> <span id="wind_speed"></span></p>
+    </div>
+    
+    <script>
+        const apiKey = 'bddbcba4640afdd88d40ed35077489d8'; 
+        
+        async function fetchData() {
+            const city = document.getElementById('cityInput').value;
+            if (!city) {
+                alert('Please enter a city name');
+                return;
+            }
+            
+            const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=1&aqi=no&alerts=no`;
+            
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                
+                document.getElementById('location').textContent = data.location.name;
+                document.getElementById('region').textContent = data.location.region;
+                document.getElementById('country').textContent = data.location.country;
+                document.getElementById('temperature').textContent = data.current.temp_c + "°C";
+                document.getElementById('condition').textContent = data.current.condition.text;
+                document.getElementById('humidity').textContent = data.current.humidity + "%";
+                document.getElementById('wind_speed').textContent = data.current.wind_kph + " kph";
+                
+                document.getElementById('weatherContainer').style.display = 'block';
+            } catch (error) {
+                console.log(error);
+                document.getElementById('weatherContainer').style.display = 'none';
+                alert("Error fetching weather data");
+            }
+        }
+    </script>
+</body>
+</html>
