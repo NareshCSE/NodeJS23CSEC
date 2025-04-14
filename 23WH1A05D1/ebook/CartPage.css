@@ -1,0 +1,17 @@
+/* src/components/CartPage.css */
+.cart-page {
+    padding: 20px;
+  }
+  
+  .cart-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cart-item {
+    background: #e0f7fa;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
