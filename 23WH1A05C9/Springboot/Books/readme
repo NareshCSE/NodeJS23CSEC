@@ -1,1 +1,11 @@
+this project contains endpoints like
 
+GET http://localhost:8080/books/getAllBooks
+
+GET http://localhost:8080/books/getBookById/1
+
+POST http://localhost:8080/books/addBook (send JSON body)
+
+PUT http://localhost:8080/books/updateBook/1 (send JSON body)
+
+DELETE http://localhost:8080/books/deleteBook/1
