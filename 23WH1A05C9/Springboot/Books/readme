@@ -1,3 +1,4 @@
+App.js is frontend which displays api in react from springboot
 this project contains endpoints like
 
 GET http://localhost:8080/books/getAllBooks
