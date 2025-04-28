@@ -1,0 +1,217 @@
+1. Go to https://start.spring.io/
+
+Project : Maven
+Language: Java
+SpringBoot: 3.4.2
+
+Project Metadata
+================
+Group       : com.bvrith
+Artifact    : demo
+Name        : demo
+Description : Demo project for Spring Boot
+Package Name: com.bvrith (Group + Artifact)
+
+Packaging   : jar (java archive)
+Java        : 17
+
+
+Dependencies
+============
+Web - Spring Web
+SQL - Spring Data JPA
+SQL - MySQL Driver
+
+
+Web - Spring Web
+----------------
+Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+
+
+SQL - Spring Data JPA
+---------------------
+Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+
+SQL - MySQL Driver
+------------------
+MySQL JDBC driver.
+
+
+
+Click on the Generate Button to Download the SpringBoot Project.
+
+
+
+Steps of Changing the Eclipse Workspace
+***************************************
+1. File -> Switch Workspae -> Other.
+2. Click on Browse Button.
+3. Navigate to the SpringBootWorkspace Folder and Click on Ok Button.
+
+
+
+    Extract the SpringBoot Project
+    ==============================
+    1. Right Click on the Downloaded .zip folder of the SpringBoot Project.
+    2. Select Open With -> Windows Explorer.
+    3. Copy or Drag the SpringBoot Project and paste it under the SpringBoot folder where it
+       contains the SpringBootWorkspace folder.
+
+
+   Open the Extracted SpringBoot Project Using the Eclipse Neon 3
+   ---------------------------------------------------------------
+   1. File -> Open Project from File System -> Click on Directory Button.
+   2. Navigate to the SpringBoot Demo Project, Select it and Click on Ok Button.
+   3. Click on Finish Button.
+
+
+
+
+   Configure the Pom.xml File
+   --------------------------
+   1. Open Pom.xml, click on pom.xml tab
+   2. Update the springboot version from 3.4.2 to 2.7.9 under the <parent> tag.
+<parent>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-parent</artifactId>
+<version>2.7.9</version>
+<relativePath/> <!-- lookup parent from repository -->
+</parent>
+
+   3. Click on the Save button or (CTRL + S).
+
+
+   4. Update the Java Version from 17 to 1.8 under the <Properties> tag.
+<properties>
+<java.version>1.8</java.version>
+</properties>
+
+   5. Click on the Save button or (CTRL + S).
+
+
+   6. Comment the following dependencies:
+      1. spring-boot-starter-data-jpa
+      2. mysql-connector-j
+
+      Select the Dependency and Hit (CTRL + SHIFT + ?) to comment the dependency
+
+
+   7. Click on the Save button or (CTRL + S).
+
+
+
+Note: Done with Configuring the pom.xml configuration.
+
+
+----------------------------------------------------------
+
+
+
+    Run the Springboot project
+    --------------------------
+    1. Expand SpringBoot Project -> src/main/java -> DemoApplication.
+    2. Right Click -> RunAs -> Java Application.
+
+
+
+
+React:
+ Introduction
+2. ReactJS Installation
+3. ReactJS Project Creation
+4. ReactJS Project Execution
+5. Virtual DOM
+
+
+ReactJS
+*******
+
+ReactJS is FrontEnd Technology
+
+
+MEAN : MongoDB, ExpressJS, Angular, NodeJS
+MERN : MongoDB, ExpressJS, ReactJS, NodeJS
+
+Java Full Stack
+---------------
+FrontEnd: ReactJS
+BackEnd : SpringBoot
+Database: MySQL
+
+
+Angular  is a UI Framework - TypeScript - Google   - Port No: 4200
+ResultJS is a UI Library   - JavaScript - Facebook - Port No: 3000
+
+ReactJS is a UI Library not a Framework.
+ReactJS is a filled gallery.
+ReactJS is a product of Facebook.
+ReactJS runs from the port no 3000.
+
+ReactJS is a component based web development.
+ReactJS is a light weight component, does not contain any heavy code.
+ReactJS is not a Framework, but supports 3rd party libraries, which full fill the requirements like angular.
+
+ReactJS contains Virtual DOM (Document Object Model).
+
+In Angular, the input is TypeScript Code and the output is HTML.
+In ReactJS, the input is JavaScript Code and the output is JSX (JavaScript + XML)
+
+XML - Extensible Markup Language.
+XML - Used to store the data.
+
+JSON - Employee
+---------------
+{ "empId": 101, "empName": "harsha", salary: 1212.12 }
+
+
+XML - Employee
+--------------
+<Employee>
+  <empId>101</empId>
+  <empName>harsha</empName>
+  <salary>1212.12</salary>
+</Employee>
+
+
+
+
+
+Installation
+************
+
+Step-1: NodeJS Installation
+***************************
+1. Google -> nodejs download
+https://nodejs.org/en
+
+2. Once Downloaded, Install the NodeJS -> Next -> Next -> Next -> Finish
+
+
+
+
+Step-2: React Installation
+**************************
+1. Open C: Drive, Create a Folder called "BVRITH".
+2. Under "BVRITH" folder, Create a new Folder called "ReactJS".
+3. Open the "ReactJS" folder using the "Visual Studio Code".
+4. Open the Terminal (View -> Terminal).
+5. Change the Terminal from "PowerShell" to "Command Prompt".
+
+6. Provide the following command to install ReactJS:
+npm install -g create-react-app
+
+
+
+Step-3: Create demo1 Project
+****************************
+1. Provide the following command to create ReactJS Project:
+npx create-react-app demo1
+
+2. Open the demo1 (project folder) using visual studio code.
+3. Change the Terminal from "PowerShell" to "CommandPrompt".
+
+4. Provide the following command to run the ReactJS demo1 project:
+npm start
+
+5. Use the following URL: localhost:3000
+http://localhost:3000/
