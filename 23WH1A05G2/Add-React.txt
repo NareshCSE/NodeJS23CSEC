@@ -1,0 +1,35 @@
+import { useState } from 'react';
+import "./App.css";
+
+const App = () => {
+  const [value1, setValue1] = useState('');
+  const [value2, setValue2] = useState('');
+  const [result, setResult] = useState('');
+
+  const handleChange = (event, type) => {
+    if (type === 'value1') setValue1(event.target.value);
+    else if (type === 'value2') setValue2(event.target.value);
+  };
+
+  const handleClick = () => {
+    const v1 = parseInt(value1);
+    const v2 = parseInt(value2);
+    if (isNaN(v1) || isNaN(v2)) {
+      setResult('Please enter valid numbers');
+    } else {
+      setResult(v1 + v2);
+    }
+  };
+
+  return (
+    <>
+      <h1>Hello Yasasvi!!</h1>
+      <input type="text" placeholder="input1" onChange={(e) => handleChange(e, 'value1')} />
+      <input type="text" placeholder="input2" onChange={(e) => handleChange(e, 'value2')} />
+      <button onClick={handleClick}>ADD</button>
+      <p>Answer: {result}</p>
+    </>
+  );
+}
+
+export default App;
