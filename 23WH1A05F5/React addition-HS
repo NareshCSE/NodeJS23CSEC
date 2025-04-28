@@ -1,0 +1,29 @@
+//functional component is defined
+import { useState } from "react"
+import "./App.css"
+const App = () =>{
+  const[value1,setValue1] = useState()
+  const[value2,setValue2] = useState()
+  const[result,setResult] = useState()
+  const handleChange = (event,type) =>{
+    if(type==="value1") setValue1(event.target.value);
+    else if(type==="value2") setValue2(event.target.value);
+  }
+  const handleClick = (event) =>{
+    let v1 = parseInt(value1)
+    let v2 = parseInt(value2)
+    setResult(v1+v2)
+  }
+  return (
+    <>
+    <h1>HELLO WORLD!</h1>
+    
+    <input type = "text" id="first" placeholder = "Enter first value" onChange={(e) => handleChange(e,"value1")}/>
+    <input type = "text" id="second" placeholder = "Enter second value" onChange={(e) => handleChange(e,"value2")}/>
+    <button type = "submit" onClick = {handleClick}>Show Answer</button>
+    <p>Answer:{result}</p>
+    </>
+  )
+}
+
+export default App
