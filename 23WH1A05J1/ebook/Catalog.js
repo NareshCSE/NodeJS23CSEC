@@ -1,0 +1,65 @@
+// src/components/Catalog.jsx
+
+import React from 'react';
+import '../App.css'; // or '../styles.css' depending on your setup
+import { Link } from 'react-router-dom';
+
+function Catalog() {
+  return (
+    <>
+      <header>
+        <h1>BVRITH Ebooks</h1>
+      </header>
+
+      <nav>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/cart">Cart</Link></li>
+          <li><Link to="/register">Register</Link></li>
+          <li><Link to="/login">Login</Link></li>
+        </ul>
+      </nav>
+
+      <main>
+        <h2>Catalog</h2>
+        <div className="grid-container">
+
+          <div className="grid-item">
+            <img src="https://www.madrasshoppe.com/207789-large_default/engineering-drawing-jntu-hyderabad-venugopal-k.jpg" alt="Book 1" />
+            <h3>Engineering Drawing</h3>
+            <p>Author: Venugopal K</p>
+            <p>Price: $10</p>
+            <button>Add to Cart</button>
+          </div>
+
+          <div className="grid-item">
+            <img src="https://m.media-amazon.com/images/I/61f3wR5F5AL._SL1024_.jpg" alt="Book 2" />
+            <h3>Computer Networks</h3>
+            <p>Author: Andrew S. Tanenbaum</p>
+            <p>Price: $15</p>
+            <button>Add to Cart</button>
+          </div>
+
+          <div className="grid-item">
+            <img src="https://rukminim1.flixcart.com/image/832/832/k6jnfrk0/regionalbooks/y/g/y/digital-electronics-b-tech-ii-year-ii-sem-eee-r18-jntu-hyderabad-original-imafzzavrz8p8phb.jpeg?q=70" alt="Book 3" />
+            <h3>Digital Electronics</h3>
+            <p>Author: R. S. Sedha</p>
+            <p>Price: $20</p>
+            <button>Add to Cart</button>
+          </div>
+
+          <div className="grid-item">
+            <img src="https://www.bookganga.com/eBooks/Content/images/books/664542b56fd644bb90926e9f40532f75.jpg" alt="Book 4" />
+            <h3>Microprocessors and Interfacing</h3>
+            <p>Author: R. S. Sedha</p>
+            <p>Price: $25</p>
+            <button>Add to Cart</button>
+          </div>
+
+        </div>
+      </main>
+    </>
+  );
+}
+
+export default Catalog;
