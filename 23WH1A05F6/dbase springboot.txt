@@ -1,0 +1,11 @@
+create database library;
+use library;
+
+create table book(
+book_id int,
+book_name varchar(45),
+book_price varchar(45),
+book_details text);
+
+insert into book values(1,"Hello",450,"MY book");
+select * from book; 
