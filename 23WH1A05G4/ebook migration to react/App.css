@@ -1,0 +1,37 @@
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.form input {
+  padding: 10px;
+  margin: 10px;
+  width: 40%;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.book-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.book-list li {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+
+.book-list button {
+  margin-left: 20px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+}
