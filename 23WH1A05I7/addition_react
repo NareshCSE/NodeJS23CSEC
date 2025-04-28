@@ -1,0 +1,36 @@
+// Functional Component
+import {useState} from "react"
+import "./App.css"
+
+const App = () =>{
+
+  const [value1,setValue1] = useState()
+  const [value2,setValue2] = useState()
+  const [result,setResult] = useState()
+
+  //definition for handleChange
+  const handleChange1= (event,type) =>{
+    if(type=='value1')
+     setValue1(event.target.value)
+    if(type=='value2')
+      setValue2(event.target.value)
+  }
+
+  const handleClick= () =>{
+    let v1 = parseInt(value1)
+    let v2 = parseInt(value2)
+    setResult(v1 +v2)
+  }
+  return (
+    // empty tag- fragment
+    // CallBack Function
+    <> 
+    <h1> Let us add :)</h1>
+    <input type ="text" placeholder="First Value"  onChange={(e)=>handleChange1(e,'value1')}/>
+    <input type ="text" placeholder="Second Value" onChange={(e)=>handleChange1(e,'value2')}/>
+    <button onClick={handleClick}>ADD</button>
+    <p>Answer:{result}</p>
+    </>
+  )
+}
+export default App
