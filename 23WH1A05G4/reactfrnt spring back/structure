@@ -1,0 +1,19 @@
+/backend
+   /src
+      /main
+         /java
+            /com
+               /example
+                  /controller
+                     EbookController.java
+                  /service
+                     EbookService.java
+                  /repository
+                     EbookRepository.java
+                  /model
+                     Ebook.java
+/backend
+/frontend
+   /src
+      /components
+         EbookList.js
