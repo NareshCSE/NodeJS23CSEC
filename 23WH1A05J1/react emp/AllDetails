@@ -1,0 +1,45 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
+function AllDetails() {
+  const [books, setBooks] = useState([]);
+  const [error, setError] = useState('');
+
+  const fetchBooks = async () => {
+    try {
+      const response = await axios.get('http://localhost:8090/employees/getAllDetails');
+      setBooks(response.data);
+      setError('');
+    } catch (err) {
+      setError('Error fetching books.');
+    }
+  };
+
+  useEffect(() => {
+    fetchBooks();
+  }, []);
+
+  return (
+    <div className="container">
+      <h1 className="heading">All employees</h1>
+      {error && <p className="error">{error}</p>}
+      <div className="box">
+        <ul className="book-list">
+          {books.length === 0 ? (
+            <p>No books found.</p>
+          ) : (
+            books.map((book) => (
+              <li key={book.id} className="book-item">
+                <div>
+                  <strong>{book.name}</strong> - ₹{book.salary} in {book.address}
+                </div>
+              </li>
+            ))
+          )}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+export default AllDetails;
