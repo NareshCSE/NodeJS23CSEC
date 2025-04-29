@@ -1,0 +1,63 @@
+package com.example.ebookapp.model;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "employee")
+public class Ebook {
+
+    @Id
+    @Column(name = "id")
+    private int id;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "salary")
+    private String salary;
+
+    @Column(name = "address")
+    private String address;
+
+    public Ebook() {
+    }
+
+    public Ebook(int id, String name, String salary, String address) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+        this.address = address;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSalary() {
+        return salary;
+    }
+
+    public void setSalary(String salary) {
+        this.salary = salary;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+}
