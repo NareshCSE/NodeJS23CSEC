@@ -1,0 +1,42 @@
+package com.example.ebookapp.controller;
+
+import com.example.ebookapp.model.Ebook;
+import com.example.ebookapp.repository.EbookRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@CrossOrigin(origins = "*")
+@RequestMapping("/api")
+public class EbookController {
+
+    @Autowired
+    private EbookRepository ebookRepository;
+
+    
+    @GetMapping("/employee/{id}")
+    public Optional<Ebook> getEmployeeById(@PathVariable int id) {
+        return ebookRepository.findById(id);
+    }
+
+    
+    @PostMapping("/employee")
+    public Ebook createOrUpdate(@RequestBody Ebook employee) {
+        return ebookRepository.save(employee);
+    }
+
+   
+    @PostMapping("/employee/batch")
+    public List<Ebook> createMultipleEbooks(@RequestBody List<Ebook> employees) {
+        return ebookRepository.saveAll(employees);
+    }
+
+    // ✅ Get all employees
+    @GetMapping("/employee")
+    public List<Ebook> getAllEmployees() {
+        return ebookRepository.findAll();
+    }
+}
