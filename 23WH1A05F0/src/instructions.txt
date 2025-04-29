@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john@example.com"
+  }
+]
+
+netstat -ano | findstr :8080
+TCP    127.0.0.1:8080     ...     LISTENING     12345
+taskkill /PID 12345 /F
+
+npx create-react-app student-management
+cd student-management
+npm install axios react-router-dom
+http://localhost:3000/
+
+rest of codes in git
