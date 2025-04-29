@@ -1,0 +1,49 @@
+/* App.css */
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  text-align: center;
+  background-color: #fff;
+  padding: 40px; /* increased padding */
+  border-radius: 15px; /* more rounded */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* stronger shadow */
+  width: 400px; /* increased width */
+}
+
+input {
+  padding: 15px; /* bigger padding */
+  width: 80%; /* responsive width */
+  margin-bottom: 15px;
+  font-size: 18px; /* bigger font */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 18px; /* bigger text in button */
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#result {
+  margin-top: 25px;
+  font-size: 22px; /* larger result font */
+  color: #333;
+}
