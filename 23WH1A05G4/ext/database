@@ -1,0 +1,24 @@
+ use lohi;
+Database changed
+mysql> show tables;
++----------------+
+| Tables_in_lohi |
++----------------+
+| employee       |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO employee (id, name, address, salary)
+    -> VALUES (1, 'John Doe', '123 Main Street, Springfield', 50000),
+    ->        (2, 'Jane Smith', '456 Elm Street, Springfield', 55000);
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from employee;
++----+------------------------------+------------+--------+
+| id | address                      | name       | salary |
++----+------------------------------+------------+--------+
+|  1 | 123 Main Street, Springfield | John Doe   |  50000 |
+|  2 | 456 Elm Street, Springfield  | Jane Smith |  55000 |
++----+------------------------------+------------+--------+
+2 rows in set (0.00 sec)
